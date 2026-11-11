@@ -1,0 +1,482 @@
+@font-face {
+  font-family: "Pindou Pixel";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("@fontsource/pixelify-sans/files/pixelify-sans-latin-500-normal.woff2")
+    format("woff2");
+}
+@font-face {
+  font-family: "Pindou Pixel";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("@fontsource/pixelify-sans/files/pixelify-sans-latin-700-normal.woff2")
+    format("woff2");
+}
+/* All chrome changes are scoped to phones in portrait. SVG chart type stays
+   monospace; the bitmap-inspired font is only for controls and status. */
+@media (max-width: 600px) and (orientation: portrait) {
+  main.workspace-main.phone-workspace {
+    gap: 6px;
+    padding-inline: max(6px, env(safe-area-inset-left))
+      max(6px, env(safe-area-inset-right));
+  }
+  .phone-workspace .workspace {
+    position: relative;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: 6px;
+  }
+  .phone-workspace .workspace-heading {
+    min-height: 44px;
+    gap: 8px;
+  }
+  .phone-workspace .workspace-heading h2 {
+    font-family: "Pindou Pixel", monospace;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0;
+  }
+  .phone-workspace .workspace-heading .tag {
+    display: none;
+  }
+  .phone-workspace .progress-info b {
+    font:
+      700 17px "Pindou Pixel",
+      monospace;
+  }
+  .phone-workspace .progress {
+    height: 7px;
+    border: 1px solid #292638;
+    box-shadow: 1px 1px 0 #d1c7ae;
+    background: #fffdf8;
+  }
+  .phone-workspace .progress i {
+    background: repeating-linear-gradient(
+      90deg,
+      #a7cb8c 0 5px,
+      #96b67c 5px 6px
+    );
+  }
+  .phone-workspace button {
+    border-radius: 2px;
+    box-shadow: 2px 2px 0 #292638;
+    transition: none;
+  }
+  .phone-workspace button:active:not(:disabled) {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+  }
+  .phone-workspace button:disabled {
+    box-shadow: 1px 1px 0 #b9af9c;
+  }
+  .phone-workspace .workspace-heading .back {
+    border: 1px solid #8b8170;
+    box-shadow: 2px 2px 0 #d2c7af;
+    font-family: "Pindou Pixel", monospace;
+  }
+  .phone-workspace .focus-mode-toggle {
+    font-family: "Pindou Pixel", monospace;
+    font-size: 12px;
+    font-weight: 500;
+    min-height: 44px;
+    background: #f0edda;
+  }
+  .phone-workspace .canvas-card {
+    border: 1px solid #bfb5a5;
+  }
+  .phone-workspace .toolbar {
+    padding: 5px 6px 7px;
+    gap: 5px;
+    border-bottom: 1px solid #bfb5a5;
+  }
+  .phone-workspace .toolbar button {
+    font-family: "Pindou Pixel", monospace;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 9px;
+    border: 1.5px solid #292638;
+  }
+  .phone-workspace .toolbar .selected {
+    background: #dcebc0 !important;
+    border-color: #617d43 !important;
+    box-shadow:
+      inset 2px 2px 0 #edf5e1,
+      2px 2px 0 #617d43;
+  }
+  .phone-workspace .toolbar > span {
+    font:
+      500 14px "Pindou Pixel",
+      monospace;
+  }
+  .phone-workspace .stage {
+    background: #f6f1e4;
+  }
+  /* A sized SVG is redrawn at its actual vector resolution. No CSS scale,
+    persistent compositor hint, blur or image interpolation is applied. */
+  .phone-workspace .canvas-pattern {
+    will-change: auto;
+    transform: none;
+  }
+  .phone-workspace .canvas-pattern svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .phone-workspace .canvas-caption {
+    padding: 6px 8px 8px;
+    gap: 8px;
+    background: #fff9f0;
+  }
+  .phone-workspace .canvas-step-nav {
+    gap: 12px;
+  }
+  .phone-workspace .canvas-step-nav > span {
+    font:
+      500 15px "Pindou Pixel",
+      monospace;
+  }
+  .phone-workspace .canvas-step-nav button {
+    font:
+      700 21px "Pindou Pixel",
+      monospace;
+    min-width: 44px;
+    background: #f7f3e6;
+  }
+  .phone-workspace .canvas-caption > button {
+    font:
+      500 13px "Pindou Pixel",
+      monospace;
+    min-width: 90px;
+  }
+  .phone-workspace .selected-marker > rect:nth-of-type(2) {
+    stroke: #43613b;
+    stroke-width: 2;
+    stroke-dasharray: none;
+  }
+  .phone-workspace .selected-marker > path {
+    stroke: #292638;
+    stroke-width: 2;
+  }
+  .phone-workspace .mobile-drawer {
+    min-width: 0;
+    border: 1px solid #a59c86;
+    border-top: 3px solid #8da86e;
+    background: #fffaf0;
+    box-shadow: 2px 2px 0 #d7ccb6;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .phone-workspace .mobile-drawer.expanded {
+    height: 54vh;
+    height: min(54dvh, 480px);
+  }
+  .phone-workspace .drawer-toggle {
+    display: block;
+    flex: none;
+    width: 100%;
+    padding: 8px 10px 9px;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+    background: #fffaf0;
+    touch-action: pan-x;
+  }
+  .phone-workspace .drawer-toggle:active {
+    transform: none;
+    box-shadow: none;
+  }
+  .drawer-handle {
+    display: block;
+    width: 38px;
+    height: 4px;
+    margin: 0 auto 8px;
+    background: #8da86e;
+    box-shadow:
+      2px 0 0 #8da86e,
+      -2px 0 0 #8da86e;
+  }
+  .drawer-summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 30px;
+  }
+  .bead-token {
+    flex: none;
+    width: 18px;
+    height: 18px;
+  }
+  .drawer-completion {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: 7px;
+    white-space: nowrap;
+    font:
+      500 13px "Pindou Pixel",
+      monospace;
+  }
+  .drawer-completion b {
+    font-weight: 500;
+  }
+  .drawer-completion > span {
+    font-weight: 700;
+  }
+  .drawer-colors {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    gap: 9px;
+    border-left: 1px solid #cec3aa;
+    padding: 2px 0 2px 9px;
+    overflow-x: auto;
+    text-align: left;
+    scrollbar-width: thin;
+  }
+  .drawer-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    font:
+      500 13px "Pindou Pixel",
+      monospace;
+  }
+  .drawer-chip i {
+    display: block;
+    flex: none;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid #292638;
+    box-shadow: 1px 1px 0 #d0c5ae;
+  }
+  .drawer-chevron {
+    flex: none;
+    font: bold 19px monospace;
+  }
+  .drawer-empty {
+    font:
+      500 12px "Pindou Pixel",
+      monospace;
+    white-space: nowrap;
+  }
+  .drawer-body {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 2px 12px 16px;
+    scroll-padding-block: 8px;
+  }
+  .drawer-body[hidden] {
+    display: none;
+  }
+  .drawer-body-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border-top: 1px solid #e2d9c7;
+    padding-top: 10px;
+  }
+  .drawer-body h2 {
+    font:
+      700 16px "Pindou Pixel",
+      monospace;
+    margin: 0;
+  }
+  .drawer-body h3 {
+    font:
+      700 16px "Pindou Pixel",
+      monospace;
+    margin: 18px 0 10px;
+  }
+  .phone-workspace .drawer-body button {
+    font:
+      500 14px "Pindou Pixel",
+      monospace;
+  }
+  .drawer-body .remaining-summary {
+    margin: 12px 0;
+    font:
+      500 14px "Pindou Pixel",
+      monospace;
+  }
+  .drawer-body .palette {
+    margin-top: 10px;
+  }
+  .drawer-body .palette b,
+  .drawer-body .palette strong {
+    font-family: "Pindou Pixel", monospace;
+    font-size: 14px;
+  }
+  .drawer-body .palette small {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+  }
+  .drawer-selection {
+    margin: 12px 0;
+    padding: 10px;
+    border: 1px solid #a57d8a;
+    background: #fff2f5;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .drawer-selection > div {
+    flex-basis: 100%;
+  }
+  .drawer-selection strong {
+    font:
+      700 15px "Pindou Pixel",
+      monospace;
+  }
+  .drawer-selection p {
+    font-size: 12px;
+    margin: 6px 0;
+  }
+  .phone-workspace .mobile-drawer .workspace-route {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 0;
+  }
+  .mobile-drawer .workspace-route label {
+    display: block;
+    font-size: 11px;
+  }
+  .mobile-drawer .workspace-route select {
+    font:
+      500 13px "Pindou Pixel",
+      monospace;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+  }
+  .phone-workspace .mobile-drawer .workspace-route .show-empty {
+    display: flex;
+    grid-column: 1/-1;
+    flex: none;
+    gap: 8px;
+    font-size: 12px;
+  }
+  .drawer-help {
+    font:
+      11px/1.7 Arial,
+      sans-serif;
+    color: #79747c;
+  }
+  .drawer-body:focus-visible {
+    outline: 2px solid #bc7591;
+    outline-offset: -2px;
+  }
+  .phone-workspace.focus-mode .workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .phone-workspace.focus-mode .workspace-heading > div:first-child {
+    display: flex;
+  }
+  .phone-workspace.focus-mode .mobile-drawer .workspace-route {
+    display: grid;
+  }
+  .phone-workspace.focus-mode .canvas-caption {
+    padding-block: 3px 6px;
+  }
+  .phone-workspace.focus-mode .toolbar {
+    padding-block: 3px 5px;
+  }
+  .phone-workspace.focus-mode .drawer-toggle {
+    padding-block: 5px 7px;
+  }
+  .phone-workspace.focus-mode .drawer-handle {
+    margin-bottom: 5px;
+  }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+  .phone-workspace .stage [data-cell-row] > rect {
+    shape-rendering: crispEdges;
+  }
+  .phone-workspace .stage text {
+    text-rendering: geometricPrecision;
+  }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+  .phone-workspace.focus-mode .workspace-heading > div:first-child {
+    display: none;
+  }
+  .phone-workspace.focus-mode .toolbar {
+    display: none;
+  }
+  .phone-focus-tools {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-width: 0;
+    flex: 1;
+  }
+  .phone-workspace .phone-focus-tools button {
+    font:
+      500 13px "Pindou Pixel",
+      monospace;
+    padding: 6px;
+    min-width: 44px;
+  }
+  .phone-focus-tools .selected {
+    background: #dcebc0 !important;
+    border-color: #617d43 !important;
+  }
+  .focus-zoom-menu {
+    position: relative;
+    margin: 0 0 0 2px;
+    font:
+      500 13px "Pindou Pixel",
+      monospace;
+  }
+  .focus-zoom-menu > summary {
+    display: grid;
+    place-items: center;
+    list-style: none;
+    min-height: 44px;
+    min-width: 54px;
+    padding: 6px;
+    border: 1px solid #292638;
+    box-shadow: 2px 2px 0 #292638;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .focus-zoom-menu > summary::-webkit-details-marker {
+    display: none;
+  }
+  .focus-zoom-menu > div {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 6px);
+    left: 0;
+    display: flex;
+    gap: 6px;
+    padding: 8px;
+    background: #fff9f0;
+    border: 2px solid #292638;
+    box-shadow: 3px 3px 0 #b8c99d;
+  }
+  .phone-workspace.focus-mode .focus-mode-toggle {
+    min-width: 68px;
+    padding: 6px;
+  }
+  .phone-workspace.focus-mode .workspace-heading {
+    gap: 6px;
+  }
+  .drawer-completion b:after {
+    content: "·";
+    margin-left: 6px;
+  }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+  /* Native tap highlights can tint the entire interactive SVG. Selection has its
+    own vector cursor, so suppress the browser's temporary raster overlay. */
+  .phone-workspace .stage {
+    -webkit-tap-highlight-color: transparent;
+  }
+}

@@ -1,0 +1,653 @@
+/* Only the crafting session fills the viewport; the studio remains a normal page. */
+body.workspace-open {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+body.workspace-open > #root > header,
+body.workspace-open > #root > footer {
+  display: none;
+}
+main.workspace-main {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  margin: 0;
+  padding: max(8px, env(safe-area-inset-top))
+    max(12px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom))
+    max(12px, env(safe-area-inset-left));
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+}
+.workspace-main .notice {
+  flex: none;
+  margin: 0;
+  max-height: 15dvh;
+  overflow: auto;
+}
+.workspace-main .workspace-heading {
+  flex: none;
+  margin: 0;
+  min-height: 44px;
+  gap: 12px;
+}
+.workspace-heading > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+}
+.workspace-main .workspace-heading .back {
+  padding: 8px 12px;
+  border: 1px solid #d8cfbf;
+  font-size: 19px;
+  min-width: 44px;
+  min-height: 44px;
+}
+.workspace-main .workspace-heading h2 {
+  font-size: 19px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.workspace-main .progress-info {
+  width: 160px;
+  flex: none;
+  font-size: 10px;
+}
+.workspace-main .progress-info b {
+  font-size: 16px;
+}
+.workspace-main .progress-info small {
+  font-size: 9px;
+}
+.workspace-main .progress {
+  height: 6px;
+  margin: 4px 0;
+}
+.focus-mode-toggle {
+  flex: none;
+  font-size: 11px;
+  padding: 10px;
+  min-height: 44px;
+}
+.workspace-main .workspace {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 12px;
+}
+.workspace-main .canvas-card {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+.workspace-main .toolbar {
+  flex: none;
+  padding: 6px 8px;
+  gap: 6px;
+}
+.workspace-main .toolbar > div {
+  display: flex;
+  gap: 4px;
+}
+.workspace-main .toolbar button {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 8px 10px;
+  margin: 0;
+}
+.workspace-main .stage {
+  flex: 1;
+  min-height: 0;
+  height: auto;
+  --stage-height: auto;
+}
+.workspace-main .canvas-pattern {
+  flex-shrink: 0;
+}
+.workspace-main .canvas-caption {
+  flex: none;
+  gap: 8px;
+  padding: 4px 8px;
+}
+.workspace-main .canvas-caption button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px;
+}
+.canvas-step-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.canvas-step-nav > span {
+  font: 11px monospace;
+  white-space: nowrap;
+}
+.canvas-step-nav button {
+  font: bold 19px monospace;
+  box-shadow: 2px 2px 0 #e5dcc7;
+}
+.workspace-main .task-panel {
+  position: relative;
+  inset: auto;
+  z-index: auto;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 10px 12px;
+  overflow: hidden;
+}
+.workspace-main .task-panel > * {
+  flex-shrink: 0;
+}
+.workspace-main .task-heading {
+  gap: 8px;
+}
+.workspace-main .step-title {
+  font-size: 22px !important;
+  margin: 0 !important;
+}
+.workspace-main .remaining-summary {
+  margin: 8px 0;
+  font: bold 11px monospace;
+}
+.workspace-main .remaining-summary span {
+  font:
+    11px Arial,
+    sans-serif;
+}
+.color-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-height: 96px;
+  overflow: auto;
+  padding: 1px 1px 3px;
+}
+.color-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font: 11px monospace;
+  padding: 5px 7px;
+  border: 1px solid #bfb39e;
+  background: #fffcf5;
+  white-space: nowrap;
+}
+.color-chip i {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #292638;
+}
+.empty-step {
+  font-size: 11px;
+  color: #79747c;
+  padding: 4px 0;
+}
+.workspace-main .task-panel .step-navigation {
+  padding: 0;
+}
+.workspace-main .task-panel .step-nav {
+  margin: 8px 0;
+}
+.workspace-main .task-panel .step-nav button {
+  min-height: 44px;
+}
+.workspace-main .task-panel .step-slider {
+  margin: 0 0 6px;
+}
+.workspace-main .complete-action {
+  min-height: 44px;
+  font-size: 12px;
+}
+.workspace-main .task-panel .task-details {
+  flex-shrink: 1;
+  min-height: 0;
+  flex-basis: auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  margin-top: 8px;
+  max-height: none;
+}
+.workspace-main .panel-toggle {
+  display: none;
+}
+.workspace-main .task-panel .task-details {
+  display: block;
+}
+.workspace-main.focus-mode .tag,
+.workspace-main.focus-mode #canvas-help {
+  display: none;
+}
+.workspace-main.focus-mode .task-details,
+.workspace-main.focus-mode .step-slider {
+  display: none;
+}
+.workspace-main.focus-mode .panel-toggle {
+  display: none;
+}
+.workspace-main.focus-mode .canvas-caption {
+  justify-content: space-between;
+}
+.complete-action.step-completed {
+  animation: complete-feedback 0.3s ease-out;
+}
+@keyframes complete-feedback {
+  50% {
+    box-shadow: 0 0 0 3px #efa4b7;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .complete-action.step-completed {
+    animation: none;
+  }
+}
+
+/* Portrait phones and tablets: canvas above an always-present task dock. */
+@media (max-width: 1000px) and (orientation: portrait) {
+  main.workspace-main {
+    padding-inline: max(8px, env(safe-area-inset-left))
+      max(8px, env(safe-area-inset-right));
+    gap: 6px;
+  }
+  .workspace-main .workspace {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(100px, 1fr) auto;
+    gap: 6px;
+  }
+  .workspace-main .task-panel {
+    padding: 8px 10px;
+    border: 1px solid #d8cfbf;
+    border-top: 3px solid #a7cb8c;
+  }
+  .workspace-main .panel-toggle {
+    display: block;
+    min-height: 44px;
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+  .workspace-main .task-panel.collapsed .task-details {
+    display: none;
+  }
+  .workspace-main .task-panel.expanded .task-details {
+    display: block;
+    max-height: min(22dvh, 220px);
+    overflow: auto;
+  }
+  .workspace-main .task-panel .step-slider {
+    display: none;
+  }
+  .workspace-main .task-panel .step-title {
+    font-size: 20px !important;
+  }
+  .workspace-main .remaining-summary {
+    margin: 4px 0 6px;
+  }
+  .workspace-main .task-panel .step-nav {
+    margin: 6px 0;
+  }
+  .workspace-main #canvas-help {
+    display: none;
+  }
+  .workspace-main .canvas-caption {
+    justify-content: space-between;
+  }
+  .workspace-main .progress-info {
+    width: 95px;
+  }
+  .workspace-main .progress-info small {
+    display: none;
+  }
+  .workspace-main.focus-mode .task-panel .task-details {
+    display: none;
+  }
+  .workspace-main.focus-mode .panel-toggle {
+    display: none;
+  }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+  .workspace-main .workspace-heading {
+    gap: 6px;
+  }
+  .workspace-main .workspace-heading > div:first-child {
+    gap: 6px;
+  }
+  .workspace-main .workspace-heading h2 {
+    font-size: 14px;
+  }
+  .workspace-main .workspace-heading .tag {
+    display: none;
+  }
+  .workspace-main .progress-info {
+    width: 52px;
+  }
+  .workspace-main .progress-info {
+    font-size: 0;
+  }
+  .workspace-main .progress-info b {
+    font-size: 13px;
+  }
+  .workspace-main .focus-mode-toggle {
+    font-size: 10px;
+    padding: 8px;
+  }
+  .workspace-main .toolbar {
+    padding: 4px;
+    gap: 3px;
+  }
+  .workspace-main .toolbar button {
+    font-size: 11px;
+    padding: 6px 8px;
+  }
+  .workspace-main .toolbar > span {
+    font-size: 10px;
+  }
+}
+/* Short landscape phones: a narrow, compact side panel rather than a bottom dock. */
+@media (orientation: landscape) and (max-height: 540px) {
+  main.workspace-main {
+    gap: 4px;
+    padding-top: max(4px, env(safe-area-inset-top));
+    padding-bottom: max(4px, env(safe-area-inset-bottom));
+  }
+  .workspace-main .workspace {
+    grid-template-columns: minmax(0, 1fr) 242px;
+    gap: 6px;
+  }
+  .workspace-main .workspace-heading h2 {
+    font-size: 15px;
+  }
+  .workspace-main .toolbar {
+    padding: 3px 4px;
+  }
+  .workspace-main .toolbar button {
+    font-size: 10px;
+    padding: 6px;
+  }
+  .workspace-main #canvas-help {
+    display: none;
+  }
+  .workspace-main .canvas-caption {
+    padding: 3px 4px;
+    justify-content: space-between;
+  }
+  .workspace-main .task-panel {
+    padding: 6px 8px;
+  }
+  .workspace-main .task-panel .step-title {
+    font-size: 18px !important;
+  }
+  .workspace-main .task-panel .step-slider {
+    display: none;
+  }
+  .workspace-main .remaining-summary,
+  .workspace-main .remaining-summary span {
+    font-size: 10px;
+  }
+  .workspace-main .color-chips {
+    gap: 4px;
+    max-height: 76px;
+  }
+  .workspace-main .color-chip {
+    font-size: 10px;
+    padding: 3px 5px;
+  }
+  .workspace-main .color-chip i {
+    width: 15px;
+    height: 15px;
+  }
+  .workspace-main .panel-toggle {
+    display: block;
+    min-height: 44px;
+    font-size: 10px;
+    padding: 6px;
+  }
+  .workspace-main .task-panel.collapsed .task-details {
+    display: none;
+  }
+  .workspace-main .task-panel.expanded .task-details {
+    display: block;
+    overflow-y: auto;
+  }
+  .workspace-main.focus-mode .task-panel .task-details,
+  .workspace-main.focus-mode .panel-toggle {
+    display: none;
+  }
+}
+.workspace-main button {
+  min-height: 44px;
+}
+/* Exit Focus returns to normal chrome first, reducing accidental project exits. */
+.workspace-main.focus-mode .workspace-heading .back {
+  display: none;
+}
+.workspace-main .color-chips:focus-visible,
+.workspace-main .task-details:focus-visible,
+.workspace-main .step-positions ol:focus-visible {
+  outline: 2px solid #bc7591;
+  outline-offset: -2px;
+}
+/* V1.3: inspection is separate from placed-bead progress. */
+.workspace-route {
+  flex: none;
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  padding: 0 4px;
+}
+.workspace-route label {
+  font-size: 10px;
+  color: #79747c;
+}
+.workspace-route select {
+  display: block;
+  margin: 3px 0 0;
+  padding: 8px;
+  min-height: 44px;
+  width: auto;
+  max-width: 100%;
+  font-size: 11px;
+}
+.workspace-route .show-empty {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 5px;
+  color: #292638;
+}
+.show-empty input {
+  width: 18px;
+  height: 18px;
+  accent-color: #6f8d55;
+}
+.selection-context {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-bottom: 2px solid #efa4b7;
+  background: #fff6f7;
+}
+.selection-context > div {
+  flex: 1;
+  min-width: 0;
+}
+.selection-context strong,
+.selection-context span {
+  display: block;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.selection-context span {
+  color: #716473;
+}
+.workspace-main .selection-context button {
+  padding: 7px;
+  font-size: 11px;
+}
+.workspace-main .selection-context .clear-selection {
+  min-width: 44px;
+  font-size: 20px;
+}
+.selected-action {
+  background: #fae4eb;
+}
+.stage [role="gridcell"] {
+  outline: none;
+}
+.stage [role="gridcell"]:focus-visible > rect {
+  stroke: #292638;
+  stroke-width: 3;
+  stroke-dasharray: 3 2;
+}
+.workspace-main .step-title {
+  font: bold 16px monospace !important;
+  line-height: 1.4 !important;
+}
+.workspace-main .task-panel .step-nav > span {
+  display: none;
+}
+.focus-route {
+  display: none;
+}
+.finished-banner {
+  border: 1px solid #6f8d55;
+  padding: 6px;
+  font: 11px monospace;
+  background: #e2ebd6;
+  margin-bottom: 6px;
+}
+.workspace-main.focus-mode .workspace-route {
+  display: none;
+}
+.workspace-main.focus-mode .focus-route {
+  display: block;
+  width: 105px;
+  flex: none;
+  margin: 0;
+  min-height: 44px;
+  padding: 6px;
+  font-size: 11px;
+}
+.workspace-main.focus-mode .workspace-heading > div:first-child {
+  display: none;
+}
+.workspace-main.focus-mode .workspace {
+  grid-template-columns: minmax(0, 1fr) 220px;
+}
+.workspace-main.focus-mode .task-panel {
+  display: grid;
+  align-content: start;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 6px;
+}
+.workspace-main.focus-mode .task-heading,
+.workspace-main.focus-mode .color-chips,
+.workspace-main.focus-mode .remaining-summary,
+.workspace-main.focus-mode .finished-banner {
+  grid-column: 1 / -1;
+}
+.workspace-main.focus-mode .remaining-summary {
+  margin: 0;
+}
+.workspace-main.focus-mode .remaining-summary span {
+  display: none;
+}
+.workspace-main.focus-mode .task-panel .step-nav {
+  margin: 0;
+  gap: 4px;
+}
+.workspace-main.focus-mode .task-panel .step-nav button {
+  font-size: 10px;
+  padding: 6px 3px;
+}
+.workspace-main.focus-mode .complete-action {
+  font-size: 10px;
+  padding: 6px;
+}
+@media (max-width: 1000px) and (orientation: portrait) {
+  .workspace-main.focus-mode .workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .workspace-route {
+    gap: 6px;
+  }
+  .workspace-route > label {
+    flex: 1;
+    min-width: 0;
+  }
+  .workspace-route select {
+    width: 100%;
+    font-size: 10px;
+    padding: 6px;
+  }
+  .workspace-route .show-empty {
+    flex: 0 1 85px;
+    font-size: 10px;
+  }
+  .selection-context {
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 4px;
+  }
+  .selection-context > div {
+    flex-basis: 140px;
+  }
+  .workspace-main .selection-context button {
+    font-size: 10px;
+  }
+}
+@media (orientation: landscape) and (max-height: 540px) {
+  .workspace-route {
+    gap: 8px;
+  }
+  .workspace-route label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .workspace-route select {
+    margin: 0;
+  }
+  .workspace-main.focus-mode .workspace {
+    grid-template-columns: minmax(0, 1fr) 210px;
+  }
+  .workspace-main .step-title {
+    font-size: 13px !important;
+  }
+  .selection-context strong,
+  .selection-context span {
+    font-size: 10px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .selection-context .selected-action:active {
+    animation: complete-feedback 0.25s ease-out;
+  }
+}
+.workspace-main .selection-context {
+  flex-wrap: nowrap;
+  height: 68px;
+  min-height: 68px;
+}
+.selection-context p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.selection-context strong {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

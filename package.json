@@ -1,0 +1,30 @@
+{
+  "name": "pindou",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --experimental-strip-types --test src/*.test.ts",
+    "test:browser": "node tests/workspace.mjs && node tests/steps.mjs && node tests/mobile-session.mjs && node tests/selection-navigation.mjs && node tests/routes.mjs && node tests/mobile-canvas.mjs",
+    "test:layout": "node tests/layout-preservation.mjs",
+    "dev:preview": "vite --config vite.preview.config.ts",
+    "build:preview": "tsc -b && vite build --config vite.preview.config.ts",
+    "serve:preview": "vite preview --config vite.preview.config.ts",
+    "test:preview": "node tests/preview.mjs"
+  },
+  "dependencies": {
+    "@fontsource/pixelify-sans": "5.2.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "playwright": "^1.65.0",
+    "typescript": "~5.7.3",
+    "vite": "^6.1.0"
+  }
+}
