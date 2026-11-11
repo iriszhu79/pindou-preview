@@ -38,3 +38,9 @@ Historical V1.4 screenshot-equality tests are retained for reference but not run
 - Browser zoom and unusually long project names or large palettes deserve further real-device review; scrollable secondary panels handle extra content.
 - Preview hosting requires Pages source set to GitHub Actions in the preview repository. Git write access and actual deployment success are separate checks.
 - During setup this cloud environment’s network policy denied `api.github.com` and `iriszhu79.github.io`. Public GitHub Actions HTML and Git transport are reachable. A blocked live URL is not evidence of a Pages failure; inspect the deployment run before calling the site live.
+
+## Initial hosted deployment attempt (2026-11-11)
+
+Git push access to `iriszhu79/pindou-preview` succeeded. [Workflow run 42996977648](https://github.com/iriszhu79/pindou-preview/actions/runs/42996977648) reached `actions/configure-pages@v5` after install, tests and build, then failed with `HttpError: Not Found` for the Pages site. The deploy job did not publish an artifact. Enable **Settings → Pages → Source → GitHub Actions** in the preview repository, then rerun the workflow. This initial result does not establish a live preview URL. The expected URL remains https://iriszhu79.github.io/pindou-preview/ .
+
+Draft PR creation via `gh` was blocked at `https://api.github.com/graphql` by this cloud environment. The original feature branch was pushed successfully; [open a review comparison](https://github.com/iriszhu79/pindou/compare/main...feat/v1.5-pixel-game-redesign?expand=1). Create a draft for visual review; do not merge for preview publication.

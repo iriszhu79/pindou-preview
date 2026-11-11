@@ -182,6 +182,9 @@ try {
     await page.reload();
     assert.equal(await page.locator(".project").count(), 1);
     await page.getByRole("button", { name: "START", exact: true }).click();
+    await page.getByRole("button", { name: "← Back to start", exact: true }).click();
+    assert.equal(await page.getByRole("button", { name: "UPLOAD", exact: true }).isVisible(), true);
+    await page.getByRole("button", { name: "START", exact: true }).click();
     await page
       .getByRole("button", { name: "▶ Continue Little bloom", exact: true })
       .click();

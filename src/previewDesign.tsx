@@ -137,6 +137,7 @@ export function GameStart({
   onStart,
   onUpload,
   onSample,
+  onMenu,
   onProject,
 }: {
   projects: Project[];
@@ -144,6 +145,7 @@ export function GameStart({
   onStart: () => void;
   onUpload: () => void;
   onSample: () => void;
+  onMenu: () => void;
   onProject: (p: Project) => void;
 }) {
   return (
@@ -178,6 +180,7 @@ export function GameStart({
               <button className="prepare-button" onClick={onSample}>
                 Pattern overview →
               </button>
+              <button className="prepare-button" onClick={onMenu}>← Back to start</button>
             </div>
           ) : (
             <div className="start-actions">

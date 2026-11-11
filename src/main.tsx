@@ -391,6 +391,7 @@ function App() {
               }}
               onUpload={() => file.current?.click()}
               onSample={open}
+              onMenu={() => setChooseProject(false)}
               onProject={(project) => {
                 resume(project);
                 setPage("workspace");
