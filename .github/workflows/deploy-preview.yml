@@ -1,5 +1,5 @@
-# Install this workflow ONLY in iriszhu79/pindou-preview.
-name: Deploy V1.5 isolated preview
+# Both pinned applications MUST be packaged and verified before one atomic Pages upload.
+name: Deploy combined V1.5 and V2.0-A previews
 on:
   push:
     branches: [main]
@@ -13,21 +13,51 @@ concurrency:
   cancel-in-progress: false
 jobs:
   build:
-    if: github.repository == 'iriszhu79/pindou-preview'
+    if: github.repository == 'iriszhu79/pindou-preview' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: npm
       - run: npm ci
-      - run: npm test
-      - run: npm run build:preview
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - name: Export approved commits and audit storage isolation
+        run: node scripts/prepare-combined.mjs
+      - name: Install, unit-test and production-build both applications
+        run: node scripts/build-combined.mjs
+      - name: Package and hash-verify both applications
+        run: node scripts/package-combined.mjs
+      - name: Install test browser
+        run: npx playwright install --with-deps chromium
+      - name: Verify combined artifact and run both browser regression suites
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/serve-combined.mjs &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          for attempt in {1..30}; do
+            if curl -fsS http://127.0.0.1:4400/pindou-preview/deployment-manifest.json >/dev/null; then break; fi
+            sleep 1
+          done
+          node scripts/verify-combined.mjs
+          node scripts/test-combined.mjs
+      - name: Retain QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          path: dist-preview
+          name: combined-preview-qa
+          path: .combined/verification/
+          if-no-files-found: ignore
+      - uses: actions/configure-pages@v5
+      - name: Upload complete, verified Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .combined/site
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -35,6 +65,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy isolated preview
+      - name: Deploy both isolated previews atomically
         id: deployment
         uses: actions/deploy-pages@v4
