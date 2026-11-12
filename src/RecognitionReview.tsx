@@ -421,6 +421,31 @@ export function RecognitionReview({
                 setGeometry(next);
               }}
             />
+            {diagnostics?.candidates && diagnostics.candidates.length > 1 && (
+              <details className="grid-candidate-options">
+                <summary>Other grid candidates</summary>
+                <p>
+                  Evidence scores rank geometry proposals; they are not
+                  recognition accuracy probabilities. Inspect any selected grid,
+                  then re-analyze.
+                </p>
+                {diagnostics.candidates.slice(0, 6).map((candidate, i) => (
+                  <button
+                    key={i}
+                    disabled={busy}
+                    onClick={() => {
+                      invalidate();
+                      setGeometryEdited(true);
+                      setGeometry(structuredClone(candidate.geometry));
+                    }}
+                  >
+                    Use candidate {i + 1}: {candidate.geometry.columns} ×{" "}
+                    {candidate.geometry.rows} · score{" "}
+                    {candidate.score.toFixed(2)}
+                  </button>
+                ))}
+              </details>
+            )}
             <details className="advanced-crop-settings">
               <summary>Advanced pixel coordinates</summary>
               <div className="recognition-fields advanced-crop">

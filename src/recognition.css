@@ -199,3 +199,4 @@
   border: 2px solid #9a6e36;
   padding: 12px;
 }
+.grid-candidate-options button{display:block;max-width:100%;margin:10px 0;overflow-wrap:anywhere}

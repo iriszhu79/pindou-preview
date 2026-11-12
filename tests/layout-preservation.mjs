@@ -33,9 +33,8 @@ try {
           deviceScaleFactor: 1,
         });
         await context.addInitScript(
-          (p) =>
-            localStorage.setItem("pindou.preview.v20b1.projects.v1", JSON.stringify([p])),
-          p,
+          ({p,key}) => localStorage.setItem(key,JSON.stringify([p])),
+          {p,key:name==="baseline"?(process.env.PINDOU_BASELINE_STORAGE_KEY||"pindou.preview.v20a.projects.v1"):"pindou.preview.v20b1.projects.v1"},
         );
         const page = await context.newPage();
         await page.goto(url);

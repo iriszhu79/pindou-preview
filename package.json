@@ -17,7 +17,9 @@
     "test:round2": "node tests/round2.mjs",
     "test:recognition": "node tests/recognition.mjs",
     "test:crop": "node tests/crop-recovery.mjs",
-    "diagnose:mard": "node tests/diagnose-mard.mjs"
+    "diagnose:mard": "node tests/diagnose-mard.mjs",
+    "test:real-grids": "node tests/real-grid-copies.mjs",
+    "test:grid-compression": "node tests/compressed-grid.mjs"
   },
   "dependencies": {
     "@fontsource/pixelify-sans": "5.2.5",

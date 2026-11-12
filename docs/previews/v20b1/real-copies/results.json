@@ -1,0 +1,374 @@
+[
+  {
+    "id": "flying-pig",
+    "provenance": "repository screenshot; unchanged original project asset",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 1179,
+      "colors": 5,
+      "uncertain": 746
+    },
+    "autoMs": 3860.9028230000004,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 1179,
+      "colors": 5,
+      "uncertain": 746
+    },
+    "manualMs": 891.6786299999994,
+    "reference": {
+      "columns": 40,
+      "rows": 51,
+      "total": 1179,
+      "colors": 5
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "unknown; no independent cell ground truth"
+  },
+  {
+    "id": "duck-copy",
+    "provenance": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7250.jpeg 1440x1672",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 139,
+      "colors": 4,
+      "uncertain": 132
+    },
+    "autoMs": 1691.7729060000001,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 139,
+      "colors": 4,
+      "uncertain": 125
+    },
+    "manualMs": 365.8733170000014,
+    "reference": {
+      "columns": 50,
+      "rows": 50,
+      "total": 139,
+      "colors": 8
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "unknown; no independent cell ground truth"
+  },
+  {
+    "id": "teapot-copy",
+    "provenance": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7252.jpeg 1440x1672",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 1018,
+      "colors": 4,
+      "uncertain": 409
+    },
+    "autoMs": 944.4414290000004,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 1017,
+      "colors": 4,
+      "uncertain": 409
+    },
+    "manualMs": 366.903393999999,
+    "reference": {
+      "columns": 50,
+      "rows": 50,
+      "total": 1333,
+      "colors": 6
+    },
+    "autoCountDifference": -315,
+    "manualCountDifference": -316,
+    "cellLevelAccuracy": "unknown; no independent cell ground truth"
+  },
+  {
+    "id": "flying-pig",
+    "provenance": "repository screenshot; unchanged original project asset",
+    "viewport": {
+      "width": 820,
+      "height": 1180
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 1179,
+      "colors": 5,
+      "uncertain": 746
+    },
+    "autoMs": 3676.7471719999994,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 1179,
+      "colors": 5,
+      "uncertain": 746
+    },
+    "manualMs": 899.0119219999979,
+    "reference": {
+      "columns": 40,
+      "rows": 51,
+      "total": 1179,
+      "colors": 5
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "unknown; no independent cell ground truth"
+  },
+  {
+    "id": "duck-copy",
+    "provenance": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7250.jpeg 1440x1672",
+    "viewport": {
+      "width": 820,
+      "height": 1180
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 139,
+      "colors": 4,
+      "uncertain": 132
+    },
+    "autoMs": 1470.707988000002,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 139,
+      "colors": 4,
+      "uncertain": 125
+    },
+    "manualMs": 408.6566789999997,
+    "reference": {
+      "columns": 50,
+      "rows": 50,
+      "total": 139,
+      "colors": 8
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "unknown; no independent cell ground truth"
+  },
+  {
+    "id": "teapot-copy",
+    "provenance": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7252.jpeg 1440x1672",
+    "viewport": {
+      "width": 820,
+      "height": 1180
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 1018,
+      "colors": 4,
+      "uncertain": 409
+    },
+    "autoMs": 1525.4335050000009,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 1017,
+      "colors": 4,
+      "uncertain": 409
+    },
+    "manualMs": 1014.2358370000002,
+    "reference": {
+      "columns": 50,
+      "rows": 50,
+      "total": 1333,
+      "colors": 6
+    },
+    "autoCountDifference": -315,
+    "manualCountDifference": -316,
+    "cellLevelAccuracy": "unknown; no independent cell ground truth"
+  },
+  {
+    "id": "flying-pig",
+    "provenance": "repository screenshot; unchanged original project asset",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 1179,
+      "colors": 5,
+      "uncertain": 746
+    },
+    "autoMs": 3002.9681949999976,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 1179,
+      "colors": 5,
+      "uncertain": 746
+    },
+    "manualMs": 889.7201029999997,
+    "reference": {
+      "columns": 40,
+      "rows": 51,
+      "total": 1179,
+      "colors": 5
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "unknown; no independent cell ground truth"
+  },
+  {
+    "id": "duck-copy",
+    "provenance": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7250.jpeg 1440x1672",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 139,
+      "colors": 4,
+      "uncertain": 132
+    },
+    "autoMs": 1497.0960479999994,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 139,
+      "colors": 4,
+      "uncertain": 125
+    },
+    "manualMs": 404.9195369999943,
+    "reference": {
+      "columns": 50,
+      "rows": 50,
+      "total": 139,
+      "colors": 8
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "unknown; no independent cell ground truth"
+  },
+  {
+    "id": "teapot-copy",
+    "provenance": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7252.jpeg 1440x1672",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 1018,
+      "colors": 4,
+      "uncertain": 409
+    },
+    "autoMs": 926.865058000003,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 1017,
+      "colors": 4,
+      "uncertain": 409
+    },
+    "manualMs": 382.9904580000002,
+    "reference": {
+      "columns": 50,
+      "rows": 50,
+      "total": 1333,
+      "colors": 6
+    },
+    "autoCountDifference": -315,
+    "manualCountDifference": -316,
+    "cellLevelAccuracy": "unknown; no independent cell ground truth"
+  },
+  {
+    "id": "flying-pig",
+    "provenance": "repository screenshot; unchanged original project asset",
+    "viewport": {
+      "width": 375,
+      "height": 667
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 1179,
+      "colors": 5,
+      "uncertain": 746
+    },
+    "autoMs": 3018.016287999999,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 1179,
+      "colors": 5,
+      "uncertain": 746
+    },
+    "manualMs": 886.6600190000026,
+    "reference": {
+      "columns": 40,
+      "rows": 51,
+      "total": 1179,
+      "colors": 5
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "unknown; no independent cell ground truth"
+  },
+  {
+    "id": "duck-copy",
+    "provenance": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7250.jpeg 1440x1672",
+    "viewport": {
+      "width": 375,
+      "height": 667
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 139,
+      "colors": 4,
+      "uncertain": 132
+    },
+    "autoMs": 1486.8075080000053,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 139,
+      "colors": 4,
+      "uncertain": 125
+    },
+    "manualMs": 378.08250899999985,
+    "reference": {
+      "columns": 50,
+      "rows": 50,
+      "total": 139,
+      "colors": 8
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "unknown; no independent cell ground truth"
+  },
+  {
+    "id": "teapot-copy",
+    "provenance": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7252.jpeg 1440x1672",
+    "viewport": {
+      "width": 375,
+      "height": 667
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 1018,
+      "colors": 4,
+      "uncertain": 409
+    },
+    "autoMs": 964.1282910000009,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 1017,
+      "colors": 4,
+      "uncertain": 409
+    },
+    "manualMs": 918.1312600000019,
+    "reference": {
+      "columns": 50,
+      "rows": 50,
+      "total": 1333,
+      "colors": 6
+    },
+    "autoCountDifference": -315,
+    "manualCountDifference": -316,
+    "cellLevelAccuracy": "unknown; no independent cell ground truth"
+  }
+]

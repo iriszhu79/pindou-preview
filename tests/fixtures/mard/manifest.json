@@ -1,0 +1,5 @@
+[
+ {"id":"flying-pig","file":"public/samples/sample-pattern.jpg","provenance":"repository screenshot; unchanged original project asset","sha256":"dd4adc3fd44257baf020725055e56371749d97259bf26f1c9ab08ef76be49a61","reference":{"columns":40,"rows":51,"total":1179,"colors":5},"manual":{"crop":{"x":34,"y":592,"width":1188,"height":1516},"rows":51,"columns":40}},
+ {"id":"duck-copy","file":"tests/fixtures/mard/duck_chat_copy.png","provenance":"conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7250.jpeg 1440x1672","sha256":"6bb5475d098913e6086709f1d0e9039b2d2cf2a66a16c4b0e1951e87da654273","reference":{"columns":50,"rows":50,"total":139,"colors":8},"manual":{"crop":{"x":81,"y":139,"width":904,"height":904},"rows":50,"columns":50}},
+ {"id":"teapot-copy","file":"tests/fixtures/mard/teapot_chat_copy.png","provenance":"conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7252.jpeg 1440x1672","sha256":"9f0b21e976ad516b51b506f3f7fb01f61ad15e9530738ed40838391a2bb9d7af","reference":{"columns":50,"rows":50,"total":1333,"colors":6},"manual":{"crop":{"x":81,"y":139,"width":904,"height":904},"rows":50,"columns":50}}
+]

@@ -1,3 +1,8 @@
+import {
+  rankGridCandidates,
+  colorBoundaryAgreement,
+  type GridCandidate,
+} from "./gridDetection.ts";
 import type { Project, Cell } from "./model.ts";
 export type Raster = { width: number; height: number; data: Uint8ClampedArray };
 export type Crop = { x: number; y: number; width: number; height: number };
@@ -184,7 +189,11 @@ export function detectAxis(v: ArrayLike<number>) {
   return best;
 }
 export type GridDiagnostics = {
-  method: "v2.0-a-baseline";
+  method: "v2.0-a-baseline" | "v2.0-b1-ranked";
+  candidates?: GridCandidate[];
+  colorPhase?: ReturnType<typeof colorBoundaryAgreement>;
+  evidence?: ReturnType<typeof rankGridCandidates>["evidence"];
+  legacy?: GridDiagnostics;
   x?: {
     projection: number[];
     peaks: number[];
@@ -222,7 +231,7 @@ function diagnosticAxis(values: number[]) {
   return { projection: values, peaks };
 }
 /** Instrument the unchanged A detector before proposing algorithm changes. */
-export function diagnoseGrid(image: Raster): GridDiagnostics {
+export function diagnoseLegacyGrid(image: Raster): GridDiagnostics {
   const d: GridDiagnostics = { method: "v2.0-a-baseline", stage: "x-axis" };
   try {
     d.x = diagnosticAxis(Array.from(projection(image, "x")));
@@ -262,6 +271,52 @@ export function diagnoseGrid(image: Raster): GridDiagnostics {
   } catch (error) {
     d.rejection = error instanceof Error ? error.message : String(error);
   }
+  return d;
+}
+export function diagnoseGrid(image: Raster): GridDiagnostics {
+  const legacy = diagnoseLegacyGrid(image),
+    ranked = rankGridCandidates(image, legacy.geometry);
+  const best = ranked.candidates[0];
+  const d: GridDiagnostics = {
+    method: "v2.0-b1-ranked",
+    stage: "axis-agreement",
+    legacy,
+    candidates: ranked.candidates,
+    evidence: ranked.evidence,
+    bestCandidate: best?.geometry,
+  };
+  if (
+    !best ||
+    best.score < 1.35 ||
+    best.methods.includes("extent-unverified")
+  ) {
+    d.rejection =
+      "Grid not located reliably. Use the visual crop and dimensions.";
+    return d;
+  }
+  const alternative = ranked.candidates.find(
+    (c) =>
+      c.geometry.rows !== best.geometry.rows ||
+      c.geometry.columns !== best.geometry.columns,
+  );
+  if (alternative && best.score - alternative.score < 0.12) {
+    d.rejection =
+      "Grid geometry is uncertain: competing periods or boundaries have similar evidence. Review the proposed crop.";
+    return d;
+  }
+  if (!best.methods.includes("paired-numbered-boundaries")) {
+    d.colorPhase = colorBoundaryAgreement(image, best.geometry);
+    if (
+      d.colorPhase.every((v) => v.strength > 0.6) &&
+      d.colorPhase.some((v) => v.alignment < 0.25)
+    ) {
+      d.rejection =
+        "Grid geometry is uncertain: colored blocks contradict the proposed coarse cell period. Align the grid manually.";
+      return d;
+    }
+  }
+  d.geometry = best.geometry;
+  d.stage = "accepted";
   return d;
 }
 export class GridDetectionError extends Error {
@@ -351,7 +406,7 @@ export function recognize(image: Raster, hint?: Geometry): Recognition {
     })),
     method: hint
       ? "Manual geometry + robust background sampling"
-      : "Automatic periodic grid + robust background sampling",
+      : "Automatic ranked grid evidence + robust background sampling",
     warnings: [
       "Needs Review: grid boundaries and pale/white cells require visual checking.",
       "Color codes are temporary; official brand codes are not inferred from RGB.",
