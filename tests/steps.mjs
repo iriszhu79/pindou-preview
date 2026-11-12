@@ -74,8 +74,8 @@ try {
   await page.goto(
     process.env.PINDOU_TEST_URL || "http://127.0.0.1:4301/pindou-preview/",
   );
-  await page.getByRole("button", { name: "START", exact: true }).click();
-  await page.getByRole("button", { name: "Pattern overview →", exact: true }).click();
+  await page.locator(".project").filter({hasText:"Rectangle demo"}).click();
+  await page.getByRole("button", { name: "Pattern overview", exact: true }).click();
   assert.equal(
     await page.locator(".preview svg").getAttribute("viewBox"),
     "-20 -20 208 112",

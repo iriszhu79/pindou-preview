@@ -28,9 +28,12 @@ import "./style.css";
 import "./workspace.css";
 import "./mobile-workspace.css";
 import "./preview-design.css";
+import "./round2.css";
 import { PROJECT_STORAGE_KEY } from "./storage";
-import { GameStart, PixelWorld, GamePanel, ConsolePad } from "./previewDesign";
+import { GameStart, GamePanel, ConsolePad } from "./previewDesign";
 import { confirmConsoleCompletion, consoleActionLabel } from "./consoleActions";
+import { useConsoleKeyboard } from "./useConsoleKeyboard";
+import { directionalStep } from "./consoleNavigation";
 import { MobileDrawer } from "./MobileDrawer";
 import { usePhonePortrait } from "./usePhonePortrait";
 import { stepPanDelta } from "./viewport";
@@ -79,7 +82,6 @@ function Strategy({ p, update }: { p: Project; update: (p: Project) => void }) {
   );
 }
 function App() {
-  const [chooseProject, setChooseProject] = useState(false);
   useEffect(() => {
     document.body.classList.add("v15-preview");
     return () => document.body.classList.remove("v15-preview");
@@ -130,6 +132,7 @@ function App() {
     setP(project);
   };
   const resume = (project: Project) => {
+    if(project.id!==p.id){setSelected(null);setUndo([]);}
     // Preserve a valid meaningful saved position; legacy empty positions are not
     // beading tasks. Route to remaining work without migrating the stored format.
     setShowEmpty(false);
@@ -168,7 +171,9 @@ function App() {
     setP(n);
   };
   const open = () => {
-    resume(saved[0] ?? createProject());
+    resume(
+      saved.find((project) => project.id === "flower-demo") ?? createProject(),
+    );
     setPage("overview");
     setUpload(null);
   };
@@ -296,8 +301,25 @@ function App() {
   const renderedHeight =
     (renderedWidth * (p.rows * CELL + 40)) / (p.columns * CELL + 40);
   const undoLast = () => {
-    setP(undo[undo.length - 1]);
+    if (!undo.length) return;
+    const previous = undo[undo.length - 1];
+    // Undo completion edits without rewinding the currently chosen route or step.
+    setP({ ...p, grid: previous.grid });
     setUndo((v) => v.slice(0, -1));
+  };
+  useConsoleKeyboard(page === "workspace", {
+    navigate: (direction) => {
+      const target = directionalStep(p, direction, showEmpty);
+      if (target) setP(target);
+    },
+    complete: () => change(confirmConsoleCompletion(p, select, selected)),
+    undo: undoLast,
+  });
+  const showStudio = () => {
+    setPage("home");
+    requestAnimationFrame(() =>
+      document.querySelector(".recent")?.scrollIntoView({ block: "start" }),
+    );
   };
   const actionLabel = consoleActionLabel(p, select, selected);
   const canConfirm =
@@ -310,26 +332,30 @@ function App() {
       role="group"
       aria-label="Console completion controls"
     >
-      <button
-        className="console-a"
-        title={`A: ${actionLabel}`}
-        aria-label={`A: ${actionLabel}`}
-        disabled={!canConfirm}
-        onClick={() => change(confirmConsoleCompletion(p, select, selected))}
-      >
-        <b>A</b>
-        <small>{select && selectedCell ? "PLACE BEAD" : "PLACE STEP"}</small>
-      </button>
-      <button
-        className="console-b"
-        aria-label="B: Undo last completion"
-        title="B: Undo last completion"
-        disabled={!undo.length}
-        onClick={undoLast}
-      >
-        <b>B</b>
-        <small>UNDO</small>
-      </button>
+      <span className="console-action">
+        <button
+          className="console-a"
+          title={`A: ${actionLabel}`}
+          aria-label={`A: ${actionLabel}`}
+          disabled={!canConfirm}
+          onClick={() => change(confirmConsoleCompletion(p, select, selected))}
+        >
+          <b>A</b>
+        </button>
+        <small aria-hidden="true">Complete</small>
+      </span>
+      <span className="console-action">
+        <button
+          className="console-b"
+          aria-label="B: Undo last completion"
+          title="B: Undo last completion"
+          disabled={!undo.length}
+          onClick={undoLast}
+        >
+          <b>B</b>
+        </button>
+        <small aria-hidden="true">Undo</small>
+      </span>
     </div>
   );
   const extraControls = (
@@ -348,18 +374,9 @@ function App() {
           <span>✿</span> PINDOU<sup>✦</sup>
         </button>
         <nav>
-          <button onClick={() => setPage("home")}>My studio</button>
-          <a
-            className="production-link"
-            href="https://iriszhu79.github.io/pindou/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Compare V1.4 ↗
-          </a>
-          <small>
-            V1.5 PREVIEW <i /> ISOLATED SAVES
-          </small>
+          <button className="studio-nav" onClick={showStudio}>
+            My Studio
+          </button>
         </nav>
       </header>
       <main
@@ -382,22 +399,7 @@ function App() {
         )}
         {page === "home" && (
           <>
-            <GameStart
-              projects={saved}
-              choosing={chooseProject}
-              onStart={() => {
-                if (saved.length) setChooseProject(true);
-                else open();
-              }}
-              onUpload={() => file.current?.click()}
-              onSample={open}
-              onMenu={() => setChooseProject(false)}
-              onProject={(project) => {
-                resume(project);
-                setPage("workspace");
-                fit();
-              }}
-            />
+            <GameStart onSample={open} onUpload={() => file.current?.click()} />
             {upload && (
               <section className="card upload">
                 <div>
@@ -480,11 +482,11 @@ function App() {
         )}
         {page === "overview" && (
           <>
-            <div className="overview-world">
-              <PixelWorld compact /><div className="world-brand" aria-hidden="true">PINDOU<small>PIXEL BEADING STUDIO</small></div>
+            <div className="preparation-strip">
+              ✦ LEVEL PREPARATION <span>Pattern · Inventory · Route</span>
             </div>
-            <button className="back" onClick={() => setPage("home")}>
-              ← Back to studio
+            <button className="back overview-back" onClick={showStudio}>
+              ← Back to Studio
             </button>
             <div className="page-heading">
               <div className="eyebrow">A SMALL PROJECT, A HAPPY MOMENT</div>
@@ -600,6 +602,12 @@ function App() {
         )}
         {page === "workspace" && (
           <>
+            <p
+              className="keyboard-hint"
+              title="With a bead focused, arrow keys inspect cells. Click the canvas margin for step shortcuts."
+            >
+              ↑↓ / ←→ Navigate · A Complete · B Undo
+            </p>
             <div className="workspace-heading">
               <div>
                 <button
@@ -1008,10 +1016,7 @@ function App() {
                     <button
                       className="undo full"
                       disabled={!undo.length}
-                      onClick={() => {
-                        setP(undo[undo.length - 1]);
-                        setUndo((v) => v.slice(0, -1));
-                      }}
+                      onClick={undoLast}
                     >
                       ↶ Undo last change
                     </button>
@@ -1055,7 +1060,14 @@ function App() {
       <footer>
         <span className="logo">✿ pindou</span>
         <span>V1.5 design experiment · preview-only saves</span>
-        <span>Made for your own pace. ✦</span>
+        <a
+          className="production-link"
+          href="https://iriszhu79.github.io/pindou/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Compare production V1.4 ↗
+        </a>
       </footer>
     </>
   );

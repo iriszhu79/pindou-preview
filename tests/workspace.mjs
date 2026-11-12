@@ -53,7 +53,7 @@ try {
   await page.waitForTimeout(200);
   await page.waitForFunction(() => window.scrollY > 0);
   await page.evaluate(() => window.scrollTo(0, 0));
-  await page.getByRole("button", { name: "START" }).click();
+  await page.getByRole("button", { name: "TRY SAMPLE" }).click();
   await page.getByRole("button", { name: "START BEADING →" }).click();
   await page.locator(".stage").scrollIntoViewIfNeeded();
   const initial = await snapshot();

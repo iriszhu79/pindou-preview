@@ -12,6 +12,15 @@ The original repository’s `main`, `/pindou/` site, Vite configuration, and pro
 - Deployment status: check the preview repository’s **Actions → Deploy V1.5 isolated preview**. A passing local build does not mean Pages is live.
 - V1.4 comparison: https://iriszhu79.github.io/pindou/
 
+## Round 2 refinements
+
+The existing preview now has **TRY SAMPLE** and **UPLOAD PATTERN**, a pixel My Studio control, a transparent mushroom sprite drawn from the supplied reference, a compact preparation header, keyboard navigation/completion/undo, and external A/B labels. Saved preview projects and the storage key are unchanged. Production remains untouched.
+
+- [Before/after screenshots, three pages × mobile/desktop](docs/previews/v15-round2/README.md)
+- [Round 2 QA, keyboard behavior and limitations](docs/QA-v1.5-round2.md)
+- Browser checks: `npm run test:round2`, `npm run test:preview`, `npm run test:browser` after starting `serve:preview`. Set `PINDOU_TEST_URL` if using another local port, and `CHROMIUM_PATH` for system Chromium.
+- Workspace shortcuts: **↑↓ / ←→ Navigate · A Complete · B Undo**. Arrows follow physical grid directions, including reverse routes. Shortcuts ignore typing, open dialogs, modifiers, repeats and IME. Focused grid cells retain their accessible arrow-key bead inspection. A never clears completed targets; undo keeps the current route. Undo history remains session-only.
+
 ## Run and review V1.5 locally
 
 ```sh
@@ -42,7 +51,7 @@ This experimental source reads and writes only `pindou.preview.v15.projects.v1`.
 
 Shared scoped tokens, pixel typography, borders, resource chips and panels unite a red game-start screen, a cream preparation board, and an orange beading console. The sky/workshop/bead-keeper illustration is original SVG artwork, not a mockup background. All charts, statistics and controls are real components. Pixelify Sans is bundled under its [SIL Open Font License](public/licenses/Pixelify-Sans-OFL.txt).
 
-START opens the sample overview or offers real preview saves to continue. UPLOAD remains image-preview-only. Overview inventory quantities and recommendations are computed from actual structured data.
+TRY SAMPLE opens/resumes the sample overview; My Studio opens real preview saves. UPLOAD PATTERN remains image-preview-only. Overview inventory quantities and recommendations are computed from actual structured data.
 
 Existing Previous/Next, completion, undo, Hand/Select, zoom, Focus Mode, route settings and drawer remain. D-pad controls in task details navigate the applicable row/column axis; other directions are disabled. **A** explicitly places the selected bead in Select Mode, otherwise the current step; its visible label and accessible name describe the action. Already-completed targets disable A. **B** undoes the most recent completion edit in this session; it never resets the project. Session undo history is not retained on refresh, matching existing behavior.
 

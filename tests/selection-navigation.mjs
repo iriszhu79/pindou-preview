@@ -32,7 +32,7 @@ try {
     debugPage = page;
     page.on("pageerror", (e) => errors.push(e.message));
     await page.goto(url);
-    await page.getByRole("button", { name: "START" }).click();
+    await page.getByRole("button", { name: "TRY SAMPLE" }).click();
     assert.equal(
       await page.locator(".preview [data-active-step]").getAttribute("y"),
       "48",

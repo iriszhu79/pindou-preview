@@ -19,7 +19,7 @@ const browser = await chromium.launch({
     ? { executablePath: process.env.CHROMIUM_PATH }
     : {}),
 });
-const screenshots = "docs/previews/v15";
+const screenshots = "docs/previews/v15-round2/after";
 await mkdir(screenshots, { recursive: true });
 const errors = [];
 try {
@@ -67,7 +67,7 @@ try {
     await page
       .getByRole("button", { name: "Close preview", exact: true })
       .click();
-    await page.getByRole("button", { name: "START", exact: true }).click();
+    await page.getByRole("button", { name: "TRY SAMPLE", exact: true }).click();
     assert.match(await page.locator(".metrics").innerText(), /91/);
     assert.equal(
       await page.locator(".preview svg").getAttribute("viewBox"),
@@ -118,9 +118,19 @@ try {
     const target = page
       .locator('.stage [data-cell-row="2"][data-cell-column="6"] > rect')
       .first();
-    await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    await page.evaluate(
+      () =>
+        new Promise((resolve) =>
+          requestAnimationFrame(() => requestAnimationFrame(resolve)),
+        ),
+    );
     await target.tap();
-    await page.waitForFunction(() => document.querySelector(".canvas-caption .console-a").getAttribute("aria-label").includes("selected bead"));
+    await page.waitForFunction(() =>
+      document
+        .querySelector(".canvas-caption .console-a")
+        .getAttribute("aria-label")
+        .includes("selected bead"),
+    );
     assert.equal(await count(), 0);
     assert.match(
       await a.getAttribute("aria-label"),
@@ -181,13 +191,14 @@ try {
     if (phone) await page.locator(".drawer-toggle").click();
     await page.reload();
     assert.equal(await page.locator(".project").count(), 1);
-    await page.getByRole("button", { name: "START", exact: true }).click();
-    await page.getByRole("button", { name: "← Back to start", exact: true }).click();
-    assert.equal(await page.getByRole("button", { name: "UPLOAD", exact: true }).isVisible(), true);
-    await page.getByRole("button", { name: "START", exact: true }).click();
-    await page
-      .getByRole("button", { name: "▶ Continue Little bloom", exact: true })
-      .click();
+    await page.getByRole("button", { name: "My Studio", exact: true }).click();
+    assert.equal(
+      await page
+        .getByRole("button", { name: "UPLOAD PATTERN", exact: true })
+        .isVisible(),
+      true,
+    );
+    await page.locator(".project").click();
     assert.equal(await count(), 1);
     assert.equal((await snapshot()).strategy, "column");
     assert.equal(

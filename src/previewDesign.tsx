@@ -1,5 +1,6 @@
 import { useId, type ReactNode } from "react";
-import { adjacentStep, type Project } from "./model";
+import { type Project } from "./model";
+import { directionalStep } from "./consoleNavigation";
 export function PixelWorld({ compact = false }: { compact?: boolean }) {
   const id = useId().replace(/:/g, "");
   return (
@@ -69,27 +70,14 @@ export function PixelWorld({ compact = false }: { compact?: boolean }) {
         fill="#292638"
       />
       <path d="M200 278H309V289H200Z" fill="#f8ce72" />
-      {/* Tiny bead keeper: original craft creature, not a game character. */}
-      <path
-        d="M477 254H493V242H529V254H541V298H529V310H489V301H477Z"
-        fill="#292638"
+      <image
+        className="mushroom-sprite"
+        href={`${import.meta.env.BASE_URL}sprites/mushroom.svg`}
+        x="438"
+        y="231"
+        width="90"
+        height="90"
       />
-      <path
-        d="M484 260H499V250H523V260H534V294H522V303H495V296H484Z"
-        fill="#fff9de"
-      />
-      <path d="M485 249V240H497V232H524V240H536V249Z" fill="#292638" />
-      <path d="M492 241H501V237H521V244H530V249H492Z" fill="#9ac773" />
-      <rect x="493" y="265" width="5" height="7" fill="#292638" />
-      <rect x="517" y="265" width="5" height="7" fill="#292638" />
-      <path d="M504 278H515V283H504Z" fill="#e391a5" />
-      <path d="M463 283H505V313H463Z" fill="#292638" />
-      <rect x="468" y="288" width="32" height="20" fill="#fff9f0" />
-      <path
-        d="M480 290H489V294H493V301H488V305H480V301H476V294H480Z"
-        fill="#efa4b7"
-      />
-      <rect x="483" y="296" width="4" height="4" fill="#f6c768" />
       <path
         d="M568 279H583V270H594V278H610V270H620V286H626V306H616V315H576V306H568Z"
         fill="#292638"
@@ -132,21 +120,11 @@ export function GamePanel({
   );
 }
 export function GameStart({
-  projects,
-  choosing,
-  onStart,
-  onUpload,
   onSample,
-  onMenu,
-  onProject,
+  onUpload,
 }: {
-  projects: Project[];
-  choosing: boolean;
-  onStart: () => void;
-  onUpload: () => void;
   onSample: () => void;
-  onMenu: () => void;
-  onProject: (p: Project) => void;
+  onUpload: () => void;
 }) {
   return (
     <section className="game-start console-red">
@@ -157,7 +135,6 @@ export function GameStart({
       <div className="start-screen">
         <PixelWorld />
         <div className="start-content">
-          <span className="preview-pill">V1.5 DESIGN PREVIEW</span>
           <h1>
             PINDOU
             <span className="logo-flower" aria-hidden="true">
@@ -165,37 +142,18 @@ export function GameStart({
             </span>
           </h1>
           <p className="logo-subtitle">✦ PIXEL BEADING STUDIO ✦</p>
-          {choosing && projects.length ? (
-            <div className="start-project-picker">
-              <h2>Continue your adventure</h2>
-              {projects.map((p) => (
-                <button
-                  className="pixel-start-button"
-                  key={p.id}
-                  onClick={() => onProject(p)}
-                >
-                  ▶ Continue {p.name}
-                </button>
-              ))}
-              <button className="prepare-button" onClick={onSample}>
-                Pattern overview →
-              </button>
-              <button className="prepare-button" onClick={onMenu}>← Back to start</button>
-            </div>
-          ) : (
-            <div className="start-actions">
-              <button className="pixel-start-button" onClick={onStart}>
-                <span aria-hidden="true">▶</span> START
-              </button>
-              <button
-                className="pixel-start-button upload-action"
-                onClick={onUpload}
-              >
-                <span aria-hidden="true">↑</span> UPLOAD
-              </button>
-              <small>Upload previews only · sample is interactive</small>
-            </div>
-          )}
+          <div className="start-actions">
+            <button className="pixel-start-button" onClick={onSample}>
+              <span aria-hidden="true">▶</span> TRY SAMPLE
+            </button>
+            <button
+              className="pixel-start-button upload-action"
+              onClick={onUpload}
+            >
+              <span aria-hidden="true">↑</span> UPLOAD PATTERN
+            </button>
+            <small>Upload your chart or try the sample board.</small>
+          </div>
         </div>
       </div>
       <div className="console-chin">
@@ -203,9 +161,10 @@ export function GameStart({
         <details className="start-help">
           <summary>How to play</summary>
           <p>
-            START opens your preview projects or the synthetic sample. UPLOAD
-            previews an image; automatic recognition is not available. Your V1.4
-            saves are never read or modified here.
+            TRY SAMPLE opens the interactive sample board. UPLOAD PATTERN
+            previews your image; automatic recognition is not available. My
+            Studio contains your preview saves. Your V1.4 saves are never read
+            or modified here.
           </p>
         </details>
         <span>MAKE LITTLE THINGS.</span>
@@ -222,18 +181,6 @@ export function ConsolePad({
   showEmpty: boolean;
   onNavigate: (p: Project) => void;
 }) {
-  const prev = adjacentStep(p, -1, showEmpty),
-    next = adjacentStep(p, 1, showEmpty);
-  const action = (direction: "up" | "down" | "left" | "right") => {
-    if (p.strategy === "row" && (direction === "up" || direction === "down"))
-      return direction === (p.reverse ? "down" : "up") ? prev : next;
-    if (
-      p.strategy === "column" &&
-      (direction === "left" || direction === "right")
-    )
-      return direction === (p.reverse ? "right" : "left") ? prev : next;
-    return null;
-  };
   return (
     <div
       className="console-dpad"
@@ -241,7 +188,7 @@ export function ConsolePad({
       aria-label="D-pad step navigation"
     >
       {(["up", "left", "right", "down"] as const).map((d) => {
-        const target = action(d);
+        const target = directionalStep(p, d, showEmpty);
         return (
           <button
             className={`pad-${d}`}
