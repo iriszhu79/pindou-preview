@@ -30,6 +30,7 @@ import "./mobile-workspace.css";
 import "./preview-design.css";
 import "./round2.css";
 import "./round3.css";
+import { RecognitionReview } from "./RecognitionReview";
 import { PROJECT_STORAGE_KEY } from "./storage";
 import { GameStart, GamePanel, ConsolePad, OverviewBanner } from "./previewDesign";
 import { confirmConsoleCompletion, consoleActionLabel } from "./consoleActions";
@@ -82,6 +83,10 @@ function Strategy({ p, update }: { p: Project; update: (p: Project) => void }) {
     </div>
   );
 }
+function projectLabel(project: Project) {
+  if (project.id === "flower-demo") return "SYNTHETIC DEMO";
+  return project.id.startsWith("recognized-") ? "REVIEWED IMPORT" : "SAVED PROJECT";
+}
 function App() {
   useEffect(() => {
     document.body.classList.add("v15-preview");
@@ -93,9 +98,6 @@ function App() {
     () => loadProjects()[0] ?? createProject(),
   );
   const [page, setPage] = useState("home");
-  const [upload, setUpload] = useState<{ url: string; name: string } | null>(
-    null,
-  );
   const [error, setError] = useState("");
   const [select, setSelect] = useState(false);
   const [undo, setUndo] = useState<Project[]>([]);
@@ -108,7 +110,6 @@ function App() {
     [],
   );
   const [stageSize, setStageSize] = useState({ width: 1, height: 1 });
-  const file = useRef<HTMLInputElement>(null);
   const counts = useMemo(() => stats(p.grid, p.palette), [p.grid, p.palette]);
   const total = counts.reduce((a, c) => a + c.count, 0),
     done = counts.reduce((a, c) => a + c.done, 0);
@@ -140,7 +141,7 @@ function App() {
     setP(stepCells(project).length ? project : startRoute(project));
   };
   useEffect(() => {
-    if (page === "home") return;
+    if (page === "home" || page === "recognition") return;
     const next = [
       { ...p, updatedAt: new Date().toISOString() },
       ...saved.filter((v) => v.id !== p.id),
@@ -155,17 +156,7 @@ function App() {
       );
     }
   }, [p, page]);
-  useEffect(
-    () => () => {
-      if (upload) URL.revokeObjectURL(upload.url);
-    },
-    [upload],
-  );
   useEffect(() => setUndo([]), [p.id]);
-  useEffect(() => {
-    if (upload)
-      document.querySelector(".upload")?.scrollIntoView({ block: "start" });
-  }, [upload]);
   const change = (n: Project) => {
     if (n === p) return;
     setUndo((v) => [...v.slice(-29), p]);
@@ -176,7 +167,6 @@ function App() {
       saved.find((project) => project.id === "flower-demo") ?? createProject(),
     );
     setPage("overview");
-    setUpload(null);
   };
   const focus = (force = true) => {
     const el = stage.current;
@@ -398,33 +388,22 @@ function App() {
             {error}
           </p>
         )}
+        {page === "recognition" && (
+          <RecognitionReview
+            onClose={showStudio}
+            onConfirm={(project) => {
+              resume(project);
+              setPage("overview");
+            }}
+          />
+        )}
         {page === "home" && (
           <>
-            <GameStart onSample={open} onUpload={() => file.current?.click()} />
-            {upload && (
-              <section className="card upload">
-                <div>
-                  <div className="eyebrow">YOUR UPLOAD · PREVIEW ONLY</div>
-                  <h2>{upload.name}</h2>
-                  <p>
-                    Automatic image recognition isn't available in Phase 1. This
-                    image has not been parsed. Try the synthetic demo for an
-                    interactive workspace.
-                  </p>
-                  <button onClick={open}>Use sample →</button>{" "}
-                  <button onClick={() => setUpload(null)}>Close preview</button>
-                </div>
-                <img
-                  src={upload.url}
-                  alt="Uploaded pattern preview"
-                  onError={() =>
-                    setError(
-                      "This image format cannot be displayed. Try PNG or JPEG.",
-                    )
-                  }
-                />
-              </section>
-            )}
+            <GameStart onSample={open} onUpload={() => setPage("recognition")} />
+            <p className="recognition-prototype-note">
+              V2.0-A development prototype · existing chart recognition.
+              Confirmed imports create new preview projects.
+            </p>
             <section className="recent">
               <div className="section-title">
                 <div>
@@ -451,7 +430,7 @@ function App() {
                       <Grid p={v} />
                     </div>
                     <div>
-                      <span className="tag">SYNTHETIC DEMO</span>
+                      <span className="tag">{projectLabel(v)}</span>
                       <h3>{v.name}</h3>
                       <p>
                         {v.columns} × {v.rows} ·{" "}
@@ -495,7 +474,7 @@ function App() {
             <div className="overview">
               <section className="card preview">
                 <div className="board-label">
-                  PATTERN BOARD <span className="tag">SYNTHETIC DEMO</span>
+                  PATTERN BOARD <span className="tag">{projectLabel(p)}</span>
                 </div>
                 <Grid
                   p={p}
@@ -509,21 +488,27 @@ function App() {
                 <p>{p.name} · Tap a row or column to preview</p>
                 <StepNavigation p={p} update={setP} showEmpty={showEmpty} />
                 <details>
-                  <summary>About this sample & original reference</summary>
+                  <summary>
+                    {p.id === "flower-demo"
+                      ? "About this sample & original reference"
+                      : "About this pattern"}
+                  </summary>
                   <p>
                     {p.id === "flower-demo"
                       ? "This synthetic flower is not a transcription of the original 40 × 51 chart."
                       : "This project uses structured grid data."}{" "}
                     All counts come from the {p.columns} × {p.rows} project
-                    grid. The original's 1,179-bead total is not used here.
+                    grid. Reference totals are never substituted for these counts.
                   </p>
-                  <a
-                    href={`${import.meta.env.BASE_URL}samples/sample-pattern.jpg`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    View original chart ↗
-                  </a>
+                  {p.id === "flower-demo" && (
+                    <a
+                      href={`${import.meta.env.BASE_URL}samples/sample-pattern.jpg`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      View original chart ↗
+                    </a>
+                  )}
                 </details>
               </section>
               <div className="info">
@@ -1039,26 +1024,10 @@ function App() {
             </div>
           </>
         )}
-        <input
-          hidden
-          ref={file}
-          type="file"
-          accept="image/*"
-          onChange={(e) => {
-            const f = e.target.files?.[0];
-            if (!f) return;
-            if (!f.type.startsWith("image/") || f.size > 15 * 1024 * 1024) {
-              setError("Choose an image smaller than 15 MB.");
-              return;
-            }
-            setUpload({ url: URL.createObjectURL(f), name: f.name });
-            e.target.value = "";
-          }}
-        />
       </main>
       <footer>
         <span className="logo">✿ pindou</span>
-        <span>V1.5 design experiment · preview-only saves</span>
+        <span>V2.0-A development prototype · preview-only saves</span>
         <a
           className="production-link"
           href="https://iriszhu79.github.io/pindou/"

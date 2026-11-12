@@ -19,7 +19,7 @@ const browser = await chromium.launch({
     ? { executablePath: process.env.CHROMIUM_PATH }
     : {}),
 });
-const screenshots = "docs/previews/v15-round2/after";
+const screenshots = "docs/previews/v20a/workspace-regression";
 await mkdir(screenshots, { recursive: true });
 const errors = [];
 try {
@@ -56,17 +56,9 @@ try {
         path: `${screenshots}/home-${label}.png`,
         fullPage: true,
       });
-    await page
-      .locator("input[type=file]")
-      .setInputFiles("public/samples/sample-pattern.jpg");
-    await page.locator(".upload").waitFor();
-    assert.match(
-      await page.locator(".upload").innerText(),
-      /has not been parsed/,
-    );
-    await page
-      .getByRole("button", { name: "Close preview", exact: true })
-      .click();
+    await page.getByRole("button", { name: "UPLOAD PATTERN", exact: true }).click();
+    await page.getByRole("heading", { name: "Pattern recognition · V2.0-A" }).waitFor();
+    await page.locator(".recognition").getByRole("button", { name: "← Back to Studio", exact: true }).click();
     await page.getByRole("button", { name: "TRY SAMPLE", exact: true }).click();
     assert.match(await page.locator(".metrics").innerText(), /91/);
     assert.equal(

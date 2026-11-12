@@ -14,7 +14,8 @@
     "build:preview": "tsc -b && vite build --config vite.preview.config.ts",
     "serve:preview": "vite preview --config vite.preview.config.ts",
     "test:preview": "node tests/preview.mjs",
-    "test:round2": "node tests/round2.mjs"
+    "test:round2": "node tests/round2.mjs",
+    "test:recognition": "node tests/recognition.mjs"
   },
   "dependencies": {
     "@fontsource/pixelify-sans": "5.2.5",

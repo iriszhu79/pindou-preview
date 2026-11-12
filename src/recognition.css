@@ -1,0 +1,148 @@
+.recognition {
+  min-width: 0;
+}
+.recognition p {
+  font:
+    14px/1.65 Arial,
+    sans-serif;
+  overflow-wrap: anywhere;
+}
+.recognition h1 {
+  font: 700 30px var(--game-font);
+}
+.recognition .card {
+  margin: 20px 0;
+}
+.recognition-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 14px 0;
+}
+.recognition-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.recognition label {
+  display: block;
+  font: 14px var(--game-font);
+  min-width: 0;
+}
+.recognition input:not([type="checkbox"]),
+.recognition select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 0;
+  background: #fffcf6;
+  border: 2px solid #292638;
+  color: #292638;
+  font: 14px Arial;
+  min-height: 44px;
+  min-width: 0;
+}
+.recognition input:focus-visible {
+  outline: 3px solid #9a3964;
+  outline-offset: 2px;
+}
+.recognition-file {
+  padding: 10px;
+  background: #ffe7a1;
+  border: 2px solid #292638;
+  max-width: 100%;
+}
+.recognition-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.recognition-comparison > .card {
+  min-width: 0;
+  padding: 16px;
+}
+.recognition-image {
+  position: relative;
+}
+.recognition-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.recognition-image > svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.recognition-grid {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: crosshair;
+  shape-rendering: crispEdges;
+}
+.recognition-tabs {
+  display: none;
+}
+.recognition-palette > div {
+  display: grid;
+  grid-template-columns: 28px 1fr 1fr 85px;
+  gap: 10px;
+  align-items: center;
+  margin: 12px 0;
+}
+.recognition-palette i {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #292638;
+}
+.recognition-confirm {
+  margin: 18px 0;
+  line-height: 1.7 !important;
+}
+.recognition-confirm input {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+}
+.recognition .card h2 {
+  font-family: var(--game-font);
+}
+@media (max-width: 760px) {
+  .recognition-comparison {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .recognition-tabs {
+    display: flex;
+    gap: 10px;
+  }
+  .recognition-tabs button {
+    flex: 1;
+  }
+  .recognition-comparison.view-source .recognition-digital,
+  .recognition-comparison.view-grid .recognition-source {
+    display: none;
+  }
+  .recognition-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .recognition-palette > div {
+    grid-template-columns: 24px 1fr 1fr;
+  }
+  .recognition-palette strong {
+    grid-column: 2/-1;
+  }
+  .recognition .card {
+    padding: 16px;
+  }
+  .recognition h1 {
+    font-size: 26px;
+  }
+  .recognition-actions > button {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+}
