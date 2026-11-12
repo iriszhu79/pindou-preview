@@ -105,6 +105,30 @@ export function PixelWorld({ compact = false }: { compact?: boolean }) {
     </svg>
   );
 }
+/** Shallow preparation-screen banner: decoration stays separate from project data. */
+export function OverviewBanner() {
+  return (
+    <section className="overview-world preparation-banner" aria-label="Pindou level preparation">
+      <svg className="banner-sky" viewBox="0 0 900 114" preserveAspectRatio="xMidYMid slice" aria-hidden="true" shapeRendering="crispEdges">
+        <path d="M54 40H70V26H86V16H110V26H126V40H142V54H54Z" fill="#fffbee" />
+        <path d="M66 54H142V60H66Z" fill="#c8eff4" />
+        <path d="M714 0H738V8H762V22H794V36H706V16H714Z" fill="#fffbee" />
+        <path d="M718 36H794V42H718Z" fill="#c8eff4" />
+        <path d="M320 100H336V86H360V100H376V114H320Z" fill="#fffbee" />
+      </svg>
+      <svg className="banner-sky banner-sky-mobile" viewBox="0 0 360 82" preserveAspectRatio="xMidYMid slice" aria-hidden="true" shapeRendering="crispEdges">
+        <path d="M8 29H16V21H24V13H40V21H48V29H56V41H8Z" fill="#fffbee" />
+        <path d="M16 41H56V45H16Z" fill="#c8eff4" />
+        <path d="M302 18H310V10H326V18H334V26H346V38H294V26H302Z" fill="#fffbee" />
+        <path d="M302 38H346V42H302Z" fill="#c8eff4" />
+      </svg>
+      <div className="world-brand">
+        <span>PINDOU</span>
+        <small>PIXEL BEADING STUDIO</small>
+      </div>
+    </section>
+  );
+}
 export function GamePanel({
   title,
   children,

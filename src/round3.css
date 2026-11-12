@@ -1,0 +1,37 @@
+/* Only the preparation banner changes here; Workspace styles stay untouched. */
+.v15-preview .preparation-banner {
+  height: 114px;
+  margin: 0 0 16px;
+  background: #65cef0;
+  border-radius: 0;
+  isolation: isolate;
+}
+.preparation-banner .banner-sky {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.preparation-banner .banner-sky-mobile {
+  display: none;
+}
+.preparation-banner .world-brand {
+  padding: 8px 12px;
+}
+@media (max-width: 760px) {
+  .v15-preview .preparation-banner {
+    height: 82px;
+    margin-bottom: 12px;
+  }
+  .preparation-banner .banner-sky {
+    display: none;
+  }
+  .preparation-banner .banner-sky-mobile {
+    display: block;
+  }
+  .preparation-banner .world-brand small {
+    font-size: 10px;
+    letter-spacing: .5px;
+  }
+}

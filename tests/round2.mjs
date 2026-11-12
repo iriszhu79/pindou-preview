@@ -77,7 +77,13 @@ try {
       .getByRole("button", { name: "← Back to Studio", exact: true })
       .boundingBox();
     assert.ok(back.height >= 36 && back.height <= 44);
-    assert.equal(await page.locator(".overview-world").count(), 0);
+    const banner = page.locator(".preparation-banner");
+    assert.equal(await banner.count(), 1);
+    assert.equal(await page.locator(".preparation-strip").count(), 0);
+    assert.match(await banner.innerText(), /PINDOU/);
+    const bannerBox = await banner.boundingBox();
+    assert.equal(bannerBox.height, width <= 760 ? 82 : 114);
+    assert.ok(await safe(), "Overview fits the viewport");
     await page
       .getByRole("button", { name: "START BEADING →", exact: true })
       .click();

@@ -29,8 +29,9 @@ import "./workspace.css";
 import "./mobile-workspace.css";
 import "./preview-design.css";
 import "./round2.css";
+import "./round3.css";
 import { PROJECT_STORAGE_KEY } from "./storage";
-import { GameStart, GamePanel, ConsolePad } from "./previewDesign";
+import { GameStart, GamePanel, ConsolePad, OverviewBanner } from "./previewDesign";
 import { confirmConsoleCompletion, consoleActionLabel } from "./consoleActions";
 import { useConsoleKeyboard } from "./useConsoleKeyboard";
 import { directionalStep } from "./consoleNavigation";
@@ -482,9 +483,7 @@ function App() {
         )}
         {page === "overview" && (
           <>
-            <div className="preparation-strip">
-              ✦ LEVEL PREPARATION <span>Pattern · Inventory · Route</span>
-            </div>
+            <OverviewBanner />
             <button className="back overview-back" onClick={showStudio}>
               ← Back to Studio
             </button>
