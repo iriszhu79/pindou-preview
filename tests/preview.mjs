@@ -4,7 +4,7 @@ import { chromium } from "playwright";
 import { createProject } from "../src/model.ts";
 const url =
   process.env.PINDOU_TEST_URL || "http://127.0.0.1:4301/pindou-preview/";
-const key = "pindou.preview.v15.projects.v1",
+const key = "pindou.preview.v20b1.projects.v1",
   prod = "pindou.projects.v1",
   sentinel = JSON.stringify([
     {
@@ -19,7 +19,7 @@ const browser = await chromium.launch({
     ? { executablePath: process.env.CHROMIUM_PATH }
     : {}),
 });
-const screenshots = "docs/previews/v20a/workspace-regression";
+const screenshots = "docs/previews/v20b1/recognition-regression/workspace-regression";
 await mkdir(screenshots, { recursive: true });
 const errors = [];
 try {
@@ -57,7 +57,7 @@ try {
         fullPage: true,
       });
     await page.getByRole("button", { name: "UPLOAD PATTERN", exact: true }).click();
-    await page.getByRole("heading", { name: "Pattern recognition · V2.0-A" }).waitFor();
+    await page.getByRole("heading", { name: "Pattern recognition · V2.0-B1" }).waitFor();
     await page.locator(".recognition").getByRole("button", { name: "← Back to Studio", exact: true }).click();
     await page.getByRole("button", { name: "TRY SAMPLE", exact: true }).click();
     assert.match(await page.locator(".metrics").innerText(), /91/);

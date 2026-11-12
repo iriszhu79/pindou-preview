@@ -401,7 +401,7 @@ function App() {
           <>
             <GameStart onSample={open} onUpload={() => setPage("recognition")} />
             <p className="recognition-prototype-note">
-              V2.0-A development prototype · existing chart recognition.
+              V2.0-B1 development prototype · existing chart recognition.
               Confirmed imports create new preview projects.
             </p>
             <section className="recent">
@@ -1027,7 +1027,7 @@ function App() {
       </main>
       <footer>
         <span className="logo">✿ pindou</span>
-        <span>V2.0-A development prototype · preview-only saves</span>
+        <span>V2.0-B1 development prototype · preview-only saves</span>
         <a
           className="production-link"
           href="https://iriszhu79.github.io/pindou/"

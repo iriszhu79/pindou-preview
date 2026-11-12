@@ -44,7 +44,7 @@ try {
     );
     const current = () =>
       page.evaluate(
-        () => JSON.parse(localStorage.getItem("pindou.preview.v15.projects.v1"))[0],
+        () => JSON.parse(localStorage.getItem("pindou.preview.v20b1.projects.v1"))[0],
       );
     const completed = async () =>
       (await current()).grid

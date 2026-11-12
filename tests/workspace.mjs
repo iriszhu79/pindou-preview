@@ -16,7 +16,7 @@ page.on("pageerror", (error) => errors.push(error.message));
 const url = process.env.PINDOU_TEST_URL || "http://127.0.0.1:4301/pindou-preview/";
 const snapshot = () =>
   page.evaluate(() => {
-    const project = JSON.parse(localStorage.getItem("pindou.preview.v15.projects.v1"))[0];
+    const project = JSON.parse(localStorage.getItem("pindou.preview.v20b1.projects.v1"))[0];
     return {
       completed: project.grid
         .filter((c) => c.isCompleted)

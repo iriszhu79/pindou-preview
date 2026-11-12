@@ -34,7 +34,7 @@ try {
         });
         await context.addInitScript(
           (p) =>
-            localStorage.setItem("pindou.preview.v15.projects.v1", JSON.stringify([p])),
+            localStorage.setItem("pindou.preview.v20b1.projects.v1", JSON.stringify([p])),
           p,
         );
         const page = await context.newPage();

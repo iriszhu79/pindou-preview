@@ -186,7 +186,7 @@ export function GameStart({
           <summary>How to play</summary>
           <p>
             TRY SAMPLE opens the interactive sample board. UPLOAD PATTERN opens
-            the V2.0-A recognition prototype for existing grid charts. Review and
+            the V2.0-B1 recognition prototype for existing grid charts. Review and
             correct results before confirming a new project. My Studio contains
             your preview saves. V1.4 saves are never read or modified here.
           </p>

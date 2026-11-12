@@ -5,13 +5,13 @@ import { createProject } from "../src/model.ts";
 import { syntheticChart } from "./recognition-fixtures.ts";
 const url =
   process.env.PINDOU_TEST_URL || "http://127.0.0.1:4305/pindou-preview/";
-const key = "pindou.preview.v15.projects.v1";
+const key = "pindou.preview.v20b1.projects.v1";
 const browser = await chromium.launch({
   headless: true,
   executablePath: process.env.CHROMIUM_PATH || "/usr/bin/chromium",
 });
 const errors = [];
-await mkdir("docs/previews/v20a", { recursive: true });
+await mkdir("docs/previews/v20b1/recognition-regression", { recursive: true });
 try {
   for (const [width, height] of [
     [1440, 900],
@@ -27,7 +27,8 @@ try {
     original.grid.find((c) => !c.isEmpty).isCompleted = true;
     await context.addInitScript(
       ({ key, original }) => {
-        if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify([original]));
+        if (!localStorage.getItem(key))
+          localStorage.setItem(key, JSON.stringify([original]));
         localStorage.setItem("pindou.projects.v1", "production-sentinel");
       },
       { key, original },
@@ -86,11 +87,13 @@ try {
       const download = page.waitForEvent("download");
       await page.getByRole("button", { name: "Export review JSON" }).click();
       const file = await download;
-      await file.saveAs("docs/previews/v20a/mard-browser-recognition.json");
+      await file.saveAs(
+        "docs/previews/v20b1/recognition-regression/mard-browser-recognition.json",
+      );
     }
     if (width === 1440 || width === 390)
       await page.screenshot({
-        path: `docs/previews/v20a/recognition-${width}.png`,
+        path: `docs/previews/v20b1/recognition-regression/recognition-${width}.png`,
         fullPage: true,
       });
     // Empty first cell is converted to a color, counts update, then restoring returns to 1,179.
@@ -114,9 +117,18 @@ try {
     await page.getByRole("button", { name: "Restore recognized cell" }).click();
     // Changing geometry requires a rerun even after ticking the review box.
     await page.getByRole("checkbox").check();
+    await page.locator(".advanced-crop-settings summary").click();
     await page.getByLabel("Crop x", { exact: true }).fill("35");
     assert.ok(await confirm.isDisabled());
     await page.getByLabel("Crop x", { exact: true }).fill("34");
+    await page.getByRole("checkbox").check();
+    assert.ok(await confirm.isDisabled());
+    await page
+      .getByRole("button", { name: "Recognize specified region" })
+      .click();
+    await page
+      .getByText("Recognized · Needs Review. Not yet saved.", { exact: true })
+      .waitFor();
     await page.getByRole("checkbox").check();
     await confirm.click();
     await page
@@ -142,18 +154,24 @@ try {
         () => document.documentElement.scrollWidth <= innerWidth,
       ),
     );
-    await page.evaluate(()=>document.activeElement?.blur());
+    await page.evaluate(() => document.activeElement?.blur());
     await page.keyboard.press("a");
-    assert.ok((await saved())[0].grid.some(c=>c.isCompleted));
+    assert.ok((await saved())[0].grid.some((c) => c.isCompleted));
     await page.keyboard.press("b");
-    assert.ok((await saved())[0].grid.every(c=>!c.isCompleted));
-    const importedId=(await saved())[0].id;
+    assert.ok((await saved())[0].grid.every((c) => !c.isCompleted));
+    const importedId = (await saved())[0].id;
     await page.reload();
-    assert.ok((await saved()).some(p=>p.id===importedId));
-    assert.deepEqual((await saved()).find(p=>p.id===original.id),original);
-    await page.locator('.project').filter({hasText:'MARD source chart'}).click();
-    await page.locator('.stage').waitFor();
-    assert.equal((await saved())[0].id,importedId);
+    assert.ok((await saved()).some((p) => p.id === importedId));
+    assert.deepEqual(
+      (await saved()).find((p) => p.id === original.id),
+      original,
+    );
+    await page
+      .locator(".project")
+      .filter({ hasText: "MARD source chart" })
+      .click();
+    await page.locator(".stage").waitFor();
+    assert.equal((await saved())[0].id, importedId);
     console.log(
       `PASS ${width}×${height}: real sample auto detection, review, correction/restore, code edit, confirmation, Workspace, storage isolation`,
     );
@@ -162,7 +180,7 @@ try {
   // Exercise real upload, unsupported file and failed-grid recovery rather than only the sample-fetch shortcut.
   const context = await browser.newContext(),
     page = await context.newPage();
-  page.on('pageerror',e=>errors.push(e.message));
+  page.on("pageerror", (e) => errors.push(e.message));
   await page.goto(url);
   await page
     .getByRole("button", { name: "UPLOAD PATTERN", exact: true })
@@ -185,6 +203,7 @@ try {
     .getByRole("alert")
     .filter({ hasText: "Recognition Failed" })
     .waitFor();
+  await page.locator(".advanced-crop-settings summary").click();
   for (const [label, value] of [
     ["Crop x", "34"],
     ["Crop y", "592"],
@@ -204,18 +223,48 @@ try {
     await page.locator(".recognition-digital").innerText(),
     /1179 beads/,
   );
-  const synthetic=syntheticChart(20,20);
-  const encoded=await page.evaluate(({width,height,data})=>{
-    const canvas=document.createElement('canvas');canvas.width=width;canvas.height=height;
-    canvas.getContext('2d').putImageData(new ImageData(new Uint8ClampedArray(data),width,height),0,0);
-    return canvas.toDataURL('image/png').split(',')[1];
-  },{width:synthetic.image.width,height:synthetic.image.height,data:Array.from(synthetic.image.data)});
-  await input.setInputFiles({name:'synthetic-20x20.png',mimeType:'image/png',buffer:Buffer.from(encoded,'base64')});
-  await page.getByRole('button',{name:'Detect grid automatically'}).click();
-  await page.getByText('Recognized · Needs Review. Not yet saved.',{exact:true}).waitFor();
-  assert.equal(await page.getByLabel('rows',{exact:true}).inputValue(),'20');
-  assert.equal(await page.getByLabel('columns',{exact:true}).inputValue(),'20');
-  assert.match(await page.locator('.recognition-digital').innerText(),new RegExp(`${synthetic.expected.filter(c=>c!==null).length} beads`));
+  const synthetic = syntheticChart(20, 20);
+  const encoded = await page.evaluate(
+    ({ width, height, data }) => {
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      canvas
+        .getContext("2d")
+        .putImageData(
+          new ImageData(new Uint8ClampedArray(data), width, height),
+          0,
+          0,
+        );
+      return canvas.toDataURL("image/png").split(",")[1];
+    },
+    {
+      width: synthetic.image.width,
+      height: synthetic.image.height,
+      data: Array.from(synthetic.image.data),
+    },
+  );
+  await input.setInputFiles({
+    name: "synthetic-20x20.png",
+    mimeType: "image/png",
+    buffer: Buffer.from(encoded, "base64"),
+  });
+  await page.getByRole("button", { name: "Detect grid automatically" }).click();
+  await page
+    .getByText("Recognized · Needs Review. Not yet saved.", { exact: true })
+    .waitFor();
+  assert.equal(
+    await page.getByLabel("rows", { exact: true }).inputValue(),
+    "20",
+  );
+  assert.equal(
+    await page.getByLabel("columns", { exact: true }).inputValue(),
+    "20",
+  );
+  assert.match(
+    await page.locator(".recognition-digital").innerText(),
+    new RegExp(`${synthetic.expected.filter((c) => c !== null).length} beads`),
+  );
   await context.close();
   assert.deepEqual(errors, []);
   console.log(

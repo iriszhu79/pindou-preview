@@ -46,13 +46,13 @@ const tall = {
 };
 await page.addInitScript(
   (projects) => {
-    if (!localStorage.getItem("pindou.preview.v15.projects.v1"))
-      localStorage.setItem("pindou.preview.v15.projects.v1", JSON.stringify(projects));
+    if (!localStorage.getItem("pindou.preview.v20b1.projects.v1"))
+      localStorage.setItem("pindou.preview.v20b1.projects.v1", JSON.stringify(projects));
   },
   [rectangle, legacy, tall],
 );
 const saved = () =>
-  page.evaluate(() => JSON.parse(localStorage.getItem("pindou.preview.v15.projects.v1")));
+  page.evaluate(() => JSON.parse(localStorage.getItem("pindou.preview.v20b1.projects.v1")));
 const state = () =>
   page.locator(".canvas-pattern").evaluate((el) => el.style.transform);
 const centered = async () => {
@@ -63,7 +63,7 @@ const centered = async () => {
     if (!stage || !rect) return false;
     const a = stage.getBoundingClientRect(),
       b = rect.getBoundingClientRect();
-    const p = JSON.parse(localStorage.getItem("pindou.preview.v15.projects.v1"))[0];
+    const p = JSON.parse(localStorage.getItem("pindou.preview.v20b1.projects.v1"))[0];
     return p.strategy === "row"
       ? b.top >= a.top + 10 && b.bottom <= a.bottom - 10
       : b.left >= a.left + 10 && b.right <= a.right - 10;

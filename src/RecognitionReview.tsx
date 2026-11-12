@@ -4,7 +4,9 @@ import {
   toProject,
   type Geometry,
   type Recognition,
+  type GridDiagnostics,
 } from "./recognition";
+import { VisualGridCrop } from "./VisualGridCrop";
 import type { Project } from "./model";
 import "./recognition.css";
 type Source = {
@@ -28,6 +30,9 @@ export function RecognitionReview({
     rows: 0,
     columns: 0,
   });
+  const [geometryEdited, setGeometryEdited] = useState(false);
+  const [diagnostics, setDiagnostics] = useState<GridDiagnostics | null>(null);
+  const [failureKind, setFailureKind] = useState("");
   const [error, setError] = useState(""),
     [busy, setBusy] = useState(false),
     [view, setView] = useState("grid"),
@@ -60,6 +65,8 @@ export function RecognitionReview({
     setError("");
     setResult(null);
     setSource(null);
+    setDiagnostics(null);
+    setFailureKind("");
     setReviewed(false);
     if (
       !["image/jpeg", "image/png"].includes(blob.type) ||
@@ -136,6 +143,7 @@ export function RecognitionReview({
     const ticket = ++request.current;
     setBusy(true);
     setError("");
+    setFailureKind("");
     setReviewed(false);
     setResult(null);
     const w = new Worker(new URL("./recognition.worker.ts", import.meta.url), {
@@ -145,17 +153,46 @@ export function RecognitionReview({
     w.onmessage = ({
       data,
     }: {
-      data: { result?: Recognition; error?: string };
+      data: {
+        result?: Recognition;
+        error?: string;
+        kind?: string;
+        diagnostics?: GridDiagnostics;
+      };
     }) => {
       if (ticket !== request.current) return;
       setBusy(false);
       w.terminate();
       if (data.error) {
-        setError(`Recognition Failed: ${data.error}`);
+        setFailureKind(data.kind ?? "analysis-failed");
+        if (data.diagnostics) {
+          setDiagnostics(data.diagnostics);
+          const candidate = data.diagnostics.bestCandidate;
+          if (
+            candidate &&
+            candidate.crop.x >= 0 &&
+            candidate.crop.y >= 0 &&
+            candidate.crop.x + candidate.crop.width <= source.width &&
+            candidate.crop.y + candidate.crop.height <= source.height
+          )
+            setGeometry(candidate);
+        }
+        const prefix =
+          data.kind === "grid-not-detected"
+            ? "Grid not detected"
+            : data.kind === "geometry-uncertain"
+              ? "Grid geometry uncertain"
+              : data.kind === "classification-failed"
+                ? "Color classification could not be completed"
+                : "Recognition Failed";
+        setError(`${prefix}: ${data.error}`);
         return;
       }
       if (data.result) {
+        setFailureKind("");
+        if (data.result.diagnostics) setDiagnostics(data.result.diagnostics);
         setResult(data.result);
+        setGeometryEdited(false);
         baseline.current = structuredClone(data.result);
         setGeometry({
           crop: data.result.crop,
@@ -182,11 +219,12 @@ export function RecognitionReview({
   }
   const geometryDirty =
     !!result &&
-    JSON.stringify({
-      crop: result.crop,
-      rows: result.rows,
-      columns: result.columns,
-    }) !== JSON.stringify(geometry);
+    (geometryEdited ||
+      JSON.stringify({
+        crop: result.crop,
+        rows: result.rows,
+        columns: result.columns,
+      }) !== JSON.stringify(geometry));
   const summary = result ? recognitionStats(result) : null,
     selected = result?.cells.find((c) => c.row === row && c.column === column);
   const invalidate = () => setReviewed(false);
@@ -259,7 +297,17 @@ export function RecognitionReview({
     const blob = new Blob(
       [
         JSON.stringify(
-          { source: source ? {name:source.name,width:source.width,height:source.height} : null, recognition: result, statistics: recognitionStats(result) },
+          {
+            source: source
+              ? {
+                  name: source.name,
+                  width: source.width,
+                  height: source.height,
+                }
+              : null,
+            recognition: result,
+            statistics: recognitionStats(result),
+          },
           null,
           2,
         ),
@@ -278,7 +326,7 @@ export function RecognitionReview({
       <button className="back overview-back" onClick={onClose}>
         ← Back to Studio
       </button>
-      <h1>Pattern recognition · V2.0-A</h1>
+      <h1>Pattern recognition · V2.0-B1</h1>
       <p>
         Existing square-grid charts only. Images stay in this browser. Clean
         JPG/PNG up to 15 MB and 20 megapixels; rotated, blurred, or perspective
@@ -304,6 +352,31 @@ export function RecognitionReview({
           {error}
         </p>
       )}
+      {source && failureKind && (
+        <div
+          className="recovery-status"
+          role="region"
+          aria-label="Recognition recovery"
+        >
+          <p>
+            {failureKind === "classification-failed"
+              ? "The grid was located, but its colors could not be classified. Inspect the source and crop before retrying."
+              : "The grid could not be analyzed reliably."}{" "}
+            {failureKind === "geometry-uncertain" && diagnostics?.bestCandidate
+              ? "An unverified candidate is shown below; inspect and revise it."
+              : "Align the crop over the chart, enter dimensions, and re-analyze. No geometry has been invented."}
+          </p>
+          <button
+            onClick={() =>
+              document
+                .querySelector(".visual-grid-crop")
+                ?.scrollIntoView({ block: "start", behavior: "smooth" })
+            }
+          >
+            Adjust Grid Manually
+          </button>
+        </div>
+      )}
       {source && (
         <>
           <div className="card recognition-geometry">
@@ -314,27 +387,6 @@ export function RecognitionReview({
               needs regular visible grid lines; always inspect its boundaries.
             </p>
             <div className="recognition-fields">
-              {(["x", "y", "width", "height"] as const).map((key) => (
-                <label key={key}>
-                  Crop {key}
-                  <input
-                    type="number"
-                    min={0}
-                    value={geometry.crop[key]}
-                    disabled={busy}
-                    onChange={(e) => {
-                      invalidate();
-                      setGeometry({
-                        ...geometry,
-                        crop: {
-                          ...geometry.crop,
-                          [key]: Number(e.target.value),
-                        },
-                      });
-                    }}
-                  />
-                </label>
-              ))}
               {(["rows", "columns"] as const).map((key) => (
                 <label key={key}>
                   {key}
@@ -346,6 +398,7 @@ export function RecognitionReview({
                     disabled={busy}
                     onChange={(e) => {
                       invalidate();
+                      setGeometryEdited(true);
                       setGeometry({
                         ...geometry,
                         [key]: Number(e.target.value),
@@ -355,6 +408,46 @@ export function RecognitionReview({
                 </label>
               ))}
             </div>
+            <VisualGridCrop
+              key={source.url}
+              url={source.url}
+              width={source.width}
+              height={source.height}
+              geometry={geometry}
+              disabled={busy}
+              onChange={(next) => {
+                invalidate();
+                setGeometryEdited(true);
+                setGeometry(next);
+              }}
+            />
+            <details className="advanced-crop-settings">
+              <summary>Advanced pixel coordinates</summary>
+              <div className="recognition-fields advanced-crop">
+                {(["x", "y", "width", "height"] as const).map((key) => (
+                  <label key={key}>
+                    Crop {key}
+                    <input
+                      type="number"
+                      min={0}
+                      value={geometry.crop[key]}
+                      disabled={busy}
+                      onChange={(e) => {
+                        invalidate();
+                        setGeometryEdited(true);
+                        setGeometry({
+                          ...geometry,
+                          crop: {
+                            ...geometry.crop,
+                            [key]: Number(e.target.value),
+                          },
+                        });
+                      }}
+                    />
+                  </label>
+                ))}
+              </div>
+            </details>
             <div className="recognition-actions">
               <button disabled={busy} onClick={() => run(false)}>
                 Detect grid automatically
@@ -374,6 +467,24 @@ export function RecognitionReview({
                 </button>
               )}
             </div>
+            {diagnostics && (
+              <button
+                onClick={() => {
+                  const blob = new Blob(
+                    [JSON.stringify(diagnostics, null, 2)],
+                    { type: "application/json" },
+                  );
+                  const url = URL.createObjectURL(blob);
+                  const a = document.createElement("a");
+                  a.href = url;
+                  a.download = "pindou-grid-diagnostics.json";
+                  a.click();
+                  URL.revokeObjectURL(url);
+                }}
+              >
+                Export last automatic grid diagnostics
+              </button>
+            )}
             <p role="status">
               {busy
                 ? "Analyzing in a local worker…"
@@ -423,6 +534,12 @@ export function RecognitionReview({
             </section>
             <section className="card recognition-digital">
               <h2>Recognized grid · Needs Review</h2>
+              {geometryDirty && (
+                <p role="alert">
+                  Grid settings changed. This grid is stale; re-analyze before
+                  reviewing or saving.
+                </p>
+              )}
               {result ? (
                 <>
                   <p>

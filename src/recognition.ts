@@ -12,6 +12,7 @@ export type Recognition = Geometry & {
   palette: Project["palette"];
   warnings: string[];
   method: string;
+  diagnostics?: GridDiagnostics;
 };
 const distance = (a: number[], b: number[]) =>
   Math.hypot(...a.map((v, i) => v - b[i]));
@@ -182,33 +183,99 @@ export function detectAxis(v: ArrayLike<number>) {
     throw new Error("Grid is ambiguous. Specify crop and dimensions manually.");
   return best;
 }
-export function detectGrid(image: Raster): Geometry {
-  const x = detectAxis(projection(image, "x"));
-  // Edge cells often retain unobstructed horizontal lines when central labels are dense.
-  const bands = [
-    [x.start + x.spacing * 0.18, x.start + x.spacing * 0.82],
-    [x.end - x.spacing * 0.82, x.end - x.spacing * 0.18],
-  ];
-  const edgeProjection = projection(image, "y", bands);
-  const factor = image.width / (x.spacing * 1.28);
-  const y = detectAxis(Array.from(edgeProjection, (v) => v * factor));
-  const ratio = x.spacing / y.spacing;
-  if (ratio < 0.86 || ratio > 1.16)
-    throw new Error(
-      "Grid spacing is inconsistent or skewed. Use a straight, square-grid chart or specify the region manually.",
-    );
-  const result = {
-    crop: {
-      x: x.start,
-      y: y.start,
-      width: x.end - x.start,
-      height: y.end - y.start,
-    },
-    columns: x.count - 1,
-    rows: y.count - 1,
+export type GridDiagnostics = {
+  method: "v2.0-a-baseline";
+  x?: {
+    projection: number[];
+    peaks: number[];
+    selected?: ReturnType<typeof detectAxis>;
   };
-  validateGeometry(image, result);
-  return result;
+  y?: {
+    projection: number[];
+    peaks: number[];
+    selected?: ReturnType<typeof detectAxis>;
+  };
+  edgeBands?: number[][];
+  spacingRatio?: number;
+  bestCandidate?: Geometry;
+  geometry?: Geometry;
+  stage:
+    | "x-axis"
+    | "y-axis"
+    | "axis-agreement"
+    | "geometry-validation"
+    | "accepted";
+  rejection?: string;
+};
+function diagnosticAxis(values: number[]) {
+  const maximum = Math.max(...values),
+    peaks: number[] = [];
+  for (let p = 3; p < values.length - 3; p++)
+    if (
+      values[p] > Math.max(0.4, maximum * 0.045) &&
+      values[p] >= values[p - 1] &&
+      values[p] > values[p + 1] &&
+      values[p] >= values[p - 2] &&
+      values[p] >= values[p + 2]
+    )
+      peaks.push(p);
+  return { projection: values, peaks };
+}
+/** Instrument the unchanged A detector before proposing algorithm changes. */
+export function diagnoseGrid(image: Raster): GridDiagnostics {
+  const d: GridDiagnostics = { method: "v2.0-a-baseline", stage: "x-axis" };
+  try {
+    d.x = diagnosticAxis(Array.from(projection(image, "x")));
+    const x = detectAxis(d.x.projection);
+    d.x.selected = x;
+    d.edgeBands = [
+      [x.start + x.spacing * 0.18, x.start + x.spacing * 0.82],
+      [x.end - x.spacing * 0.82, x.end - x.spacing * 0.18],
+    ];
+    d.stage = "y-axis";
+    const factor = image.width / (x.spacing * 1.28);
+    d.y = diagnosticAxis(
+      Array.from(projection(image, "y", d.edgeBands), (v) => v * factor),
+    );
+    const y = detectAxis(d.y.projection);
+    d.y.selected = y;
+    d.bestCandidate = {
+      crop: {
+        x: x.start,
+        y: y.start,
+        width: x.end - x.start,
+        height: y.end - y.start,
+      },
+      columns: x.count - 1,
+      rows: y.count - 1,
+    };
+    d.stage = "axis-agreement";
+    d.spacingRatio = x.spacing / y.spacing;
+    if (d.spacingRatio < 0.86 || d.spacingRatio > 1.16)
+      throw new Error(
+        "Grid spacing is inconsistent or skewed. Use a straight, square-grid chart or specify the region manually.",
+      );
+    d.stage = "geometry-validation";
+    validateGeometry(image, d.bestCandidate);
+    d.geometry = d.bestCandidate;
+    d.stage = "accepted";
+  } catch (error) {
+    d.rejection = error instanceof Error ? error.message : String(error);
+  }
+  return d;
+}
+export class GridDetectionError extends Error {
+  diagnostics: GridDiagnostics;
+  constructor(diagnostics: GridDiagnostics) {
+    super(diagnostics.rejection ?? "Grid could not be located reliably.");
+    this.name = "GridDetectionError";
+    this.diagnostics = diagnostics;
+  }
+}
+export function detectGrid(image: Raster): Geometry {
+  const d = diagnoseGrid(image);
+  if (!d.geometry) throw new GridDetectionError(d);
+  return d.geometry;
 }
 export function recognize(image: Raster, hint?: Geometry): Recognition {
   if (
@@ -221,7 +288,10 @@ export function recognize(image: Raster, hint?: Geometry): Recognition {
     throw new Error(
       "Use a chart between 80px and 20 megapixels, with neither side above 12,000px.",
     );
-  const geometry = hint ?? detectGrid(image);
+  const diagnostics = hint ? undefined : diagnoseGrid(image);
+  if (diagnostics && !diagnostics.geometry)
+    throw new GridDetectionError(diagnostics);
+  const geometry = hint ?? diagnostics!.geometry!;
   validateGeometry(image, geometry);
   const clusters: { rgb: number[]; code: string; count: number }[] = [];
   const cells: RecognizedCell[] = [];
@@ -270,6 +340,7 @@ export function recognize(image: Raster, hint?: Geometry): Recognition {
     );
   return {
     ...geometry,
+    diagnostics,
     cells,
     palette: clusters.map((c) => ({
       code: c.code,

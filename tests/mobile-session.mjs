@@ -63,8 +63,8 @@ try {
     page.on("pageerror", (e) => allErrors.push(e.message));
     await page.addInitScript(
       (projects) => {
-        if (!localStorage.getItem("pindou.preview.v15.projects.v1"))
-          localStorage.setItem("pindou.preview.v15.projects.v1", JSON.stringify(projects));
+        if (!localStorage.getItem("pindou.preview.v20b1.projects.v1"))
+          localStorage.setItem("pindou.preview.v20b1.projects.v1", JSON.stringify(projects));
       },
       [project, backup, large],
     );
@@ -72,7 +72,7 @@ try {
     // Entering a new version must not write or reset data just by opening the studio.
     assert.deepEqual(
       await page.evaluate(() =>
-        JSON.parse(localStorage.getItem("pindou.preview.v15.projects.v1")),
+        JSON.parse(localStorage.getItem("pindou.preview.v20b1.projects.v1")),
       ),
       [project, backup, large],
     );
@@ -95,7 +95,7 @@ try {
     };
     const current = () =>
       page.evaluate(
-        () => JSON.parse(localStorage.getItem("pindou.preview.v15.projects.v1"))[0],
+        () => JSON.parse(localStorage.getItem("pindou.preview.v20b1.projects.v1"))[0],
       );
     const visible = async () => {
       const result = await page.evaluate(() => {
@@ -171,7 +171,7 @@ try {
           b = document
             .querySelector(".stage [data-active-step]")
             .getBoundingClientRect(),
-          p = JSON.parse(localStorage.getItem("pindou.preview.v15.projects.v1"))[0];
+          p = JSON.parse(localStorage.getItem("pindou.preview.v20b1.projects.v1"))[0];
         return p.strategy === "row"
           ? b.top >= a.top + 10 && b.bottom <= a.bottom - 10
           : b.left >= a.left + 10 && b.right <= a.right - 10;
@@ -349,7 +349,7 @@ try {
     assert.equal((await current()).step, before.step);
     assert.deepEqual((await current()).grid, before.grid);
     const stored = await page.evaluate(() =>
-      JSON.parse(localStorage.getItem("pindou.preview.v15.projects.v1")),
+      JSON.parse(localStorage.getItem("pindou.preview.v20b1.projects.v1")),
     );
     assert.deepEqual(
       stored.find((p) => p.id === backup.id),
@@ -399,9 +399,9 @@ try {
     const largeZoom = await page.locator(".toolbar > span").innerText();
     // Large jump forces an offscreen row into view without resetting zoom.
     await page.evaluate(() => {
-      const p = JSON.parse(localStorage.getItem("pindou.preview.v15.projects.v1"));
+      const p = JSON.parse(localStorage.getItem("pindou.preview.v20b1.projects.v1"));
       p[0].step = 49;
-      localStorage.setItem("pindou.preview.v15.projects.v1", JSON.stringify(p));
+      localStorage.setItem("pindou.preview.v20b1.projects.v1", JSON.stringify(p));
     });
     await page.reload();
     await page

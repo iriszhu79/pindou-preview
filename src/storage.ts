@@ -1,2 +1,2 @@
-/** V1.5 is an isolated experiment. Never read or migrate the V1.4 key. */
-export const PROJECT_STORAGE_KEY = "pindou.preview.v15.projects.v1";
+/** B1 development uses its own namespace. Never read or migrate approved-version keys. */
+export const PROJECT_STORAGE_KEY = "pindou.preview.v20b1.projects.v1";

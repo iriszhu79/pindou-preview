@@ -3,7 +3,7 @@ import { chromium } from "playwright";
 import { createProject, coordinate, stepCells } from "../src/model.ts";
 const url =
   process.env.PINDOU_TEST_URL || "http://127.0.0.1:4303/pindou-preview/";
-const key = "pindou.preview.v15.projects.v1";
+const key = "pindou.preview.v20b1.projects.v1";
 const browser = await chromium.launch({
   headless: true,
   ...(process.env.CHROMIUM_PATH
@@ -245,7 +245,7 @@ try {
       const stage = await page.locator(".stage").boundingBox();
       assert.ok(
         stage.height >= (height === 667 ? 390 : 567),
-        "A/B fix must not shrink the canvas",
+        `A/B fix must not shrink the canvas: ${width}x${height}, measured ${stage.height}`,
       );
       await page.evaluate(
         () => (document.documentElement.style.fontSize = "200%"),

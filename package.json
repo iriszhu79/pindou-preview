@@ -15,7 +15,9 @@
     "serve:preview": "vite preview --config vite.preview.config.ts",
     "test:preview": "node tests/preview.mjs",
     "test:round2": "node tests/round2.mjs",
-    "test:recognition": "node tests/recognition.mjs"
+    "test:recognition": "node tests/recognition.mjs",
+    "test:crop": "node tests/crop-recovery.mjs",
+    "diagnose:mard": "node tests/diagnose-mard.mjs"
   },
   "dependencies": {
     "@fontsource/pixelify-sans": "5.2.5",
