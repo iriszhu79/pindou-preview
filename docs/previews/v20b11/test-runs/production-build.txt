@@ -1,0 +1,21 @@
+
+> pindou@0.1.0 build
+> tsc -b && vite build
+
+vite v6.4.5 building for production...
+transforming...
+✓ 54 modules transformed.
+rendering chunks...
+computing gzip size...
+dist-preview/index.html                                              0.47 kB │ gzip:  0.32 kB
+dist-preview/assets/pixelify-sans-latin-700-normal-Bq5zIolO.woff2    7.98 kB
+dist-preview/assets/pixelify-sans-latin-500-normal-DzrO_s83.woff2    8.10 kB
+dist-preview/assets/recognition.worker-DRuCOlQL.js                  21.33 kB
+dist-preview/assets/index-B45AfA5q.css                              54.64 kB │ gzip: 11.23 kB
+dist-preview/assets/index-CQoTeZp9.js                              293.27 kB │ gzip: 91.74 kB
+✓ built in 1.49s
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

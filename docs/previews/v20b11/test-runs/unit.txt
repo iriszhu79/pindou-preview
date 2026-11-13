@@ -1,0 +1,61 @@
+
+> pindou@0.1.0 test
+> node --experimental-strip-types --test src/*.test.ts
+
+✔ perceptual multi-region classification retains dark, saturated, pale and printed white beads under crop perturbation (89.45964ms)
+✔ unlabelled white between colored beads stays explicitly uncertain instead of silently certain empty (42.274585ms)
+✔ a chart filled with pale cream does not teach the classifier that cream is empty paper (24.0962ms)
+✔ A explicitly completes only the selected bead and is idempotent (2.161749ms)
+✔ A in Hand Mode completes current step, preserves unrelated progress, and never clears (2.352506ms)
+✔ preview storage loads only its own namespace without migrating production saves (1.188912ms)
+✔ arrows and D-pad share physical row/column navigation and preserve all cells (2.675562ms)
+✔ shortcut mapping accepts A/B case, only recognizes navigation and completion keys (0.394845ms)
+✔ crop move and each corner preserve an in-image positive rectangle (1.722616ms)
+✔ pointer mapping retains image coordinates under zoom, scrolling and layout offsets (0.280092ms)
+✔ B1 uses only its own project namespace when approved-version saves exist (5.398056ms)
+✔ vertical handle swipes expand up and collapse down (0.801027ms)
+✔ taps, jitter and horizontal chip scrolling do not trigger the drawer (0.141914ms)
+✔ mixed-line synthetic {"fine":250,"major":5}: full lattice instead of major-line alias (270.475576ms)
+✔ mixed-line synthetic {"fine":252,"major":10}: full lattice instead of major-line alias (140.932659ms)
+✔ mixed-line synthetic {"fine":248,"missing":[7,8],"header":true}: full lattice instead of major-line alias (175.143955ms)
+✔ mixed-line synthetic {"rows":29,"columns":41,"fine":250,"major":10,"header":true}: full lattice instead of major-line alias (180.234558ms)
+✔ cropping outer page margins does not change inferred grid size or phase (109.814901ms)
+✔ color blocks without outer grid/axis evidence cannot certify missing empty margins (13.637645ms)
+✔ rendered rectangles map centers and fractional boundaries at any zoom/pan (1.609557ms)
+✔ off-grid, nonfinite and collapsed geometry never aliases another cell (0.163637ms)
+✔ a short boundary-crossing gesture is not treated as the release neighbor (0.122785ms)
+✔ demo grid has unique coordinates and deterministic counts (2.407609ms)
+✔ completion is shared between row and column views; clearing and reverse are consistent (1.449405ms)
+✔ recommendation uses structural run counts (0.744542ms)
+✔ rectangular projects use axis-specific limits, palette counts, positions and completion (0.973778ms)
+✔ legacy progress and rectangular projects load without modifying stored data (1.759832ms)
+✔ new routes distinguish meaningful task numbers from chart coordinates (4.418389ms)
+✔ reverse/direction changes choose the correct nonempty unfinished boundary (0.452432ms)
+✔ cell completion edits only one valid nonempty address and preserves unrelated cells (0.460264ms)
+✔ row/column routes and storage retain exactly the same completed cells and raw saved step (0.952936ms)
+✔ malformed storage safely fails without writes or invented projects (0.21842ms)
+✔ empty-pattern strategy changes stay within valid saved coordinate bounds (0.397579ms)
+✔ crop geometry and cell coordinates reject invalid and off-image inputs (13.595172ms)
+✔ robust sampling ignores dark center labels and distinguishes occupied white from empty white (13.211153ms)
+✔ synthetic 20×20: automatic grid, cell classification, palette, counts and conversion (229.805895ms)
+✔ synthetic 40×51: automatic grid, cell classification, palette, counts and conversion (768.014191ms)
+✔ synthetic 120×100: automatic grid, cell classification, palette, counts and conversion (4968.841527ms)
+✔ uncertainty is reported, corrections update statistics and malformed outputs cannot become projects (40.024382ms)
+✔ blank images, low resolution and excessive palettes are rejected (103.161017ms)
+✔ navigation leaves clearly visible rows and columns at the existing pan (1.309494ms)
+✔ offscreen navigation moves only enough to reveal the active step (0.206061ms)
+✔ manual focus centers using rendered bounds, independent of grid dimensions (0.117658ms)
+✔ huge steps and perpendicular offscreen pans remain reachable without changing zoom (0.115464ms)
+ℹ tests 44
+ℹ suites 0
+ℹ pass 44
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8512.7352
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

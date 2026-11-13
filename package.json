@@ -19,7 +19,9 @@
     "test:crop": "node tests/crop-recovery.mjs",
     "diagnose:mard": "node tests/diagnose-mard.mjs",
     "test:real-grids": "node tests/real-grid-copies.mjs",
-    "test:grid-compression": "node tests/compressed-grid.mjs"
+    "test:grid-compression": "node tests/compressed-grid.mjs",
+    "test:cells": "node --experimental-strip-types tests/cell-validation.mjs",
+    "test:cell-workspace": "node --experimental-strip-types tests/cell-workspace.mjs"
   },
   "dependencies": {
     "@fontsource/pixelify-sans": "5.2.5",

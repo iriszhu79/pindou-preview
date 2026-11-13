@@ -1,3 +1,5 @@
+import { classifyCells, perceptualDistance } from "./cellClassification.ts";
+export { sampleCell, isEmptySample } from "./cellClassification.ts";
 import {
   rankGridCandidates,
   colorBoundaryAgreement,
@@ -11,6 +13,10 @@ export type RecognizedCell = Cell & {
   confidence: number;
   detectedColor: string;
   corrected?: boolean;
+  occupancy?: "occupied" | "empty" | "uncertain";
+  occupancyConfidence?: number;
+  colorConfidence?: number;
+  occupancyReason?: string;
 };
 export type Recognition = Geometry & {
   cells: RecognizedCell[];
@@ -19,8 +25,6 @@ export type Recognition = Geometry & {
   method: string;
   diagnostics?: GridDiagnostics;
 };
-const distance = (a: number[], b: number[]) =>
-  Math.hypot(...a.map((v, i) => v - b[i]));
 export function validateGeometry(image: Raster, geometry: Geometry) {
   const { crop: c, rows, columns } = geometry;
   if (
@@ -63,45 +67,6 @@ export function cellBounds(g: Geometry, row: number, column: number): Crop {
     width: g.crop.width / g.columns,
     height: g.crop.height / g.rows,
   };
-}
-function channelMedian(values: number[]) {
-  values.sort((a, b) => a - b);
-  return values[Math.floor(values.length / 2)];
-}
-export function sampleCell(image: Raster, b: Crop) {
-  const colors: number[][] = [];
-  let ink = 0,
-    all = 0;
-  for (let y = Math.ceil(b.y + b.height * 0.16); y < b.y + b.height * 0.84; y++)
-    for (
-      let x = Math.ceil(b.x + b.width * 0.16);
-      x < b.x + b.width * 0.84;
-      x++
-    ) {
-      const i = (y * image.width + x) * 4;
-      const rgb = Array.from(image.data.subarray(i, i + 3));
-      all++;
-      if (Math.max(...rgb) < 145) ink++;
-      if (Math.min(...rgb) > 145) colors.push(rgb);
-    }
-  if (colors.length < all * 0.2)
-    return { rgb: [128, 128, 128], confidence: 0, ink: ink / Math.max(all, 1) };
-  // A channel median suppresses lettering, symbols, JPEG noise and watermark strokes.
-  const rgb = [0, 1, 2].map((i) => channelMedian(colors.map((c) => c[i])));
-  const support =
-    colors.filter((c) => distance(c, rgb) < 27).length / Math.max(1, all);
-  return {
-    rgb,
-    confidence: Math.min(0.97, support),
-    ink: ink / Math.max(all, 1),
-  };
-}
-export function isEmptySample(rgb: number[], ink: number) {
-  return (
-    Math.min(...rgb) > 237 &&
-    Math.max(...rgb) - Math.min(...rgb) < 15 &&
-    ink < 0.055
-  );
 }
 function projection(image: Raster, axis: "x" | "y", bands?: number[][]) {
   const n = axis === "x" ? image.width : image.height,
@@ -348,43 +313,51 @@ export function recognize(image: Raster, hint?: Geometry): Recognition {
     throw new GridDetectionError(diagnostics);
   const geometry = hint ?? diagnostics!.geometry!;
   validateGeometry(image, geometry);
-  const clusters: { rgb: number[]; code: string; count: number }[] = [];
-  const cells: RecognizedCell[] = [];
-  for (let row = 0; row < geometry.rows; row++)
-    for (let column = 0; column < geometry.columns; column++) {
-      const s = sampleCell(image, cellBounds(geometry, row, column));
-      const empty = isEmptySample(s.rgb, s.ink);
-      let code: string | null = null,
-        confidence = s.confidence;
-      if (!empty) {
-        let cluster = clusters.find((c) => distance(c.rgb, s.rgb) < 23);
-        if (!cluster) {
-          cluster = {
-            rgb: s.rgb,
-            code: `Color ${clusters.length + 1}`,
-            count: 0,
-          };
-          clusters.push(cluster);
-        }
-        const delta = distance(cluster.rgb, s.rgb);
-        cluster.count++;
-        code = cluster.code;
-        confidence = Math.min(confidence, 1 - delta / 50);
-      } else if (s.ink > 0.025) confidence = Math.min(confidence, 0.55);
-      cells.push({
-        row,
-        column,
-        colorCode: code,
-        isEmpty: empty,
-        isCompleted: false,
-        confidence,
-        detectedColor:
-          "#" +
-          s.rgb
-            .map((c) => Math.round(c).toString(16).padStart(2, "0"))
-            .join(""),
-      });
-    }
+  const classified = classifyCells(image, geometry),
+    clusters = classified.clusters.map((c, k) => ({
+      ...c,
+      code: `Color ${k + 1}`,
+    }));
+  const cells: RecognizedCell[] = classified.samples.map((s, i) => {
+    const occupancy = classified.occupancy[i],
+      group = classified.assignment[i],
+      colorConfidence =
+        group < 0
+          ? s.confidence
+          : Math.min(
+              s.confidence,
+              classified.separation[group] < 0.04 ||
+                perceptualDistance(s.lab, clusters[group].lab) > 0.025
+                ? 0.63
+                : 0.96,
+            );
+    return {
+      row: Math.floor(i / geometry.columns),
+      column: i % geometry.columns,
+      colorCode: group < 0 ? null : clusters[group].code,
+      isEmpty: !occupancy.occupied,
+      isCompleted: false,
+      confidence: Math.min(
+        occupancy.ambiguous ? 0.65 : 1,
+        occupancy.confidence,
+        colorConfidence,
+      ),
+      detectedColor:
+        "#" +
+        s.rgb.map((v) => Math.round(v).toString(16).padStart(2, "0")).join(""),
+      occupancy: occupancy.ambiguous
+        ? "uncertain"
+        : occupancy.occupied
+          ? "occupied"
+          : "empty",
+      occupancyConfidence: Math.min(
+        occupancy.ambiguous ? 0.65 : 1,
+        occupancy.confidence,
+      ),
+      colorConfidence,
+      occupancyReason: occupancy.reason,
+    };
+  });
   if (clusters.length > 24)
     throw new Error(
       "More than 24 background colors found. This may be a photo, a compressed chart, or an incorrect grid crop.",
@@ -405,8 +378,8 @@ export function recognize(image: Raster, hint?: Geometry): Recognition {
         c.rgb.map((v) => Math.round(v).toString(16).padStart(2, "0")).join(""),
     })),
     method: hint
-      ? "Manual geometry + robust background sampling"
-      : "Automatic ranked grid evidence + robust background sampling",
+      ? "Manual geometry + perceptual color and occupancy analysis"
+      : "Automatic ranked grid evidence + perceptual color and occupancy analysis",
     warnings: [
       "Needs Review: grid boundaries and pale/white cells require visual checking.",
       "Color codes are temporary; official brand codes are not inferred from RGB.",

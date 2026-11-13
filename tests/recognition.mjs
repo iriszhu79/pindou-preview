@@ -1,5 +1,6 @@
+const qaDir = process.env.PINDOU_QA_DIR || "docs/previews/v20b1";
 import assert from "node:assert/strict";
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, writeFile, readFile } from "node:fs/promises";
 import { chromium } from "playwright";
 import { createProject } from "../src/model.ts";
 import { syntheticChart } from "./recognition-fixtures.ts";
@@ -11,7 +12,7 @@ const browser = await chromium.launch({
   executablePath: process.env.CHROMIUM_PATH || "/usr/bin/chromium",
 });
 const errors = [];
-await mkdir("docs/previews/v20b1/recognition-regression", { recursive: true });
+await mkdir(`${qaDir}/recognition-regression`, { recursive: true });
 try {
   for (const [width, height] of [
     [1440, 900],
@@ -88,12 +89,12 @@ try {
       await page.getByRole("button", { name: "Export review JSON" }).click();
       const file = await download;
       await file.saveAs(
-        "docs/previews/v20b1/recognition-regression/mard-browser-recognition.json",
+        `${qaDir}/recognition-regression/mard-browser-recognition.json`,
       );
     }
     if (width === 1440 || width === 390)
       await page.screenshot({
-        path: `docs/previews/v20b1/recognition-regression/recognition-${width}.png`,
+        path: `${qaDir}/recognition-regression/recognition-${width}.png`,
         fullPage: true,
       });
     // Empty first cell is converted to a color, counts update, then restoring returns to 1,179.
@@ -104,6 +105,19 @@ try {
       await page.locator(".recognition-digital").innerText(),
       /1180 beads/,
     );
+    if (width === 1440) {
+      const download = page.waitForEvent("download");
+      await page.getByRole("button", { name: "Export review JSON" }).click();
+      const data = JSON.parse(
+        await readFile(await (await download).path(), "utf8"),
+      );
+      assert.equal(data.recognition.cells[0].occupancy, "occupied");
+      assert.equal(data.recognition.cells[0].corrected, true);
+      assert.match(
+        data.recognition.cells[0].occupancyReason,
+        /Manually corrected/,
+      );
+    }
     await page.getByRole("button", { name: "Restore recognized cell" }).click();
     assert.match(
       await page.locator(".recognition-digital").innerText(),

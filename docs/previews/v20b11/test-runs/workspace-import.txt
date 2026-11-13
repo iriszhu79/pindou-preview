@@ -1,0 +1,15 @@
+
+> pindou@0.1.0 test:cell-workspace
+> node --experimental-strip-types tests/cell-workspace.mjs
+
+PASS duck-copy 1440 900 export/import/palette rendering/progress/storage
+PASS teapot-copy 1440 900 export/import/palette rendering/progress/storage
+PASS duck-copy 820 1180 export/import/palette rendering/progress/storage
+PASS teapot-copy 820 1180 export/import/palette rendering/progress/storage
+PASS duck-copy 390 844 export/import/palette rendering/progress/storage
+PASS teapot-copy 390 844 export/import/palette rendering/progress/storage
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

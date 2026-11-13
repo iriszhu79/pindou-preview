@@ -1,0 +1,43 @@
+
+> pindou@0.1.0 test:grid-compression
+> node tests/compressed-grid.mjs
+
+{
+  synthetic: true,
+  quality: 0.92,
+  rows: 37,
+  columns: 43,
+  automatic: false,
+  proposed: {
+    crop: { x: 20, y: 24, width: 480, height: 420 },
+    columns: 8,
+    rows: 7
+  },
+  rejection: 'Grid geometry is uncertain: competing periods or boundaries have similar evidence. Review the proposed crop.',
+  manualTotal: 24,
+  manualUncertain: 0,
+  expected: 24,
+  ms: 305.5646030000007
+}
+{
+  synthetic: true,
+  quality: 0.82,
+  rows: 37,
+  columns: 43,
+  automatic: false,
+  proposed: {
+    crop: { x: 20, y: 24, width: 480, height: 420 },
+    columns: 8,
+    rows: 7
+  },
+  rejection: 'Grid geometry is uncertain: colored blocks contradict the proposed coarse cell period. Align the grid manually.',
+  manualTotal: 24,
+  manualUncertain: 0,
+  expected: 24,
+  ms: 232.60843699999896
+}
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

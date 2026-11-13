@@ -1,0 +1,15 @@
+
+> pindou@0.1.0 test:preview
+> node tests/preview.mjs
+
+PASS V1.5 390×844: upload/start, chart stats, selection, A/B, D-pad, route, Focus, saves and isolation
+PASS V1.5 375×667: upload/start, chart stats, selection, A/B, D-pad, route, Focus, saves and isolation
+PASS V1.5 844×390: upload/start, chart stats, selection, A/B, D-pad, route, Focus, saves and isolation
+PASS V1.5 820×1180: upload/start, chart stats, selection, A/B, D-pad, route, Focus, saves and isolation
+PASS V1.5 1180×820: upload/start, chart stats, selection, A/B, D-pad, route, Focus, saves and isolation
+PASS V1.5 1440×900: upload/start, chart stats, selection, A/B, D-pad, route, Focus, saves and isolation
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

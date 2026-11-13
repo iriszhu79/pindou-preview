@@ -1,0 +1,104 @@
+[
+  {
+    "fixture": "duck-copy",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "exportedColors": 8,
+    "exportedBeads": 139,
+    "paletteRendered": true,
+    "progressPersisted": true,
+    "protectedStorageUntouched": true,
+    "protectedStorageKeys": [
+      "pindou.projects.v1",
+      "pindou.preview.v15.projects.v1",
+      "pindou.preview.v20a.projects.v1"
+    ]
+  },
+  {
+    "fixture": "teapot-copy",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "exportedColors": 6,
+    "exportedBeads": 1333,
+    "paletteRendered": true,
+    "progressPersisted": true,
+    "protectedStorageUntouched": true,
+    "protectedStorageKeys": [
+      "pindou.projects.v1",
+      "pindou.preview.v15.projects.v1",
+      "pindou.preview.v20a.projects.v1"
+    ]
+  },
+  {
+    "fixture": "duck-copy",
+    "viewport": {
+      "width": 820,
+      "height": 1180
+    },
+    "exportedColors": 8,
+    "exportedBeads": 139,
+    "paletteRendered": true,
+    "progressPersisted": true,
+    "protectedStorageUntouched": true,
+    "protectedStorageKeys": [
+      "pindou.projects.v1",
+      "pindou.preview.v15.projects.v1",
+      "pindou.preview.v20a.projects.v1"
+    ]
+  },
+  {
+    "fixture": "teapot-copy",
+    "viewport": {
+      "width": 820,
+      "height": 1180
+    },
+    "exportedColors": 6,
+    "exportedBeads": 1333,
+    "paletteRendered": true,
+    "progressPersisted": true,
+    "protectedStorageUntouched": true,
+    "protectedStorageKeys": [
+      "pindou.projects.v1",
+      "pindou.preview.v15.projects.v1",
+      "pindou.preview.v20a.projects.v1"
+    ]
+  },
+  {
+    "fixture": "duck-copy",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "exportedColors": 8,
+    "exportedBeads": 139,
+    "paletteRendered": true,
+    "progressPersisted": true,
+    "protectedStorageUntouched": true,
+    "protectedStorageKeys": [
+      "pindou.projects.v1",
+      "pindou.preview.v15.projects.v1",
+      "pindou.preview.v20a.projects.v1"
+    ]
+  },
+  {
+    "fixture": "teapot-copy",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "exportedColors": 6,
+    "exportedBeads": 1333,
+    "paletteRendered": true,
+    "progressPersisted": true,
+    "protectedStorageUntouched": true,
+    "protectedStorageKeys": [
+      "pindou.projects.v1",
+      "pindou.preview.v15.projects.v1",
+      "pindou.preview.v20a.projects.v1"
+    ]
+  }
+]

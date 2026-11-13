@@ -1,0 +1,20 @@
+
+> pindou@0.1.0 test:recognition
+> node tests/recognition.mjs
+
+1440×900 worker/UI recognition: 5804ms
+PASS 1440×900: real sample auto detection, review, correction/restore, code edit, confirmation, Workspace, storage isolation
+1280×800 worker/UI recognition: 3523ms
+PASS 1280×800: real sample auto detection, review, correction/restore, code edit, confirmation, Workspace, storage isolation
+820×1180 worker/UI recognition: 4015ms
+PASS 820×1180: real sample auto detection, review, correction/restore, code edit, confirmation, Workspace, storage isolation
+390×844 worker/UI recognition: 4467ms
+PASS 390×844: real sample auto detection, review, correction/restore, code edit, confirmation, Workspace, storage isolation
+375×667 worker/UI recognition: 3947ms
+PASS 375×667: real sample auto detection, review, correction/restore, code edit, confirmation, Workspace, storage isolation
+PASS upload, invalid type, invalid geometry, manual crop recovery; zero page errors
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

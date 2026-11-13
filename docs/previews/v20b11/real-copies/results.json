@@ -1,0 +1,374 @@
+[
+  {
+    "id": "flying-pig",
+    "provenance": "repository screenshot; unchanged original project asset",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 1179,
+      "colors": 5,
+      "uncertain": 61
+    },
+    "autoMs": 3167.909858,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 1179,
+      "colors": 5,
+      "uncertain": 61
+    },
+    "manualMs": 884.6813649999995,
+    "reference": {
+      "columns": 40,
+      "rows": 51,
+      "total": 1179,
+      "colors": 5
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "Full-chart accuracy unknown; annotated subset evaluated separately by test:cells"
+  },
+  {
+    "id": "duck-copy",
+    "provenance": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7250.jpeg 1440x1672",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 139,
+      "colors": 8,
+      "uncertain": 79
+    },
+    "autoMs": 1005.6712470000002,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 139,
+      "colors": 8,
+      "uncertain": 80
+    },
+    "manualMs": 896.8900759999997,
+    "reference": {
+      "columns": 50,
+      "rows": 50,
+      "total": 139,
+      "colors": 8
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "Full-chart accuracy unknown; annotated subset evaluated separately by test:cells"
+  },
+  {
+    "id": "teapot-copy",
+    "provenance": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7252.jpeg 1440x1672",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 1333,
+      "colors": 6,
+      "uncertain": 16
+    },
+    "autoMs": 1009.5701509999999,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 1333,
+      "colors": 6,
+      "uncertain": 16
+    },
+    "manualMs": 883.9337439999999,
+    "reference": {
+      "columns": 50,
+      "rows": 50,
+      "total": 1333,
+      "colors": 6
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "Full-chart accuracy unknown; annotated subset evaluated separately by test:cells"
+  },
+  {
+    "id": "flying-pig",
+    "provenance": "repository screenshot; unchanged original project asset",
+    "viewport": {
+      "width": 820,
+      "height": 1180
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 1179,
+      "colors": 5,
+      "uncertain": 61
+    },
+    "autoMs": 3005.549494000001,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 1179,
+      "colors": 5,
+      "uncertain": 61
+    },
+    "manualMs": 863.6037179999985,
+    "reference": {
+      "columns": 40,
+      "rows": 51,
+      "total": 1179,
+      "colors": 5
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "Full-chart accuracy unknown; annotated subset evaluated separately by test:cells"
+  },
+  {
+    "id": "duck-copy",
+    "provenance": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7250.jpeg 1440x1672",
+    "viewport": {
+      "width": 820,
+      "height": 1180
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 139,
+      "colors": 8,
+      "uncertain": 79
+    },
+    "autoMs": 1467.001024000001,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 139,
+      "colors": 8,
+      "uncertain": 80
+    },
+    "manualMs": 933.1390800000008,
+    "reference": {
+      "columns": 50,
+      "rows": 50,
+      "total": 139,
+      "colors": 8
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "Full-chart accuracy unknown; annotated subset evaluated separately by test:cells"
+  },
+  {
+    "id": "teapot-copy",
+    "provenance": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7252.jpeg 1440x1672",
+    "viewport": {
+      "width": 820,
+      "height": 1180
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 1333,
+      "colors": 6,
+      "uncertain": 16
+    },
+    "autoMs": 1435.1102299999984,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 1333,
+      "colors": 6,
+      "uncertain": 16
+    },
+    "manualMs": 899.2819539999982,
+    "reference": {
+      "columns": 50,
+      "rows": 50,
+      "total": 1333,
+      "colors": 6
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "Full-chart accuracy unknown; annotated subset evaluated separately by test:cells"
+  },
+  {
+    "id": "flying-pig",
+    "provenance": "repository screenshot; unchanged original project asset",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 1179,
+      "colors": 5,
+      "uncertain": 61
+    },
+    "autoMs": 3012.240786999999,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 1179,
+      "colors": 5,
+      "uncertain": 61
+    },
+    "manualMs": 942.1930139999968,
+    "reference": {
+      "columns": 40,
+      "rows": 51,
+      "total": 1179,
+      "colors": 5
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "Full-chart accuracy unknown; annotated subset evaluated separately by test:cells"
+  },
+  {
+    "id": "duck-copy",
+    "provenance": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7250.jpeg 1440x1672",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 139,
+      "colors": 8,
+      "uncertain": 79
+    },
+    "autoMs": 1553.051994999998,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 139,
+      "colors": 8,
+      "uncertain": 80
+    },
+    "manualMs": 967.2100940000018,
+    "reference": {
+      "columns": 50,
+      "rows": 50,
+      "total": 139,
+      "colors": 8
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "Full-chart accuracy unknown; annotated subset evaluated separately by test:cells"
+  },
+  {
+    "id": "teapot-copy",
+    "provenance": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7252.jpeg 1440x1672",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 1333,
+      "colors": 6,
+      "uncertain": 16
+    },
+    "autoMs": 1672.850406999998,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 1333,
+      "colors": 6,
+      "uncertain": 16
+    },
+    "manualMs": 918.7329170000012,
+    "reference": {
+      "columns": 50,
+      "rows": 50,
+      "total": 1333,
+      "colors": 6
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "Full-chart accuracy unknown; annotated subset evaluated separately by test:cells"
+  },
+  {
+    "id": "flying-pig",
+    "provenance": "repository screenshot; unchanged original project asset",
+    "viewport": {
+      "width": 375,
+      "height": 667
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 1179,
+      "colors": 5,
+      "uncertain": 61
+    },
+    "autoMs": 3531.312812999997,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 1179,
+      "colors": 5,
+      "uncertain": 61
+    },
+    "manualMs": 1420.9862989999965,
+    "reference": {
+      "columns": 40,
+      "rows": 51,
+      "total": 1179,
+      "colors": 5
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "Full-chart accuracy unknown; annotated subset evaluated separately by test:cells"
+  },
+  {
+    "id": "duck-copy",
+    "provenance": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7250.jpeg 1440x1672",
+    "viewport": {
+      "width": 375,
+      "height": 667
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 139,
+      "colors": 8,
+      "uncertain": 79
+    },
+    "autoMs": 1615.9932280000066,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 139,
+      "colors": 8,
+      "uncertain": 80
+    },
+    "manualMs": 925.0990969999984,
+    "reference": {
+      "columns": 50,
+      "rows": 50,
+      "total": 139,
+      "colors": 8
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "Full-chart accuracy unknown; annotated subset evaluated separately by test:cells"
+  },
+  {
+    "id": "teapot-copy",
+    "provenance": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7252.jpeg 1440x1672",
+    "viewport": {
+      "width": 375,
+      "height": 667
+    },
+    "automaticGrid": true,
+    "automatic": {
+      "beads": 1333,
+      "colors": 6,
+      "uncertain": 16
+    },
+    "autoMs": 2185.975633999995,
+    "manualCropViaHandles": true,
+    "manual": {
+      "beads": 1333,
+      "colors": 6,
+      "uncertain": 16
+    },
+    "manualMs": 1015.6704790000003,
+    "reference": {
+      "columns": 50,
+      "rows": 50,
+      "total": 1333,
+      "colors": 6
+    },
+    "autoCountDifference": 0,
+    "manualCountDifference": 0,
+    "cellLevelAccuracy": "Full-chart accuracy unknown; annotated subset evaluated separately by test:cells"
+  }
+]

@@ -1,3 +1,4 @@
+const qaDir = process.env.PINDOU_QA_DIR || "docs/previews/v20b1";
 import assert from "node:assert/strict";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { createHash } from "node:crypto";
@@ -12,7 +13,7 @@ const browser = await chromium.launch({
   executablePath: process.env.CHROMIUM_PATH || "/usr/bin/chromium",
 });
 const reports = [];
-await mkdir("docs/previews/v20b1/real-copies", { recursive: true });
+await mkdir(`${qaDir}/real-copies`, { recursive: true });
 try {
   for (const [width, height] of [
     [1440, 900],
@@ -64,7 +65,7 @@ try {
       const automatic = parse(text);
       if (width === 1440 || width === 390)
         await page.screenshot({
-          path: `docs/previews/v20b1/real-copies/${f.id}-auto-${width}.png`,
+          path: `${qaDir}/real-copies/${f.id}-auto-${width}.png`,
           fullPage: true,
         });
       // Deliberate manual recovery: reset and align via pointer handles. Never enter crop pixel fields.
@@ -145,7 +146,10 @@ try {
         .waitFor();
       const manualMs = performance.now() - manualStart,
         manual = parse(await page.locator(".recognition-digital").innerText());
-      if(width===1440||width===390)await page.locator(".recognition-geometry").screenshot({path:`docs/previews/v20b1/real-copies/${f.id}-manual-crop-${width}.png`});
+      if (width === 1440 || width === 390)
+        await page.locator(".recognition-geometry").screenshot({
+          path: `${qaDir}/real-copies/${f.id}-manual-crop-${width}.png`,
+        });
       assert.ok(
         await page
           .getByRole("button", { name: "Confirm pattern → Overview" })
@@ -176,13 +180,14 @@ try {
         reference: f.reference,
         autoCountDifference: automatic.beads - f.reference.total,
         manualCountDifference: manual.beads - f.reference.total,
-        cellLevelAccuracy: "unknown; no independent cell ground truth",
+        cellLevelAccuracy:
+          "Full-chart accuracy unknown; annotated subset evaluated separately by test:cells",
       });
       console.log(JSON.stringify(reports.at(-1)));
       await context.close();
     }
   await writeFile(
-    "docs/previews/v20b1/real-copies/results.json",
+    `${qaDir}/real-copies/results.json`,
     JSON.stringify(reports, null, 2),
   );
 } finally {

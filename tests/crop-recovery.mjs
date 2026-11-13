@@ -1,3 +1,4 @@
+const qaDir = process.env.PINDOU_QA_DIR || "docs/previews/v20b1";
 import assert from "node:assert/strict";
 import { chromium } from "playwright";
 import { mkdir } from "node:fs/promises";
@@ -7,7 +8,7 @@ const browser = await chromium.launch({
   headless: true,
   executablePath: process.env.CHROMIUM_PATH || "/usr/bin/chromium",
 });
-await mkdir("docs/previews/v20b1", { recursive: true });
+await mkdir(qaDir, { recursive: true });
 try {
   for (const [width, height] of [
     [1440, 900],
@@ -116,13 +117,11 @@ try {
       x.fillRect(230, 230, 40, 40);
       return c.toDataURL("image/png").split(",")[1];
     });
-    await page
-      .locator(".recognition input[type=file]")
-      .setInputFiles({
-        name: "synthetic-line-free-50x50.png",
-        mimeType: "image/png",
-        buffer: Buffer.from(png, "base64"),
-      });
+    await page.locator(".recognition input[type=file]").setInputFiles({
+      name: "synthetic-line-free-50x50.png",
+      mimeType: "image/png",
+      buffer: Buffer.from(png, "base64"),
+    });
     await page
       .getByRole("button", { name: "Detect grid automatically" })
       .click();
@@ -156,7 +155,7 @@ try {
     );
     if (width === 1440 || width === 390)
       await page.screenshot({
-        path: `docs/previews/v20b1/recovery-${width}.png`,
+        path: `${qaDir}/recovery-${width}.png`,
         fullPage: true,
       });
     assert.deepEqual(errors, []);

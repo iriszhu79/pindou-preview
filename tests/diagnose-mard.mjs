@@ -7,13 +7,14 @@ import {
   recognize,
   recognitionStats,
 } from "../src/recognition.ts";
+const qaDir = process.env.PINDOU_QA_DIR || "docs/previews/v20b1";
 const filenames = process.argv.slice(2);
 if (!filenames.length) filenames.push("public/samples/sample-pattern.jpg");
 const browser = await chromium.launch({
   headless: true,
   executablePath: process.env.CHROMIUM_PATH || "/usr/bin/chromium",
 });
-await mkdir("docs/previews/v20b1/diagnostics", { recursive: true });
+await mkdir(`${qaDir}/diagnostics`, { recursive: true });
 try {
   for (const filename of filenames) {
     const bytes = await readFile(filename);
@@ -63,7 +64,7 @@ try {
       elapsedMs: performance.now() - start,
     };
     await writeFile(
-      `docs/previews/v20b1/diagnostics/${path.basename(filename)}.json`,
+      `${qaDir}/diagnostics/${path.basename(filename)}.json`,
       JSON.stringify(report, null, 2),
     );
     console.log(

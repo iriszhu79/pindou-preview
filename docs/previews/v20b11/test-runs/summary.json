@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-13",
+  "branch": "feat/v2-grid-recovery-b1",
+  "baseCommit": "bc9be9127af142e970ab6002d4d7b70936c98314",
+  "deployed": false,
+  "unitTests": {
+    "passed": 44,
+    "failed": 0
+  },
+  "commands": [
+    {
+      "evidence": "unit.txt",
+      "exitCode": 0
+    },
+    {
+      "evidence": "production-build.txt",
+      "exitCode": 0
+    },
+    {
+      "evidence": "preview-build.txt",
+      "exitCode": 0
+    },
+    {
+      "evidence": "annotated-cells.txt",
+      "exitCode": 0
+    },
+    {
+      "evidence": "real-grids.txt",
+      "exitCode": 0
+    },
+    {
+      "evidence": "recognition.txt",
+      "exitCode": 0
+    },
+    {
+      "evidence": "workspace-import.txt",
+      "exitCode": 0
+    },
+    {
+      "evidence": "crop.txt",
+      "exitCode": 0
+    },
+    {
+      "evidence": "compressed-grid.txt",
+      "exitCode": 0
+    },
+    {
+      "evidence": "workspace-browser.txt",
+      "exitCode": 0
+    },
+    {
+      "evidence": "preview-regression.txt",
+      "exitCode": 0
+    },
+    {
+      "evidence": "round2-regression.txt",
+      "exitCode": 0
+    },
+    {
+      "evidence": "layout.txt",
+      "exitCode": 0
+    },
+    {
+      "evidence": "diagnostics.txt",
+      "exitCode": 0
+    }
+  ],
+  "protectedStorageKeys": [
+    "pindou.projects.v1",
+    "pindou.preview.v15.projects.v1",
+    "pindou.preview.v20a.projects.v1"
+  ],
+  "currentStorageKey": "pindou.preview.v20b1.projects.v1"
+}

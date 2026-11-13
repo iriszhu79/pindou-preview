@@ -1,0 +1,16 @@
+
+> pindou@0.1.0 test:round2
+> node tests/round2.mjs
+
+PASS Round 2 1440×900: navigation, A/B keys, conflicts, repeat, undo/route, assets, persistence, responsive labels
+PASS Round 2 1280×800: navigation, A/B keys, conflicts, repeat, undo/route, assets, persistence, responsive labels
+PASS Round 2 820×1180: navigation, A/B keys, conflicts, repeat, undo/route, assets, persistence, responsive labels
+PASS Round 2 1180×820: navigation, A/B keys, conflicts, repeat, undo/route, assets, persistence, responsive labels
+PASS Round 2 390×844: navigation, A/B keys, conflicts, repeat, undo/route, assets, persistence, responsive labels
+PASS Round 2 375×667: navigation, A/B keys, conflicts, repeat, undo/route, assets, persistence, responsive labels
+PASS Round 2 844×390: navigation, A/B keys, conflicts, repeat, undo/route, assets, persistence, responsive labels
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

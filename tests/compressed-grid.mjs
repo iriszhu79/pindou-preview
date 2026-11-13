@@ -1,3 +1,4 @@
+const qaDir = process.env.PINDOU_QA_DIR || "docs/previews/v20b1";
 import assert from "node:assert/strict";
 import { writeFile, mkdir } from "node:fs/promises";
 import { chromium } from "playwright";
@@ -13,7 +14,7 @@ const browser = await chromium.launch({
   }),
   page = await browser.newPage(),
   reports = [];
-await mkdir("docs/previews/v20b1/synthetic", { recursive: true });
+await mkdir(`${qaDir}/synthetic`, { recursive: true });
 try {
   for (const quality of [0.92, 0.82]) {
     const f = gridVariant({ fine: 250, major: 5, header: true });
@@ -76,12 +77,12 @@ try {
     reports.push(report);
     console.log(report);
     await writeFile(
-      `docs/previews/v20b1/synthetic/grid-jpeg-${quality}.jpg`,
+      `${qaDir}/synthetic/grid-jpeg-${quality}.jpg`,
       Buffer.from(decoded.jpeg, "base64"),
     );
   }
   await writeFile(
-    "docs/previews/v20b1/synthetic/compression-results.json",
+    `${qaDir}/synthetic/compression-results.json`,
     JSON.stringify(reports, null, 2),
   );
 } finally {

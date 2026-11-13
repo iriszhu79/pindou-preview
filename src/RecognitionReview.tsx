@@ -241,6 +241,11 @@ export function RecognitionReview({
               isEmpty: code === null,
               corrected: true,
               confidence: 1,
+              occupancy:
+                code === null ? ("empty" as const) : ("occupied" as const),
+              occupancyConfidence: 1,
+              colorConfidence: 1,
+              occupancyReason: "Manually corrected during review",
             }
           : c,
       ),
@@ -574,8 +579,8 @@ export function RecognitionReview({
                     {summary?.uncertain} uncertain cells
                   </p>
                   <p>
-                    Orange outlines: uncertain cells. Click a cell or use
-                    row/column controls below.
+                    Orange outlines: uncertain occupancy or color. Click a cell
+                    or use row/column controls below.
                   </p>
                   <svg
                     className="recognition-grid"
@@ -709,6 +714,13 @@ export function RecognitionReview({
               {Math.round((selected?.confidence ?? 0) * 100)}%
               {selected?.corrected ? " · manually corrected" : ""}
             </p>
+            {selected?.occupancyReason && !selected.corrected && (
+              <p>
+                Occupancy: {selected.occupancy} · {selected.occupancyReason}.
+                {selected.colorCode &&
+                  ` Color confidence ${Math.round((selected.colorConfidence ?? selected.confidence) * 100)}%.`}
+              </p>
+            )}
             <button onClick={restore}>Restore recognized cell</button>
           </div>
           <div className="card">

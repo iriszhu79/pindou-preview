@@ -1,0 +1,5497 @@
+[
+  {
+    "fixture": {
+      "id": "flying-pig",
+      "file": "public/samples/sample-pattern.jpg",
+      "provenance": "repository screenshot; unchanged original project asset",
+      "sha256": "dd4adc3fd44257baf020725055e56371749d97259bf26f1c9ab08ef76be49a61",
+      "reference": {
+        "columns": 40,
+        "rows": 51,
+        "total": 1179,
+        "colors": 5
+      },
+      "manual": {
+        "crop": {
+          "x": 34,
+          "y": 592,
+          "width": 1188,
+          "height": 1516
+        },
+        "rows": 51,
+        "columns": 40
+      }
+    },
+    "annotationMethod": "Manual visual transcription of source chart cells and printed codes, not inferred from recognizer output. Zero-based row/column. Targeted diagnostic subset, not random or blinded. Color identity uses separate manually located 5x3-pixel legend background patches excluding printed labels, median RGB per channel; patch coordinates and derived swatches are test-only. Empty is null.",
+    "current": {
+      "id": "flying-pig",
+      "automatic": {
+        "geometry": {
+          "crop": {
+            "x": 34,
+            "y": 592,
+            "width": 1188,
+            "height": 1516
+          },
+          "rows": 51,
+          "columns": 40
+        },
+        "stats": {
+          "total": 1179,
+          "uncertain": 61,
+          "counts": [
+            {
+              "code": "Color 1",
+              "name": "Color 1",
+              "hex": "#f9f4ca",
+              "count": 246
+            },
+            {
+              "code": "Color 2",
+              "name": "Color 2",
+              "hex": "#f9b1c0",
+              "count": 224
+            },
+            {
+              "code": "Color 3",
+              "name": "Color 3",
+              "hex": "#fdfdfd",
+              "count": 21
+            },
+            {
+              "code": "Color 4",
+              "name": "Color 4",
+              "hex": "#fad6dc",
+              "count": 626
+            },
+            {
+              "code": "Color 5",
+              "name": "Color 5",
+              "hex": "#cde3fa",
+              "count": 62
+            }
+          ],
+          "empty": 861,
+          "occupancyUncertain": 58,
+          "colorUncertain": 3,
+          "uncertainEmpty": 58
+        },
+        "annotation": {
+          "annotated": 39,
+          "tp": 35,
+          "fp": 0,
+          "fn": 0,
+          "tn": 4,
+          "precision": 1,
+          "recall": 1,
+          "colorCorrect": 35,
+          "occupied": 35,
+          "colorAccuracyIncludingMissed": 1,
+          "uncertain": 2,
+          "disagreements": []
+        }
+      },
+      "automaticMs": 2519.750649,
+      "manual": {
+        "stats": {
+          "total": 1179,
+          "uncertain": 61,
+          "counts": [
+            {
+              "code": "Color 1",
+              "name": "Color 1",
+              "hex": "#f9f4ca",
+              "count": 246
+            },
+            {
+              "code": "Color 2",
+              "name": "Color 2",
+              "hex": "#f9b1c0",
+              "count": 224
+            },
+            {
+              "code": "Color 3",
+              "name": "Color 3",
+              "hex": "#fdfdfd",
+              "count": 21
+            },
+            {
+              "code": "Color 4",
+              "name": "Color 4",
+              "hex": "#fad6dc",
+              "count": 626
+            },
+            {
+              "code": "Color 5",
+              "name": "Color 5",
+              "hex": "#cde3fa",
+              "count": 62
+            }
+          ],
+          "empty": 861,
+          "occupancyUncertain": 58,
+          "colorUncertain": 3,
+          "uncertainEmpty": 58
+        },
+        "annotation": {
+          "annotated": 39,
+          "tp": 35,
+          "fp": 0,
+          "fn": 0,
+          "tn": 4,
+          "precision": 1,
+          "recall": 1,
+          "colorCorrect": 35,
+          "occupied": 35,
+          "colorAccuracyIncludingMissed": 1,
+          "uncertain": 2,
+          "disagreements": []
+        }
+      },
+      "perturbations": [
+        {
+          "dx": -1,
+          "dy": -1,
+          "stats": {
+            "total": 1179,
+            "uncertain": 62,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#f9f4ca",
+                "count": 246
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#f9b1bf",
+                "count": 224
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#fdfdfd",
+                "count": 21
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#fbd6dc",
+                "count": 626
+              },
+              {
+                "code": "Color 5",
+                "name": "Color 5",
+                "hex": "#cde3fa",
+                "count": 62
+              }
+            ],
+            "empty": 861,
+            "occupancyUncertain": 57,
+            "colorUncertain": 5,
+            "uncertainEmpty": 57
+          },
+          "annotation": {
+            "annotated": 39,
+            "tp": 35,
+            "fp": 0,
+            "fn": 0,
+            "tn": 4,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 35,
+            "occupied": 35,
+            "colorAccuracyIncludingMissed": 1,
+            "uncertain": 2,
+            "disagreements": []
+          }
+        },
+        {
+          "dx": 1,
+          "dy": 1,
+          "stats": {
+            "total": 1179,
+            "uncertain": 59,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#f9f4c9",
+                "count": 246
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#f9b1c0",
+                "count": 224
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#fdfdfd",
+                "count": 21
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#fad6dc",
+                "count": 626
+              },
+              {
+                "code": "Color 5",
+                "name": "Color 5",
+                "hex": "#cde3fa",
+                "count": 62
+              }
+            ],
+            "empty": 861,
+            "occupancyUncertain": 57,
+            "colorUncertain": 2,
+            "uncertainEmpty": 57
+          },
+          "annotation": {
+            "annotated": 39,
+            "tp": 35,
+            "fp": 0,
+            "fn": 0,
+            "tn": 4,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 35,
+            "occupied": 35,
+            "colorAccuracyIncludingMissed": 1,
+            "uncertain": 2,
+            "disagreements": []
+          }
+        },
+        {
+          "dx": -1,
+          "dy": 1,
+          "stats": {
+            "total": 1179,
+            "uncertain": 61,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#f9f4ca",
+                "count": 246
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#f9b1c0",
+                "count": 224
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#fdfdfd",
+                "count": 21
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#fad6dc",
+                "count": 626
+              },
+              {
+                "code": "Color 5",
+                "name": "Color 5",
+                "hex": "#cde3fa",
+                "count": 62
+              }
+            ],
+            "empty": 861,
+            "occupancyUncertain": 58,
+            "colorUncertain": 3,
+            "uncertainEmpty": 58
+          },
+          "annotation": {
+            "annotated": 39,
+            "tp": 35,
+            "fp": 0,
+            "fn": 0,
+            "tn": 4,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 35,
+            "occupied": 35,
+            "colorAccuracyIncludingMissed": 1,
+            "uncertain": 2,
+            "disagreements": []
+          }
+        },
+        {
+          "dx": 1,
+          "dy": -1,
+          "stats": {
+            "total": 1179,
+            "uncertain": 61,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#f9f4c9",
+                "count": 246
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#f9b1bf",
+                "count": 224
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#fdfdfd",
+                "count": 21
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#fbd6dc",
+                "count": 626
+              },
+              {
+                "code": "Color 5",
+                "name": "Color 5",
+                "hex": "#cde3fa",
+                "count": 62
+              }
+            ],
+            "empty": 861,
+            "occupancyUncertain": 58,
+            "colorUncertain": 3,
+            "uncertainEmpty": 58
+          },
+          "annotation": {
+            "annotated": 39,
+            "tp": 35,
+            "fp": 0,
+            "fn": 0,
+            "tn": 4,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 35,
+            "occupied": 35,
+            "colorAccuracyIncludingMissed": 1,
+            "uncertain": 2,
+            "disagreements": []
+          }
+        }
+      ],
+      "performance": {
+        "classificationMs": [
+          634.0551410000007,
+          657.8174099999997,
+          732.25738
+        ],
+        "medianMs": 657.8174099999997,
+        "retainedHeapDeltaBytes": 399304,
+        "peakProcessRssKiB": 266072,
+        "rasterBytes": 13866240
+      },
+      "retainedCells": 2040
+    },
+    "baseline": {
+      "id": "flying-pig",
+      "automatic": {
+        "geometry": {
+          "crop": {
+            "x": 34,
+            "y": 592,
+            "width": 1188,
+            "height": 1516
+          },
+          "rows": 51,
+          "columns": 40
+        },
+        "stats": {
+          "total": 1179,
+          "uncertain": 746,
+          "counts": [
+            {
+              "code": "Color 1",
+              "name": "Color 1",
+              "hex": "#f9f4c8",
+              "count": 246
+            },
+            {
+              "code": "Color 2",
+              "name": "Color 2",
+              "hex": "#f8b1bf",
+              "count": 224
+            },
+            {
+              "code": "Color 3",
+              "name": "Color 3",
+              "hex": "#fdfbfc",
+              "count": 21
+            },
+            {
+              "code": "Color 4",
+              "name": "Color 4",
+              "hex": "#f7d3d9",
+              "count": 626
+            },
+            {
+              "code": "Color 5",
+              "name": "Color 5",
+              "hex": "#cde3fb",
+              "count": 62
+            }
+          ],
+          "empty": 861,
+          "occupancyUncertain": 0,
+          "colorUncertain": 0,
+          "uncertainEmpty": 0
+        },
+        "annotation": {
+          "annotated": 39,
+          "tp": 35,
+          "fp": 0,
+          "fn": 0,
+          "tn": 4,
+          "precision": 1,
+          "recall": 1,
+          "colorCorrect": 35,
+          "occupied": 35,
+          "colorAccuracyIncludingMissed": 1,
+          "uncertain": 17,
+          "disagreements": []
+        }
+      },
+      "automaticMs": 2459.58888,
+      "manual": {
+        "stats": {
+          "total": 1179,
+          "uncertain": 746,
+          "counts": [
+            {
+              "code": "Color 1",
+              "name": "Color 1",
+              "hex": "#f9f4c8",
+              "count": 246
+            },
+            {
+              "code": "Color 2",
+              "name": "Color 2",
+              "hex": "#f8b1bf",
+              "count": 224
+            },
+            {
+              "code": "Color 3",
+              "name": "Color 3",
+              "hex": "#fdfbfc",
+              "count": 21
+            },
+            {
+              "code": "Color 4",
+              "name": "Color 4",
+              "hex": "#f7d3d9",
+              "count": 626
+            },
+            {
+              "code": "Color 5",
+              "name": "Color 5",
+              "hex": "#cde3fb",
+              "count": 62
+            }
+          ],
+          "empty": 861,
+          "occupancyUncertain": 0,
+          "colorUncertain": 0,
+          "uncertainEmpty": 0
+        },
+        "annotation": {
+          "annotated": 39,
+          "tp": 35,
+          "fp": 0,
+          "fn": 0,
+          "tn": 4,
+          "precision": 1,
+          "recall": 1,
+          "colorCorrect": 35,
+          "occupied": 35,
+          "colorAccuracyIncludingMissed": 1,
+          "uncertain": 17,
+          "disagreements": []
+        }
+      },
+      "perturbations": [
+        {
+          "dx": -1,
+          "dy": -1,
+          "stats": {
+            "total": 1179,
+            "uncertain": 749,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#f9f4c7",
+                "count": 246
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#f8b1be",
+                "count": 224
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#fdfcfc",
+                "count": 21
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#f7d3d9",
+                "count": 626
+              },
+              {
+                "code": "Color 5",
+                "name": "Color 5",
+                "hex": "#cce3fa",
+                "count": 62
+              }
+            ],
+            "empty": 861,
+            "occupancyUncertain": 0,
+            "colorUncertain": 0,
+            "uncertainEmpty": 0
+          },
+          "annotation": {
+            "annotated": 39,
+            "tp": 35,
+            "fp": 0,
+            "fn": 0,
+            "tn": 4,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 35,
+            "occupied": 35,
+            "colorAccuracyIncludingMissed": 1,
+            "uncertain": 18,
+            "disagreements": []
+          }
+        },
+        {
+          "dx": 1,
+          "dy": 1,
+          "stats": {
+            "total": 1179,
+            "uncertain": 749,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#f9f4c8",
+                "count": 246
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#f8b1bf",
+                "count": 224
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#fdfbfc",
+                "count": 21
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#f7d3d9",
+                "count": 626
+              },
+              {
+                "code": "Color 5",
+                "name": "Color 5",
+                "hex": "#cde3fb",
+                "count": 62
+              }
+            ],
+            "empty": 861,
+            "occupancyUncertain": 0,
+            "colorUncertain": 0,
+            "uncertainEmpty": 0
+          },
+          "annotation": {
+            "annotated": 39,
+            "tp": 35,
+            "fp": 0,
+            "fn": 0,
+            "tn": 4,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 35,
+            "occupied": 35,
+            "colorAccuracyIncludingMissed": 1,
+            "uncertain": 15,
+            "disagreements": []
+          }
+        },
+        {
+          "dx": -1,
+          "dy": 1,
+          "stats": {
+            "total": 1179,
+            "uncertain": 746,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#f9f4c7",
+                "count": 246
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#f8b1bf",
+                "count": 224
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#fdfcfc",
+                "count": 21
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#f7d2d8",
+                "count": 626
+              },
+              {
+                "code": "Color 5",
+                "name": "Color 5",
+                "hex": "#cde3fb",
+                "count": 62
+              }
+            ],
+            "empty": 861,
+            "occupancyUncertain": 0,
+            "colorUncertain": 0,
+            "uncertainEmpty": 0
+          },
+          "annotation": {
+            "annotated": 39,
+            "tp": 35,
+            "fp": 0,
+            "fn": 0,
+            "tn": 4,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 35,
+            "occupied": 35,
+            "colorAccuracyIncludingMissed": 1,
+            "uncertain": 17,
+            "disagreements": []
+          }
+        },
+        {
+          "dx": 1,
+          "dy": -1,
+          "stats": {
+            "total": 1179,
+            "uncertain": 748,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#f9f4c8",
+                "count": 246
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#f8b1be",
+                "count": 224
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#fdfbfc",
+                "count": 21
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#f8d4da",
+                "count": 626
+              },
+              {
+                "code": "Color 5",
+                "name": "Color 5",
+                "hex": "#cce3fb",
+                "count": 62
+              }
+            ],
+            "empty": 861,
+            "occupancyUncertain": 0,
+            "colorUncertain": 0,
+            "uncertainEmpty": 0
+          },
+          "annotation": {
+            "annotated": 39,
+            "tp": 35,
+            "fp": 0,
+            "fn": 0,
+            "tn": 4,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 35,
+            "occupied": 35,
+            "colorAccuracyIncludingMissed": 1,
+            "uncertain": 13,
+            "disagreements": []
+          }
+        }
+      ],
+      "performance": {
+        "classificationMs": [
+          433.6089809999994,
+          431.83738600000015,
+          458.0383389999997
+        ],
+        "medianMs": 433.6089809999994,
+        "retainedHeapDeltaBytes": 273016,
+        "peakProcessRssKiB": 205528,
+        "rasterBytes": 13866240
+      },
+      "retainedCells": 2040
+    }
+  },
+  {
+    "fixture": {
+      "id": "duck-copy",
+      "file": "tests/fixtures/mard/duck_chat_copy.png",
+      "provenance": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7250.jpeg 1440x1672",
+      "sha256": "6bb5475d098913e6086709f1d0e9039b2d2cf2a66a16c4b0e1951e87da654273",
+      "reference": {
+        "columns": 50,
+        "rows": 50,
+        "total": 139,
+        "colors": 8
+      },
+      "manual": {
+        "crop": {
+          "x": 81,
+          "y": 139,
+          "width": 904,
+          "height": 904
+        },
+        "rows": 50,
+        "columns": 50
+      }
+    },
+    "annotationMethod": "Manual visual transcription of source chart cells and printed codes, not inferred from recognizer output. Zero-based row/column. Targeted diagnostic subset, not random or blinded. Color identity uses separate manually located 5x3-pixel legend background patches excluding printed labels, median RGB per channel; patch coordinates and derived swatches are test-only. Empty is null.",
+    "current": {
+      "id": "duck-copy",
+      "automatic": {
+        "geometry": {
+          "crop": {
+            "x": 81.17269984917047,
+            "y": 139.40974812318052,
+            "width": 903.8212669683257,
+            "height": 903.6779782523278
+          },
+          "rows": 50,
+          "columns": 50
+        },
+        "stats": {
+          "total": 139,
+          "uncertain": 79,
+          "counts": [
+            {
+              "code": "Color 1",
+              "name": "Color 1",
+              "hex": "#fcfdfb",
+              "count": 70
+            },
+            {
+              "code": "Color 2",
+              "name": "Color 2",
+              "hex": "#f7eb5b",
+              "count": 44
+            },
+            {
+              "code": "Color 3",
+              "name": "Color 3",
+              "hex": "#f6fca0",
+              "count": 1
+            },
+            {
+              "code": "Color 4",
+              "name": "Color 4",
+              "hex": "#000200",
+              "count": 1
+            },
+            {
+              "code": "Color 5",
+              "name": "Color 5",
+              "hex": "#f47d36",
+              "count": 2
+            },
+            {
+              "code": "Color 6",
+              "name": "Color 6",
+              "hex": "#a7e2f2",
+              "count": 16
+            },
+            {
+              "code": "Color 7",
+              "name": "Color 7",
+              "hex": "#324cbc",
+              "count": 4
+            },
+            {
+              "code": "Color 8",
+              "name": "Color 8",
+              "hex": "#ecd541",
+              "count": 1
+            }
+          ],
+          "empty": 2361,
+          "occupancyUncertain": 41,
+          "colorUncertain": 49,
+          "uncertainEmpty": 30
+        },
+        "annotation": {
+          "annotated": 61,
+          "tp": 37,
+          "fp": 0,
+          "fn": 0,
+          "tn": 24,
+          "precision": 1,
+          "recall": 1,
+          "colorCorrect": 37,
+          "occupied": 37,
+          "colorAccuracyIncludingMissed": 1,
+          "uncertain": 23,
+          "disagreements": []
+        }
+      },
+      "automaticMs": 826.1297010000001,
+      "manual": {
+        "stats": {
+          "total": 139,
+          "uncertain": 80,
+          "counts": [
+            {
+              "code": "Color 1",
+              "name": "Color 1",
+              "hex": "#fcfdfb",
+              "count": 70
+            },
+            {
+              "code": "Color 2",
+              "name": "Color 2",
+              "hex": "#f7eb5b",
+              "count": 44
+            },
+            {
+              "code": "Color 3",
+              "name": "Color 3",
+              "hex": "#f6fca0",
+              "count": 1
+            },
+            {
+              "code": "Color 4",
+              "name": "Color 4",
+              "hex": "#000200",
+              "count": 1
+            },
+            {
+              "code": "Color 5",
+              "name": "Color 5",
+              "hex": "#f47e35",
+              "count": 2
+            },
+            {
+              "code": "Color 6",
+              "name": "Color 6",
+              "hex": "#a8e3f4",
+              "count": 16
+            },
+            {
+              "code": "Color 7",
+              "name": "Color 7",
+              "hex": "#324cbc",
+              "count": 4
+            },
+            {
+              "code": "Color 8",
+              "name": "Color 8",
+              "hex": "#ecd541",
+              "count": 1
+            }
+          ],
+          "empty": 2361,
+          "occupancyUncertain": 42,
+          "colorUncertain": 50,
+          "uncertainEmpty": 30
+        },
+        "annotation": {
+          "annotated": 61,
+          "tp": 37,
+          "fp": 0,
+          "fn": 0,
+          "tn": 24,
+          "precision": 1,
+          "recall": 1,
+          "colorCorrect": 37,
+          "occupied": 37,
+          "colorAccuracyIncludingMissed": 1,
+          "uncertain": 22,
+          "disagreements": []
+        }
+      },
+      "perturbations": [
+        {
+          "dx": -1,
+          "dy": -1,
+          "stats": {
+            "total": 139,
+            "uncertain": 69,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#fcfdfb",
+                "count": 70
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#f6ea5d",
+                "count": 44
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#f8fda2",
+                "count": 1
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#000203",
+                "count": 1
+              },
+              {
+                "code": "Color 5",
+                "name": "Color 5",
+                "hex": "#f77f36",
+                "count": 2
+              },
+              {
+                "code": "Color 6",
+                "name": "Color 6",
+                "hex": "#a6e2f1",
+                "count": 16
+              },
+              {
+                "code": "Color 7",
+                "name": "Color 7",
+                "hex": "#334cbb",
+                "count": 4
+              },
+              {
+                "code": "Color 8",
+                "name": "Color 8",
+                "hex": "#f0da42",
+                "count": 1
+              }
+            ],
+            "empty": 2361,
+            "occupancyUncertain": 41,
+            "colorUncertain": 40,
+            "uncertainEmpty": 29
+          },
+          "annotation": {
+            "annotated": 61,
+            "tp": 37,
+            "fp": 0,
+            "fn": 0,
+            "tn": 24,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 37,
+            "occupied": 37,
+            "colorAccuracyIncludingMissed": 1,
+            "uncertain": 20,
+            "disagreements": []
+          }
+        },
+        {
+          "dx": 1,
+          "dy": 1,
+          "stats": {
+            "total": 139,
+            "uncertain": 69,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#fcfdfb",
+                "count": 70
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#f6ea5e",
+                "count": 44
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#f4faa3",
+                "count": 1
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#020400",
+                "count": 1
+              },
+              {
+                "code": "Color 5",
+                "name": "Color 5",
+                "hex": "#f37e39",
+                "count": 2
+              },
+              {
+                "code": "Color 6",
+                "name": "Color 6",
+                "hex": "#a5dff0",
+                "count": 16
+              },
+              {
+                "code": "Color 7",
+                "name": "Color 7",
+                "hex": "#344dbe",
+                "count": 4
+              },
+              {
+                "code": "Color 8",
+                "name": "Color 8",
+                "hex": "#ead541",
+                "count": 1
+              }
+            ],
+            "empty": 2361,
+            "occupancyUncertain": 35,
+            "colorUncertain": 40,
+            "uncertainEmpty": 29
+          },
+          "annotation": {
+            "annotated": 61,
+            "tp": 37,
+            "fp": 0,
+            "fn": 0,
+            "tn": 24,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 37,
+            "occupied": 37,
+            "colorAccuracyIncludingMissed": 1,
+            "uncertain": 23,
+            "disagreements": []
+          }
+        },
+        {
+          "dx": -1,
+          "dy": 1,
+          "stats": {
+            "total": 139,
+            "uncertain": 73,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#fcfdfb",
+                "count": 70
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#f6ea5b",
+                "count": 44
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#f6fca1",
+                "count": 1
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#020400",
+                "count": 1
+              },
+              {
+                "code": "Color 5",
+                "name": "Color 5",
+                "hex": "#f37d37",
+                "count": 2
+              },
+              {
+                "code": "Color 6",
+                "name": "Color 6",
+                "hex": "#a5e0f1",
+                "count": 16
+              },
+              {
+                "code": "Color 7",
+                "name": "Color 7",
+                "hex": "#344bbc",
+                "count": 4
+              },
+              {
+                "code": "Color 8",
+                "name": "Color 8",
+                "hex": "#ecd541",
+                "count": 1
+              }
+            ],
+            "empty": 2361,
+            "occupancyUncertain": 38,
+            "colorUncertain": 43,
+            "uncertainEmpty": 30
+          },
+          "annotation": {
+            "annotated": 61,
+            "tp": 37,
+            "fp": 0,
+            "fn": 0,
+            "tn": 24,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 37,
+            "occupied": 37,
+            "colorAccuracyIncludingMissed": 1,
+            "uncertain": 21,
+            "disagreements": []
+          }
+        },
+        {
+          "dx": 1,
+          "dy": -1,
+          "stats": {
+            "total": 139,
+            "uncertain": 75,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#fcfefb",
+                "count": 70
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#f6eb5d",
+                "count": 44
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#f7fca3",
+                "count": 1
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#040500",
+                "count": 1
+              },
+              {
+                "code": "Color 5",
+                "name": "Color 5",
+                "hex": "#f17f3c",
+                "count": 2
+              },
+              {
+                "code": "Color 6",
+                "name": "Color 6",
+                "hex": "#a3e0ee",
+                "count": 16
+              },
+              {
+                "code": "Color 7",
+                "name": "Color 7",
+                "hex": "#344cbb",
+                "count": 4
+              },
+              {
+                "code": "Color 8",
+                "name": "Color 8",
+                "hex": "#eed943",
+                "count": 1
+              }
+            ],
+            "empty": 2361,
+            "occupancyUncertain": 44,
+            "colorUncertain": 44,
+            "uncertainEmpty": 31
+          },
+          "annotation": {
+            "annotated": 61,
+            "tp": 37,
+            "fp": 0,
+            "fn": 0,
+            "tn": 24,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 37,
+            "occupied": 37,
+            "colorAccuracyIncludingMissed": 1,
+            "uncertain": 22,
+            "disagreements": []
+          }
+        }
+      ],
+      "performance": {
+        "classificationMs": [
+          266.1791739999999,
+          284.65333999999984,
+          318.21068400000013
+        ],
+        "medianMs": 284.65333999999984,
+        "retainedHeapDeltaBytes": -2487992,
+        "peakProcessRssKiB": 179792,
+        "rasterBytes": 5417280
+      },
+      "retainedCells": 2500
+    },
+    "baseline": {
+      "id": "duck-copy",
+      "automatic": {
+        "geometry": {
+          "crop": {
+            "x": 81.17269984917047,
+            "y": 139.40974812318052,
+            "width": 903.8212669683257,
+            "height": 903.6779782523278
+          },
+          "rows": 50,
+          "columns": 50
+        },
+        "stats": {
+          "total": 139,
+          "uncertain": 132,
+          "counts": [
+            {
+              "code": "Color 1",
+              "name": "Color 1",
+              "hex": "#f7faf9",
+              "count": 70
+            },
+            {
+              "code": "Color 2",
+              "name": "Color 2",
+              "hex": "#808080",
+              "count": 52
+            },
+            {
+              "code": "Color 3",
+              "name": "Color 3",
+              "hex": "#f4faa2",
+              "count": 1
+            },
+            {
+              "code": "Color 4",
+              "name": "Color 4",
+              "hex": "#a3e0f1",
+              "count": 16
+            }
+          ],
+          "empty": 2361,
+          "occupancyUncertain": 0,
+          "colorUncertain": 0,
+          "uncertainEmpty": 8
+        },
+        "annotation": {
+          "annotated": 61,
+          "tp": 37,
+          "fp": 0,
+          "fn": 0,
+          "tn": 24,
+          "precision": 1,
+          "recall": 1,
+          "colorCorrect": 22,
+          "occupied": 37,
+          "colorAccuracyIncludingMissed": 0.5945945945945946,
+          "uncertain": 37,
+          "disagreements": [
+            {
+              "row": 16,
+              "column": 22,
+              "code": "A4",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 16,
+              "column": 23,
+              "code": "A4",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 16,
+              "column": 24,
+              "code": "A4",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 18,
+              "column": 21,
+              "code": "A4",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 18,
+              "column": 22,
+              "code": "A4",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 18,
+              "column": 24,
+              "code": "A4",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 18,
+              "column": 25,
+              "code": "A4",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 18,
+              "column": 23,
+              "code": "H7",
+              "tags": [
+                "dark",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 19,
+              "column": 20,
+              "code": "A7",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 19,
+              "column": 21,
+              "code": "A7",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 29,
+              "column": 28,
+              "code": "C9",
+              "tags": [
+                "dark",
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 30,
+              "column": 27,
+              "code": "C9",
+              "tags": [
+                "dark",
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 30,
+              "column": 29,
+              "code": "C9",
+              "tags": [
+                "dark",
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 31,
+              "column": 28,
+              "code": "C9",
+              "tags": [
+                "dark",
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 30,
+              "column": 28,
+              "code": "A5",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            }
+          ]
+        }
+      },
+      "automaticMs": 742.34702,
+      "manual": {
+        "stats": {
+          "total": 139,
+          "uncertain": 125,
+          "counts": [
+            {
+              "code": "Color 1",
+              "name": "Color 1",
+              "hex": "#f7faf8",
+              "count": 70
+            },
+            {
+              "code": "Color 2",
+              "name": "Color 2",
+              "hex": "#808080",
+              "count": 52
+            },
+            {
+              "code": "Color 3",
+              "name": "Color 3",
+              "hex": "#f4faa2",
+              "count": 1
+            },
+            {
+              "code": "Color 4",
+              "name": "Color 4",
+              "hex": "#a2e0f1",
+              "count": 16
+            }
+          ],
+          "empty": 2361,
+          "occupancyUncertain": 0,
+          "colorUncertain": 0,
+          "uncertainEmpty": 8
+        },
+        "annotation": {
+          "annotated": 61,
+          "tp": 37,
+          "fp": 0,
+          "fn": 0,
+          "tn": 24,
+          "precision": 1,
+          "recall": 1,
+          "colorCorrect": 22,
+          "occupied": 37,
+          "colorAccuracyIncludingMissed": 0.5945945945945946,
+          "uncertain": 35,
+          "disagreements": [
+            {
+              "row": 16,
+              "column": 22,
+              "code": "A4",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 16,
+              "column": 23,
+              "code": "A4",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 16,
+              "column": 24,
+              "code": "A4",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 18,
+              "column": 21,
+              "code": "A4",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 18,
+              "column": 22,
+              "code": "A4",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 18,
+              "column": 24,
+              "code": "A4",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 18,
+              "column": 25,
+              "code": "A4",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 18,
+              "column": 23,
+              "code": "H7",
+              "tags": [
+                "dark",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 19,
+              "column": 20,
+              "code": "A7",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 19,
+              "column": 21,
+              "code": "A7",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 29,
+              "column": 28,
+              "code": "C9",
+              "tags": [
+                "dark",
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 30,
+              "column": 27,
+              "code": "C9",
+              "tags": [
+                "dark",
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 30,
+              "column": 29,
+              "code": "C9",
+              "tags": [
+                "dark",
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 31,
+              "column": 28,
+              "code": "C9",
+              "tags": [
+                "dark",
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 30,
+              "column": 28,
+              "code": "A5",
+              "tags": [
+                "saturated",
+                "text"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            }
+          ]
+        }
+      },
+      "perturbations": [
+        {
+          "dx": -1,
+          "dy": -1,
+          "stats": {
+            "total": 146,
+            "uncertain": 134,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#f9fbf9",
+                "count": 70
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#808080",
+                "count": 52
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#f5f9a3",
+                "count": 1
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#ececec",
+                "count": 7
+              },
+              {
+                "code": "Color 5",
+                "name": "Color 5",
+                "hex": "#a2e0f0",
+                "count": 16
+              }
+            ],
+            "empty": 2354,
+            "occupancyUncertain": 0,
+            "colorUncertain": 0,
+            "uncertainEmpty": 9
+          },
+          "annotation": {
+            "annotated": 61,
+            "tp": 37,
+            "fp": 2,
+            "fn": 0,
+            "tn": 22,
+            "precision": 0.9487179487179487,
+            "recall": 1,
+            "colorCorrect": 22,
+            "occupied": 37,
+            "colorAccuracyIncludingMissed": 0.5945945945945946,
+            "uncertain": 37,
+            "disagreements": [
+              {
+                "row": 18,
+                "column": 26,
+                "code": null,
+                "tags": [
+                  "empty-white",
+                  "shadow"
+                ],
+                "actual": "H2",
+                "confidence": 0.28205128205128205
+              },
+              {
+                "row": 25,
+                "column": 31,
+                "code": null,
+                "tags": [
+                  "empty-white",
+                  "hole"
+                ],
+                "actual": "H2",
+                "confidence": 0.2948717948717949
+              },
+              {
+                "row": 16,
+                "column": 22,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 23,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 24,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 21,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 22,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 24,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 25,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 23,
+                "code": "H7",
+                "tags": [
+                  "dark",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 19,
+                "column": 20,
+                "code": "A7",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 19,
+                "column": 21,
+                "code": "A7",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 29,
+                "column": 28,
+                "code": "C9",
+                "tags": [
+                  "dark",
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 30,
+                "column": 27,
+                "code": "C9",
+                "tags": [
+                  "dark",
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 30,
+                "column": 29,
+                "code": "C9",
+                "tags": [
+                  "dark",
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 31,
+                "column": 28,
+                "code": "C9",
+                "tags": [
+                  "dark",
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 30,
+                "column": 28,
+                "code": "A5",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              }
+            ]
+          }
+        },
+        {
+          "dx": 1,
+          "dy": 1,
+          "stats": {
+            "total": 139,
+            "uncertain": 112,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#f7fbf7",
+                "count": 70
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#808080",
+                "count": 52
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#f4faa5",
+                "count": 1
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#a3dfef",
+                "count": 16
+              }
+            ],
+            "empty": 2361,
+            "occupancyUncertain": 0,
+            "colorUncertain": 0,
+            "uncertainEmpty": 0
+          },
+          "annotation": {
+            "annotated": 61,
+            "tp": 37,
+            "fp": 0,
+            "fn": 0,
+            "tn": 24,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 22,
+            "occupied": 37,
+            "colorAccuracyIncludingMissed": 0.5945945945945946,
+            "uncertain": 31,
+            "disagreements": [
+              {
+                "row": 16,
+                "column": 22,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 23,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 24,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 21,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 22,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 24,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 25,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 23,
+                "code": "H7",
+                "tags": [
+                  "dark",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 19,
+                "column": 20,
+                "code": "A7",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 19,
+                "column": 21,
+                "code": "A7",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 29,
+                "column": 28,
+                "code": "C9",
+                "tags": [
+                  "dark",
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 30,
+                "column": 27,
+                "code": "C9",
+                "tags": [
+                  "dark",
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 30,
+                "column": 29,
+                "code": "C9",
+                "tags": [
+                  "dark",
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 31,
+                "column": 28,
+                "code": "C9",
+                "tags": [
+                  "dark",
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 30,
+                "column": 28,
+                "code": "A5",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              }
+            ]
+          }
+        },
+        {
+          "dx": -1,
+          "dy": 1,
+          "stats": {
+            "total": 139,
+            "uncertain": 129,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#f8fbf6",
+                "count": 70
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#808080",
+                "count": 52
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#f5faa3",
+                "count": 1
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#a5dff0",
+                "count": 16
+              }
+            ],
+            "empty": 2361,
+            "occupancyUncertain": 0,
+            "colorUncertain": 0,
+            "uncertainEmpty": 13
+          },
+          "annotation": {
+            "annotated": 61,
+            "tp": 37,
+            "fp": 0,
+            "fn": 0,
+            "tn": 24,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 22,
+            "occupied": 37,
+            "colorAccuracyIncludingMissed": 0.5945945945945946,
+            "uncertain": 34,
+            "disagreements": [
+              {
+                "row": 16,
+                "column": 22,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 23,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 24,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 21,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 22,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 24,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 25,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 23,
+                "code": "H7",
+                "tags": [
+                  "dark",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 19,
+                "column": 20,
+                "code": "A7",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 19,
+                "column": 21,
+                "code": "A7",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 29,
+                "column": 28,
+                "code": "C9",
+                "tags": [
+                  "dark",
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 30,
+                "column": 27,
+                "code": "C9",
+                "tags": [
+                  "dark",
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 30,
+                "column": 29,
+                "code": "C9",
+                "tags": [
+                  "dark",
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 31,
+                "column": 28,
+                "code": "C9",
+                "tags": [
+                  "dark",
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 30,
+                "column": 28,
+                "code": "A5",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              }
+            ]
+          }
+        },
+        {
+          "dx": 1,
+          "dy": -1,
+          "stats": {
+            "total": 139,
+            "uncertain": 127,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#f8fbfa",
+                "count": 70
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#808080",
+                "count": 52
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#f4faa5",
+                "count": 1
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#a2e0f0",
+                "count": 16
+              }
+            ],
+            "empty": 2361,
+            "occupancyUncertain": 0,
+            "colorUncertain": 0,
+            "uncertainEmpty": 14
+          },
+          "annotation": {
+            "annotated": 61,
+            "tp": 37,
+            "fp": 0,
+            "fn": 0,
+            "tn": 24,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 22,
+            "occupied": 37,
+            "colorAccuracyIncludingMissed": 0.5945945945945946,
+            "uncertain": 35,
+            "disagreements": [
+              {
+                "row": 16,
+                "column": 22,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 23,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 24,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 21,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 22,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 24,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 25,
+                "code": "A4",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 18,
+                "column": 23,
+                "code": "H7",
+                "tags": [
+                  "dark",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 19,
+                "column": 20,
+                "code": "A7",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 19,
+                "column": 21,
+                "code": "A7",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 29,
+                "column": 28,
+                "code": "C9",
+                "tags": [
+                  "dark",
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 30,
+                "column": 27,
+                "code": "C9",
+                "tags": [
+                  "dark",
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 30,
+                "column": 29,
+                "code": "C9",
+                "tags": [
+                  "dark",
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 31,
+                "column": 28,
+                "code": "C9",
+                "tags": [
+                  "dark",
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 30,
+                "column": 28,
+                "code": "A5",
+                "tags": [
+                  "saturated",
+                  "text"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              }
+            ]
+          }
+        }
+      ],
+      "performance": {
+        "classificationMs": [
+          215.77850100000023,
+          226.69463300000007,
+          222.15361699999994
+        ],
+        "medianMs": 222.15361699999994,
+        "retainedHeapDeltaBytes": 328192,
+        "peakProcessRssKiB": 129336,
+        "rasterBytes": 5417280
+      },
+      "retainedCells": 2500
+    }
+  },
+  {
+    "fixture": {
+      "id": "teapot-copy",
+      "file": "tests/fixtures/mard/teapot_chat_copy.png",
+      "provenance": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7252.jpeg 1440x1672",
+      "sha256": "9f0b21e976ad516b51b506f3f7fb01f61ad15e9530738ed40838391a2bb9d7af",
+      "reference": {
+        "columns": 50,
+        "rows": 50,
+        "total": 1333,
+        "colors": 6
+      },
+      "manual": {
+        "crop": {
+          "x": 81,
+          "y": 139,
+          "width": 904,
+          "height": 904
+        },
+        "rows": 50,
+        "columns": 50
+      }
+    },
+    "annotationMethod": "Manual visual transcription of source chart cells and printed codes, not inferred from recognizer output. Zero-based row/column. Targeted diagnostic subset, not random or blinded. Color identity uses separate manually located 5x3-pixel legend background patches excluding printed labels, median RGB per channel; patch coordinates and derived swatches are test-only. Empty is null.",
+    "current": {
+      "id": "teapot-copy",
+      "automatic": {
+        "geometry": {
+          "crop": {
+            "x": 81.2072021116139,
+            "y": 139.42713873888601,
+            "width": 903.8110859728507,
+            "height": 903.6660669657379
+          },
+          "rows": 50,
+          "columns": 50
+        },
+        "stats": {
+          "total": 1333,
+          "uncertain": 16,
+          "counts": [
+            {
+              "code": "Color 1",
+              "name": "Color 1",
+              "hex": "#21c3c2",
+              "count": 272
+            },
+            {
+              "code": "Color 2",
+              "name": "Color 2",
+              "hex": "#fdfdef",
+              "count": 635
+            },
+            {
+              "code": "Color 3",
+              "name": "Color 3",
+              "hex": "#fa97bf",
+              "count": 266
+            },
+            {
+              "code": "Color 4",
+              "name": "Color 4",
+              "hex": "#fae26c",
+              "count": 25
+            },
+            {
+              "code": "Color 5",
+              "name": "Color 5",
+              "hex": "#d23691",
+              "count": 112
+            },
+            {
+              "code": "Color 6",
+              "name": "Color 6",
+              "hex": "#9fe2f7",
+              "count": 23
+            }
+          ],
+          "empty": 1167,
+          "occupancyUncertain": 8,
+          "colorUncertain": 9,
+          "uncertainEmpty": 7
+        },
+        "annotation": {
+          "annotated": 69,
+          "tp": 59,
+          "fp": 0,
+          "fn": 0,
+          "tn": 10,
+          "precision": 1,
+          "recall": 1,
+          "colorCorrect": 59,
+          "occupied": 59,
+          "colorAccuracyIncludingMissed": 1,
+          "uncertain": 0,
+          "disagreements": []
+        }
+      },
+      "automaticMs": 744.947757,
+      "manual": {
+        "stats": {
+          "total": 1333,
+          "uncertain": 16,
+          "counts": [
+            {
+              "code": "Color 1",
+              "name": "Color 1",
+              "hex": "#21c4c2",
+              "count": 272
+            },
+            {
+              "code": "Color 2",
+              "name": "Color 2",
+              "hex": "#fdfdef",
+              "count": 635
+            },
+            {
+              "code": "Color 3",
+              "name": "Color 3",
+              "hex": "#fa97be",
+              "count": 266
+            },
+            {
+              "code": "Color 4",
+              "name": "Color 4",
+              "hex": "#fae26c",
+              "count": 25
+            },
+            {
+              "code": "Color 5",
+              "name": "Color 5",
+              "hex": "#d23691",
+              "count": 112
+            },
+            {
+              "code": "Color 6",
+              "name": "Color 6",
+              "hex": "#9fe2f7",
+              "count": 23
+            }
+          ],
+          "empty": 1167,
+          "occupancyUncertain": 8,
+          "colorUncertain": 9,
+          "uncertainEmpty": 7
+        },
+        "annotation": {
+          "annotated": 69,
+          "tp": 59,
+          "fp": 0,
+          "fn": 0,
+          "tn": 10,
+          "precision": 1,
+          "recall": 1,
+          "colorCorrect": 59,
+          "occupied": 59,
+          "colorAccuracyIncludingMissed": 1,
+          "uncertain": 0,
+          "disagreements": []
+        }
+      },
+      "perturbations": [
+        {
+          "dx": -1,
+          "dy": -1,
+          "stats": {
+            "total": 1333,
+            "uncertain": 12,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#21c4c3",
+                "count": 272
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#fdfdef",
+                "count": 635
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#fa97be",
+                "count": 266
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#fae26c",
+                "count": 25
+              },
+              {
+                "code": "Color 5",
+                "name": "Color 5",
+                "hex": "#d23691",
+                "count": 112
+              },
+              {
+                "code": "Color 6",
+                "name": "Color 6",
+                "hex": "#9fe2f7",
+                "count": 23
+              }
+            ],
+            "empty": 1167,
+            "occupancyUncertain": 3,
+            "colorUncertain": 9,
+            "uncertainEmpty": 3
+          },
+          "annotation": {
+            "annotated": 69,
+            "tp": 59,
+            "fp": 0,
+            "fn": 0,
+            "tn": 10,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 59,
+            "occupied": 59,
+            "colorAccuracyIncludingMissed": 1,
+            "uncertain": 0,
+            "disagreements": []
+          }
+        },
+        {
+          "dx": 1,
+          "dy": 1,
+          "stats": {
+            "total": 1333,
+            "uncertain": 21,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#21c3c2",
+                "count": 272
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#fdfdf0",
+                "count": 635
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#fa97be",
+                "count": 266
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#fae26c",
+                "count": 25
+              },
+              {
+                "code": "Color 5",
+                "name": "Color 5",
+                "hex": "#d23691",
+                "count": 112
+              },
+              {
+                "code": "Color 6",
+                "name": "Color 6",
+                "hex": "#9fe2f8",
+                "count": 23
+              }
+            ],
+            "empty": 1167,
+            "occupancyUncertain": 12,
+            "colorUncertain": 10,
+            "uncertainEmpty": 11
+          },
+          "annotation": {
+            "annotated": 69,
+            "tp": 59,
+            "fp": 0,
+            "fn": 0,
+            "tn": 10,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 59,
+            "occupied": 59,
+            "colorAccuracyIncludingMissed": 1,
+            "uncertain": 0,
+            "disagreements": []
+          }
+        },
+        {
+          "dx": -1,
+          "dy": 1,
+          "stats": {
+            "total": 1333,
+            "uncertain": 12,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#21c4c2",
+                "count": 272
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#fdfdef",
+                "count": 635
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#fa97bf",
+                "count": 266
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#fae26c",
+                "count": 25
+              },
+              {
+                "code": "Color 5",
+                "name": "Color 5",
+                "hex": "#d23691",
+                "count": 112
+              },
+              {
+                "code": "Color 6",
+                "name": "Color 6",
+                "hex": "#9fe2f7",
+                "count": 23
+              }
+            ],
+            "empty": 1167,
+            "occupancyUncertain": 5,
+            "colorUncertain": 8,
+            "uncertainEmpty": 4
+          },
+          "annotation": {
+            "annotated": 69,
+            "tp": 59,
+            "fp": 0,
+            "fn": 0,
+            "tn": 10,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 59,
+            "occupied": 59,
+            "colorAccuracyIncludingMissed": 1,
+            "uncertain": 1,
+            "disagreements": []
+          }
+        },
+        {
+          "dx": 1,
+          "dy": -1,
+          "stats": {
+            "total": 1333,
+            "uncertain": 19,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#21c3c2",
+                "count": 272
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#fdfdef",
+                "count": 635
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#fa97be",
+                "count": 266
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#fae26d",
+                "count": 25
+              },
+              {
+                "code": "Color 5",
+                "name": "Color 5",
+                "hex": "#d23691",
+                "count": 112
+              },
+              {
+                "code": "Color 6",
+                "name": "Color 6",
+                "hex": "#9fe1f8",
+                "count": 23
+              }
+            ],
+            "empty": 1167,
+            "occupancyUncertain": 8,
+            "colorUncertain": 12,
+            "uncertainEmpty": 7
+          },
+          "annotation": {
+            "annotated": 69,
+            "tp": 59,
+            "fp": 0,
+            "fn": 0,
+            "tn": 10,
+            "precision": 1,
+            "recall": 1,
+            "colorCorrect": 59,
+            "occupied": 59,
+            "colorAccuracyIncludingMissed": 1,
+            "uncertain": 0,
+            "disagreements": []
+          }
+        }
+      ],
+      "performance": {
+        "classificationMs": [
+          267.04298500000004,
+          258.3080279999999,
+          283.41132000000016
+        ],
+        "medianMs": 267.04298500000004,
+        "retainedHeapDeltaBytes": 417512,
+        "peakProcessRssKiB": 182584,
+        "rasterBytes": 5417280
+      },
+      "retainedCells": 2500
+    },
+    "baseline": {
+      "id": "teapot-copy",
+      "automatic": {
+        "geometry": {
+          "crop": {
+            "x": 81.2072021116139,
+            "y": 139.42713873888601,
+            "width": 903.8110859728507,
+            "height": 903.6660669657379
+          },
+          "rows": 50,
+          "columns": 50
+        },
+        "stats": {
+          "total": 1018,
+          "uncertain": 409,
+          "counts": [
+            {
+              "code": "Color 1",
+              "name": "Color 1",
+              "hex": "#808080",
+              "count": 409
+            },
+            {
+              "code": "Color 2",
+              "name": "Color 2",
+              "hex": "#f9fcec",
+              "count": 320
+            },
+            {
+              "code": "Color 3",
+              "name": "Color 3",
+              "hex": "#f69fc1",
+              "count": 266
+            },
+            {
+              "code": "Color 4",
+              "name": "Color 4",
+              "hex": "#a0e1f9",
+              "count": 23
+            }
+          ],
+          "empty": 1482,
+          "occupancyUncertain": 0,
+          "colorUncertain": 0,
+          "uncertainEmpty": 0
+        },
+        "annotation": {
+          "annotated": 69,
+          "tp": 45,
+          "fp": 0,
+          "fn": 14,
+          "tn": 10,
+          "precision": 1,
+          "recall": 0.7627118644067796,
+          "colorCorrect": 26,
+          "occupied": 59,
+          "colorAccuracyIncludingMissed": 0.4406779661016949,
+          "uncertain": 19,
+          "disagreements": [
+            {
+              "row": 9,
+              "column": 4,
+              "code": "C15",
+              "tags": [
+                "saturated"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 9,
+              "column": 6,
+              "code": "C15",
+              "tags": [
+                "saturated"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 9,
+              "column": 7,
+              "code": "C15",
+              "tags": [
+                "saturated"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 9,
+              "column": 8,
+              "code": "C15",
+              "tags": [
+                "saturated"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 9,
+              "column": 10,
+              "code": "C15",
+              "tags": [
+                "saturated"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 12,
+              "column": 4,
+              "code": "C15",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 12,
+              "column": 5,
+              "code": "C15",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 12,
+              "column": 6,
+              "code": "C15",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 16,
+              "column": 4,
+              "code": "C15",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 16,
+              "column": 5,
+              "code": "C15",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 16,
+              "column": 6,
+              "code": "C15",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 9,
+              "column": 5,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 9,
+              "column": 13,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 10,
+              "column": 6,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 10,
+              "column": 8,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 10,
+              "column": 10,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 10,
+              "column": 12,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 10,
+              "column": 14,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 10,
+              "column": 16,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 10,
+              "column": 18,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 12,
+              "column": 7,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 12,
+              "column": 10,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 12,
+              "column": 14,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 12,
+              "column": 19,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 18,
+              "column": 17,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 20,
+              "column": 17,
+              "code": "A17",
+              "tags": [
+                "saturated"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 20,
+              "column": 19,
+              "code": "A17",
+              "tags": [
+                "saturated"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 21,
+              "column": 14,
+              "code": "E10",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 21,
+              "column": 15,
+              "code": "E10",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 21,
+              "column": 16,
+              "code": "E10",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 21,
+              "column": 17,
+              "code": "E10",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 21,
+              "column": 18,
+              "code": "E10",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 21,
+              "column": 19,
+              "code": "E10",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            }
+          ]
+        }
+      },
+      "automaticMs": 634.740064,
+      "manual": {
+        "stats": {
+          "total": 1017,
+          "uncertain": 409,
+          "counts": [
+            {
+              "code": "Color 1",
+              "name": "Color 1",
+              "hex": "#808080",
+              "count": 409
+            },
+            {
+              "code": "Color 2",
+              "name": "Color 2",
+              "hex": "#f9fcec",
+              "count": 319
+            },
+            {
+              "code": "Color 3",
+              "name": "Color 3",
+              "hex": "#f69fc1",
+              "count": 266
+            },
+            {
+              "code": "Color 4",
+              "name": "Color 4",
+              "hex": "#a0e1f9",
+              "count": 23
+            }
+          ],
+          "empty": 1483,
+          "occupancyUncertain": 0,
+          "colorUncertain": 0,
+          "uncertainEmpty": 0
+        },
+        "annotation": {
+          "annotated": 69,
+          "tp": 45,
+          "fp": 0,
+          "fn": 14,
+          "tn": 10,
+          "precision": 1,
+          "recall": 0.7627118644067796,
+          "colorCorrect": 26,
+          "occupied": 59,
+          "colorAccuracyIncludingMissed": 0.4406779661016949,
+          "uncertain": 19,
+          "disagreements": [
+            {
+              "row": 9,
+              "column": 4,
+              "code": "C15",
+              "tags": [
+                "saturated"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 9,
+              "column": 6,
+              "code": "C15",
+              "tags": [
+                "saturated"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 9,
+              "column": 7,
+              "code": "C15",
+              "tags": [
+                "saturated"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 9,
+              "column": 8,
+              "code": "C15",
+              "tags": [
+                "saturated"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 9,
+              "column": 10,
+              "code": "C15",
+              "tags": [
+                "saturated"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 12,
+              "column": 4,
+              "code": "C15",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 12,
+              "column": 5,
+              "code": "C15",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 12,
+              "column": 6,
+              "code": "C15",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 16,
+              "column": 4,
+              "code": "C15",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 16,
+              "column": 5,
+              "code": "C15",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 16,
+              "column": 6,
+              "code": "C15",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 9,
+              "column": 5,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 9,
+              "column": 13,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 10,
+              "column": 6,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 10,
+              "column": 8,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 10,
+              "column": 10,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 10,
+              "column": 12,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 10,
+              "column": 14,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 10,
+              "column": 16,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 10,
+              "column": 18,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 12,
+              "column": 7,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 12,
+              "column": 10,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 12,
+              "column": 14,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 12,
+              "column": 19,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 18,
+              "column": 17,
+              "code": "H18",
+              "tags": [
+                "pale"
+              ],
+              "actual": null,
+              "confidence": 0.97
+            },
+            {
+              "row": 20,
+              "column": 17,
+              "code": "A17",
+              "tags": [
+                "saturated"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 20,
+              "column": 19,
+              "code": "A17",
+              "tags": [
+                "saturated"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 21,
+              "column": 14,
+              "code": "E10",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 21,
+              "column": 15,
+              "code": "E10",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 21,
+              "column": 16,
+              "code": "E10",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 21,
+              "column": 17,
+              "code": "E10",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 21,
+              "column": 18,
+              "code": "E10",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            },
+            {
+              "row": 21,
+              "column": 19,
+              "code": "E10",
+              "tags": [
+                "saturated",
+                "watermark"
+              ],
+              "actual": "unmatched",
+              "confidence": 0
+            }
+          ]
+        }
+      },
+      "perturbations": [
+        {
+          "dx": -1,
+          "dy": -1,
+          "stats": {
+            "total": 1017,
+            "uncertain": 447,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#808080",
+                "count": 409
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#f9fcec",
+                "count": 319
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#f69ec1",
+                "count": 266
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#9fe1f8",
+                "count": 23
+              }
+            ],
+            "empty": 1483,
+            "occupancyUncertain": 0,
+            "colorUncertain": 0,
+            "uncertainEmpty": 38
+          },
+          "annotation": {
+            "annotated": 69,
+            "tp": 45,
+            "fp": 0,
+            "fn": 14,
+            "tn": 10,
+            "precision": 1,
+            "recall": 0.7627118644067796,
+            "colorCorrect": 26,
+            "occupied": 59,
+            "colorAccuracyIncludingMissed": 0.4406779661016949,
+            "uncertain": 19,
+            "disagreements": [
+              {
+                "row": 9,
+                "column": 4,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 6,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 7,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 8,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 10,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 12,
+                "column": 4,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 12,
+                "column": 5,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 12,
+                "column": 6,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 4,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 5,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 6,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 5,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 6,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 8,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 10,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 12,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 14,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 16,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 18,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 12,
+                "column": 7,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 12,
+                "column": 10,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 12,
+                "column": 14,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 12,
+                "column": 19,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 18,
+                "column": 6,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 18,
+                "column": 17,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 20,
+                "column": 17,
+                "code": "A17",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 20,
+                "column": 19,
+                "code": "A17",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 14,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 15,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 16,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 17,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 18,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 19,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              }
+            ]
+          }
+        },
+        {
+          "dx": 1,
+          "dy": 1,
+          "stats": {
+            "total": 1010,
+            "uncertain": 409,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#808080",
+                "count": 409
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#f9fced",
+                "count": 312
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#f49ec0",
+                "count": 266
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#a0e0f9",
+                "count": 23
+              }
+            ],
+            "empty": 1490,
+            "occupancyUncertain": 0,
+            "colorUncertain": 0,
+            "uncertainEmpty": 0
+          },
+          "annotation": {
+            "annotated": 69,
+            "tp": 44,
+            "fp": 0,
+            "fn": 15,
+            "tn": 10,
+            "precision": 1,
+            "recall": 0.7457627118644068,
+            "colorCorrect": 25,
+            "occupied": 59,
+            "colorAccuracyIncludingMissed": 0.423728813559322,
+            "uncertain": 19,
+            "disagreements": [
+              {
+                "row": 9,
+                "column": 4,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 6,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 7,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 8,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 10,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 12,
+                "column": 4,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 12,
+                "column": 5,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 12,
+                "column": 6,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 4,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 5,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 6,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 5,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 9,
+                "column": 13,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 9,
+                "column": 17,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 6,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 8,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 10,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 12,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 14,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 16,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 18,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 12,
+                "column": 10,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 12,
+                "column": 14,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 12,
+                "column": 19,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 18,
+                "column": 6,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 18,
+                "column": 17,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 20,
+                "column": 17,
+                "code": "A17",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 20,
+                "column": 19,
+                "code": "A17",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 14,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 15,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 16,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 17,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 18,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 19,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              }
+            ]
+          }
+        },
+        {
+          "dx": -1,
+          "dy": 1,
+          "stats": {
+            "total": 993,
+            "uncertain": 440,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#808080",
+                "count": 409
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#f9fcec",
+                "count": 295
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#f69ec1",
+                "count": 266
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#9fe0f8",
+                "count": 23
+              }
+            ],
+            "empty": 1507,
+            "occupancyUncertain": 0,
+            "colorUncertain": 0,
+            "uncertainEmpty": 31
+          },
+          "annotation": {
+            "annotated": 69,
+            "tp": 45,
+            "fp": 0,
+            "fn": 14,
+            "tn": 10,
+            "precision": 1,
+            "recall": 0.7627118644067796,
+            "colorCorrect": 26,
+            "occupied": 59,
+            "colorAccuracyIncludingMissed": 0.4406779661016949,
+            "uncertain": 19,
+            "disagreements": [
+              {
+                "row": 9,
+                "column": 4,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 6,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 7,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 8,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 10,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 12,
+                "column": 4,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 12,
+                "column": 5,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 12,
+                "column": 6,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 4,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 5,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 6,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 5,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 9,
+                "column": 13,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 9,
+                "column": 17,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 8,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 10,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 12,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 14,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 18,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 12,
+                "column": 7,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 12,
+                "column": 10,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 12,
+                "column": 14,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 12,
+                "column": 19,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 18,
+                "column": 6,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 18,
+                "column": 7,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 20,
+                "column": 17,
+                "code": "A17",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 20,
+                "column": 19,
+                "code": "A17",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 14,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 15,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 16,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 17,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 18,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 19,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              }
+            ]
+          }
+        },
+        {
+          "dx": 1,
+          "dy": -1,
+          "stats": {
+            "total": 1036,
+            "uncertain": 419,
+            "counts": [
+              {
+                "code": "Color 1",
+                "name": "Color 1",
+                "hex": "#808080",
+                "count": 409
+              },
+              {
+                "code": "Color 2",
+                "name": "Color 2",
+                "hex": "#f9fdec",
+                "count": 338
+              },
+              {
+                "code": "Color 3",
+                "name": "Color 3",
+                "hex": "#f59ec0",
+                "count": 266
+              },
+              {
+                "code": "Color 4",
+                "name": "Color 4",
+                "hex": "#a0e0f9",
+                "count": 23
+              }
+            ],
+            "empty": 1464,
+            "occupancyUncertain": 0,
+            "colorUncertain": 0,
+            "uncertainEmpty": 10
+          },
+          "annotation": {
+            "annotated": 69,
+            "tp": 45,
+            "fp": 0,
+            "fn": 14,
+            "tn": 10,
+            "precision": 1,
+            "recall": 0.7627118644067796,
+            "colorCorrect": 26,
+            "occupied": 59,
+            "colorAccuracyIncludingMissed": 0.4406779661016949,
+            "uncertain": 19,
+            "disagreements": [
+              {
+                "row": 9,
+                "column": 4,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 6,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 7,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 8,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 10,
+                "code": "C15",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 12,
+                "column": 4,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 12,
+                "column": 5,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 12,
+                "column": 6,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 4,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 5,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 16,
+                "column": 6,
+                "code": "C15",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 9,
+                "column": 5,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 6,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 8,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 10,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 12,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 14,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 16,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 10,
+                "column": 18,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 12,
+                "column": 7,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 12,
+                "column": 10,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 12,
+                "column": 14,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 12,
+                "column": 19,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 18,
+                "column": 6,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 18,
+                "column": 17,
+                "code": "H18",
+                "tags": [
+                  "pale"
+                ],
+                "actual": null,
+                "confidence": 0.97
+              },
+              {
+                "row": 20,
+                "column": 17,
+                "code": "A17",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 20,
+                "column": 19,
+                "code": "A17",
+                "tags": [
+                  "saturated"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 14,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 15,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 16,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 17,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 18,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              },
+              {
+                "row": 21,
+                "column": 19,
+                "code": "E10",
+                "tags": [
+                  "saturated",
+                  "watermark"
+                ],
+                "actual": "unmatched",
+                "confidence": 0
+              }
+            ]
+          }
+        }
+      ],
+      "performance": {
+        "classificationMs": [
+          203.80180200000018,
+          178.75088900000014,
+          178.92340899999977
+        ],
+        "medianMs": 178.92340899999977,
+        "retainedHeapDeltaBytes": 328984,
+        "peakProcessRssKiB": 124780,
+        "rasterBytes": 5417280
+      },
+      "retainedCells": 2500
+    }
+  }
+]
