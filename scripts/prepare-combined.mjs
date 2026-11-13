@@ -10,6 +10,7 @@ import assert from "node:assert/strict";
 import path from "node:path";
 export const V15 = "19a4cfbccc2eedcf70eab12db4512f6bc00ee57b";
 export const V20 = "86f58afd93bac3ea3bcdd3339254185681fab602";
+export const V211 = "91d7f25fd21f1323e2db52988bfdce4ee66e354b";
 export const root = path.resolve(import.meta.dirname, "..");
 export const build = path.join(root, ".combined");
 export const versions = [
@@ -25,6 +26,12 @@ export const versions = [
     base: "/pindou-preview/v2-a/",
     key: "pindou.preview.v20a.projects.v1",
   },
+  {
+    name: "v211",
+    sha: V211,
+    base: "/pindou-preview/v2-b1-1/",
+    key: "pindou.preview.v20b11.projects.v1",
+  },
 ];
 if (process.argv[1] === import.meta.filename) {
   mkdirSync(build, { recursive: true });
@@ -38,14 +45,15 @@ if (process.argv[1] === import.meta.filename) {
       maxBuffer: 50 * 1024 * 1024,
     });
     execFileSync("tar", ["-xf", "-", "-C", dest], { input: tar });
-    if (v.name === "v20") {
+    if (v.name !== "v15") {
+      const sourceKey =
+        v.name === "v211"
+          ? "pindou.preview.v20b1.projects.v1"
+          : "pindou.preview.v15.projects.v1";
       const storage = path.join(dest, "src/storage.ts");
       let s = readFileSync(storage, "utf8");
-      assert.equal(s.split("pindou.preview.v15.projects.v1").length, 2);
-      writeFileSync(
-        storage,
-        s.replace("pindou.preview.v15.projects.v1", v.key),
-      );
+      assert.equal(s.split(sourceKey).length, 2);
+      writeFileSync(storage, s.replace(sourceKey, v.key));
       const config = path.join(dest, "vite.preview.config.ts");
       s = readFileSync(config, "utf8");
       assert.equal(s.split('base: "/pindou-preview/"').length, 2);
@@ -65,11 +73,11 @@ if (process.argv[1] === import.meta.filename) {
           writeFileSync(
             p,
             readFileSync(p, "utf8")
-              .replaceAll("pindou.preview.v15.projects.v1", v.key)
+              .replaceAll(sourceKey, v.key)
               .replaceAll("/pindou-preview/", v.base)
               .replaceAll(
                 String.raw`\/pindou-preview\/`,
-                String.raw`\/pindou-preview\/v2-a\/`,
+                v.base.replaceAll("/", String.raw`\/`),
               ),
           );
         }
@@ -82,7 +90,11 @@ if (process.argv[1] === import.meta.filename) {
       if (/(?:localStorage|sessionStorage|Storage\.prototype)/.test(text))
         accesses.push(file);
       if (file !== "storage.ts")
-        for (const key of ["pindou.projects.v1", ...versions.map((o) => o.key)])
+        for (const key of [
+          "pindou.projects.v1",
+          "pindou.preview.v20b1.projects.v1",
+          ...versions.map((o) => o.key),
+        ])
           assert.ok(!text.includes(key), "Unexpected storage literal");
     }
     assert.deepEqual(accesses.sort(), ["main.tsx", "model.ts"]);

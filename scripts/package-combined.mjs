@@ -24,7 +24,7 @@ function files(dir, prefix = "") {
 const manifest = { versions: [] };
 for (const v of versions) {
   const source = path.join(build, v.name, "dist-preview"),
-    dest = v.name === "v15" ? site : path.join(site, "v2-a");
+    dest = path.join(site, v.base.slice("/pindou-preview/".length));
   assert.ok(
     readFileSync(path.join(source, "index.html"), "utf8").includes(
       v.base + "assets/",
@@ -35,10 +35,10 @@ for (const v of versions) {
   const record = {
     ...v,
     applicationOverrides:
-      v.name === "v20"
+      v.name !== "v15"
         ? [
-            "src/storage.ts: isolated V2 key",
-            "vite.preview.config.ts: /pindou-preview/v2-a/ base",
+            `src/storage.ts: isolated ${v.name} key`,
+            `vite.preview.config.ts: ${v.base} base`,
           ]
         : [],
     files: {},
@@ -54,6 +54,7 @@ for (const v of versions) {
   assert.ok(js.includes(v.key));
   for (const other of [
     "pindou.projects.v1",
+    "pindou.preview.v20b1.projects.v1",
     ...versions.filter((o) => o.key !== v.key).map((o) => o.key),
   ])
     assert.ok(
@@ -66,11 +67,30 @@ for (const v of versions) {
   );
   manifest.versions.push(record);
 }
+assert.equal(manifest.versions.length, 3);
+assert.deepEqual(
+  manifest.versions.map((v) => v.base),
+  ["/pindou-preview/", "/pindou-preview/v2-a/", "/pindou-preview/v2-b1-1/"],
+);
 assert.ok(manifest.versions.every((v) => Object.keys(v.files).length > 5));
+// Fail before upload if any approved application file changes or disappears.
+const approved = JSON.parse(
+  readFileSync(path.join(root, "scripts/approved-preview-hashes.json"), "utf8"),
+);
+for (const previous of approved.versions) {
+  const current = manifest.versions.find((v) => v.name === previous.name);
+  for (const field of ["sha", "base", "key"])
+    assert.equal(current[field], previous[field]);
+  assert.deepEqual(
+    current.files,
+    previous.files,
+    `${previous.name}: approved assets changed`,
+  );
+}
 writeFileSync(
   path.join(site, "deployment-manifest.json"),
   JSON.stringify(manifest, null, 2),
 );
 console.log(
-  "Combined artifact verified: both complete applications, pinned sample, isolated keys, file hashes.",
+  "Combined artifact verified: all three complete applications, pinned sample, isolated keys, file hashes.",
 );

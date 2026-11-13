@@ -1,0 +1,44 @@
+{
+  "versions": [
+    {
+      "name": "v15",
+      "sha": "19a4cfbccc2eedcf70eab12db4512f6bc00ee57b",
+      "base": "/pindou-preview/",
+      "key": "pindou.preview.v15.projects.v1",
+      "applicationOverrides": [],
+      "files": {
+        "assets/index-8BSfixWF.css": "00125d13a176b1cb7bce9ef3d6a8096af6c04fc924426355953a74aaab71da3e",
+        "assets/index-D-HSQeSi.js": "2a133abdb7702c3cac5cc76341477ad7e335f23f43f24dff9bd0dba630ef0ac2",
+        "assets/pixelify-sans-latin-500-normal-DzrO_s83.woff2": "15c4d0478df8d41269047418e6ab089ca870c3ce0a44e7272d5b9b35a23e0f02",
+        "assets/pixelify-sans-latin-700-normal-Bq5zIolO.woff2": "9bdebea930e01bd8edd4f184edd289a5f778c09338a6b528c2a4f7e8332ce84f",
+        "index.html": "a23ffdbaa56b6d149fb065670da0975142b2fe1079d7c776231b392567dee08c",
+        "licenses/Pixelify-Sans-OFL.txt": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3",
+        "samples/.gitkeep": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "samples/sample-pattern.jpg": "dd4adc3fd44257baf020725055e56371749d97259bf26f1c9ab08ef76be49a61",
+        "sprites/mushroom.svg": "9696584148323822dfb22549073e20457ab53314d2fa833076d93b132800be6e"
+      }
+    },
+    {
+      "name": "v20",
+      "sha": "86f58afd93bac3ea3bcdd3339254185681fab602",
+      "base": "/pindou-preview/v2-a/",
+      "key": "pindou.preview.v20a.projects.v1",
+      "applicationOverrides": [
+        "src/storage.ts: isolated V2 key",
+        "vite.preview.config.ts: /pindou-preview/v2-a/ base"
+      ],
+      "files": {
+        "assets/index-lqYsa0ab.js": "9da025ea4191c8c43c67183619765a5b2dbb77e594f629dc5166eed08c30f110",
+        "assets/index-xbShB7tM.css": "e47015a9580862c54295fb83a3db0a9174d0e658b469a23d8842a3471cf14fbc",
+        "assets/pixelify-sans-latin-500-normal-DzrO_s83.woff2": "15c4d0478df8d41269047418e6ab089ca870c3ce0a44e7272d5b9b35a23e0f02",
+        "assets/pixelify-sans-latin-700-normal-Bq5zIolO.woff2": "9bdebea930e01bd8edd4f184edd289a5f778c09338a6b528c2a4f7e8332ce84f",
+        "assets/recognition.worker-CcxR1id6.js": "964223d509bfd513ffcc812fcba14427b82b69776cbbb368cbd254395efe2de4",
+        "index.html": "8a00a765c59888fcda7793e36f695c90d6e756290318956fc552f26a78b4b329",
+        "licenses/Pixelify-Sans-OFL.txt": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3",
+        "samples/.gitkeep": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "samples/sample-pattern.jpg": "dd4adc3fd44257baf020725055e56371749d97259bf26f1c9ab08ef76be49a61",
+        "sprites/mushroom.svg": "9696584148323822dfb22549073e20457ab53314d2fa833076d93b132800be6e"
+      }
+    }
+  ]
+}
