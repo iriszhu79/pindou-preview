@@ -3,3 +3,9 @@ dist/
 *.tsbuildinfo
 
 dist-preview/
+
+# Original benchmark collections and generated runs stay local by default.
+tests/benchmark/images/*
+!tests/benchmark/images/.gitkeep
+!tests/benchmark/images/synthetic-complete.png
+tests/benchmark/reports/runs/

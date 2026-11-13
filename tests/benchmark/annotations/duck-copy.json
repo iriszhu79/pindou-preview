@@ -1,0 +1,1501 @@
+{
+  "schemaVersion": "1.0",
+  "patternId": "duck-copy",
+  "revision": 1,
+  "verification": {
+    "status": "unreviewed",
+    "reviewer": "Development annotation import",
+    "reviewerKind": "assistant",
+    "independent": false,
+    "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+  },
+  "grid": {
+    "dimensions": {
+      "value": {
+        "rows": 50,
+        "columns": 50
+      },
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    "crop": {
+      "value": {
+        "x": 81,
+        "y": 139,
+        "width": 904,
+        "height": 904
+      },
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    }
+  },
+  "palette": {
+    "completeness": "complete",
+    "verification": {
+      "status": "unreviewed",
+      "reviewer": "Development annotation import",
+      "reviewerKind": "assistant",
+      "independent": false,
+      "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+    },
+    "entries": [
+      {
+        "code": "H2",
+        "verification": {
+          "status": "unreviewed",
+          "reviewer": "Development annotation import",
+          "reviewerKind": "assistant",
+          "independent": false,
+          "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+        },
+        "quantity": {
+          "value": 70,
+          "verification": {
+            "status": "unreviewed",
+            "reviewer": "Development annotation import",
+            "reviewerKind": "assistant",
+            "independent": false,
+            "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+          }
+        },
+        "swatch": {
+          "value": [
+            254,
+            255,
+            249
+          ],
+          "verification": {
+            "status": "unreviewed",
+            "reviewer": "Development annotation import",
+            "reviewerKind": "assistant",
+            "independent": false,
+            "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+          }
+        }
+      },
+      {
+        "code": "A4",
+        "verification": {
+          "status": "unreviewed",
+          "reviewer": "Development annotation import",
+          "reviewerKind": "assistant",
+          "independent": false,
+          "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+        },
+        "quantity": {
+          "value": 44,
+          "verification": {
+            "status": "unreviewed",
+            "reviewer": "Development annotation import",
+            "reviewerKind": "assistant",
+            "independent": false,
+            "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+          }
+        },
+        "swatch": {
+          "value": [
+            253,
+            230,
+            78
+          ],
+          "verification": {
+            "status": "unreviewed",
+            "reviewer": "Development annotation import",
+            "reviewerKind": "assistant",
+            "independent": false,
+            "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+          }
+        }
+      },
+      {
+        "code": "A3",
+        "verification": {
+          "status": "unreviewed",
+          "reviewer": "Development annotation import",
+          "reviewerKind": "assistant",
+          "independent": false,
+          "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+        },
+        "quantity": {
+          "value": 1,
+          "verification": {
+            "status": "unreviewed",
+            "reviewer": "Development annotation import",
+            "reviewerKind": "assistant",
+            "independent": false,
+            "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+          }
+        },
+        "swatch": {
+          "value": [
+            246,
+            251,
+            160
+          ],
+          "verification": {
+            "status": "unreviewed",
+            "reviewer": "Development annotation import",
+            "reviewerKind": "assistant",
+            "independent": false,
+            "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+          }
+        }
+      },
+      {
+        "code": "H7",
+        "verification": {
+          "status": "unreviewed",
+          "reviewer": "Development annotation import",
+          "reviewerKind": "assistant",
+          "independent": false,
+          "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+        },
+        "quantity": {
+          "value": 1,
+          "verification": {
+            "status": "unreviewed",
+            "reviewer": "Development annotation import",
+            "reviewerKind": "assistant",
+            "independent": false,
+            "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+          }
+        },
+        "swatch": {
+          "value": [
+            1,
+            1,
+            1
+          ],
+          "verification": {
+            "status": "unreviewed",
+            "reviewer": "Development annotation import",
+            "reviewerKind": "assistant",
+            "independent": false,
+            "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+          }
+        }
+      },
+      {
+        "code": "A7",
+        "verification": {
+          "status": "unreviewed",
+          "reviewer": "Development annotation import",
+          "reviewerKind": "assistant",
+          "independent": false,
+          "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+        },
+        "quantity": {
+          "value": 2,
+          "verification": {
+            "status": "unreviewed",
+            "reviewer": "Development annotation import",
+            "reviewerKind": "assistant",
+            "independent": false,
+            "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+          }
+        },
+        "swatch": {
+          "value": [
+            248,
+            126,
+            36
+          ],
+          "verification": {
+            "status": "unreviewed",
+            "reviewer": "Development annotation import",
+            "reviewerKind": "assistant",
+            "independent": false,
+            "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+          }
+        }
+      },
+      {
+        "code": "C3",
+        "verification": {
+          "status": "unreviewed",
+          "reviewer": "Development annotation import",
+          "reviewerKind": "assistant",
+          "independent": false,
+          "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+        },
+        "quantity": {
+          "value": 16,
+          "verification": {
+            "status": "unreviewed",
+            "reviewer": "Development annotation import",
+            "reviewerKind": "assistant",
+            "independent": false,
+            "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+          }
+        },
+        "swatch": {
+          "value": [
+            157,
+            225,
+            246
+          ],
+          "verification": {
+            "status": "unreviewed",
+            "reviewer": "Development annotation import",
+            "reviewerKind": "assistant",
+            "independent": false,
+            "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+          }
+        }
+      },
+      {
+        "code": "C9",
+        "verification": {
+          "status": "unreviewed",
+          "reviewer": "Development annotation import",
+          "reviewerKind": "assistant",
+          "independent": false,
+          "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+        },
+        "quantity": {
+          "value": 4,
+          "verification": {
+            "status": "unreviewed",
+            "reviewer": "Development annotation import",
+            "reviewerKind": "assistant",
+            "independent": false,
+            "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+          }
+        },
+        "swatch": {
+          "value": [
+            46,
+            70,
+            200
+          ],
+          "verification": {
+            "status": "unreviewed",
+            "reviewer": "Development annotation import",
+            "reviewerKind": "assistant",
+            "independent": false,
+            "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+          }
+        }
+      },
+      {
+        "code": "A5",
+        "verification": {
+          "status": "unreviewed",
+          "reviewer": "Development annotation import",
+          "reviewerKind": "assistant",
+          "independent": false,
+          "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+        },
+        "quantity": {
+          "value": 1,
+          "verification": {
+            "status": "unreviewed",
+            "reviewer": "Development annotation import",
+            "reviewerKind": "assistant",
+            "independent": false,
+            "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+          }
+        },
+        "swatch": {
+          "value": [
+            241,
+            213,
+            55
+          ],
+          "verification": {
+            "status": "unreviewed",
+            "reviewer": "Development annotation import",
+            "reviewerKind": "assistant",
+            "independent": false,
+            "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+          }
+        }
+      }
+    ]
+  },
+  "mappingPolicy": {
+    "value": {
+      "maxDistance": 0.06,
+      "minMargin": 0.005
+    },
+    "verification": {
+      "status": "unreviewed",
+      "reviewer": "Development annotation import",
+      "reviewerKind": "assistant",
+      "independent": false,
+      "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+    }
+  },
+  "cellCoverage": "partial",
+  "cells": [
+    {
+      "row": 14,
+      "column": 19,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 14,
+      "column": 20,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 14,
+      "column": 24,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 14,
+      "column": 26,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 14,
+      "column": 30,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 14,
+      "column": 34,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 15,
+      "column": 21,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white, shadow",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 15,
+      "column": 25,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white, shadow",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 15,
+      "column": 27,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white, shadow",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 15,
+      "column": 28,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white, shadow",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 18,
+      "column": 26,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white, shadow",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 18,
+      "column": 27,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white, shadow",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 18,
+      "column": 28,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white, shadow",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 19,
+      "column": 29,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 20,
+      "column": 20,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white, shadow",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 20,
+      "column": 21,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white, shadow",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 20,
+      "column": 28,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white, shadow",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 24,
+      "column": 0,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white, compression",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 25,
+      "column": 31,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white, hole",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 25,
+      "column": 32,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white, hole",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 25,
+      "column": 33,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white, hole",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 26,
+      "column": 31,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white, hole",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 26,
+      "column": 32,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white, hole",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 26,
+      "column": 33,
+      "occupancy": "empty",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "empty-white, hole",
+      "notes": "Imported development annotation; NOT independent human-certified truth."
+    },
+    {
+      "row": 15,
+      "column": 26,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "occupied-white, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "H2",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 16,
+      "column": 25,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "occupied-white, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "H2",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 16,
+      "column": 27,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "occupied-white, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "H2",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 17,
+      "column": 26,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "occupied-white, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "H2",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 23,
+      "column": 20,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "occupied-white, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "H2",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 23,
+      "column": 23,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "occupied-white, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "H2",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 23,
+      "column": 25,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "occupied-white, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "H2",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 23,
+      "column": 28,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "occupied-white, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "H2",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 23,
+      "column": 30,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "occupied-white, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "H2",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 27,
+      "column": 21,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "occupied-white, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "H2",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 27,
+      "column": 24,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "occupied-white, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "H2",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 27,
+      "column": 27,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "occupied-white, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "H2",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 27,
+      "column": 30,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "occupied-white, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "H2",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 27,
+      "column": 34,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "occupied-white, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "H2",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 16,
+      "column": 22,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "saturated, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "A4",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 16,
+      "column": 23,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "saturated, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "A4",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 16,
+      "column": 24,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "saturated, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "A4",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 18,
+      "column": 21,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "saturated, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "A4",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 18,
+      "column": 22,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "saturated, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "A4",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 18,
+      "column": 24,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "saturated, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "A4",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 18,
+      "column": 25,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "saturated, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "A4",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 16,
+      "column": 26,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "pale, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "A3",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 18,
+      "column": 23,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "dark, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "H7",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 19,
+      "column": 20,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "saturated, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "A7",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 19,
+      "column": 21,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "saturated, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "A7",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 24,
+      "column": 20,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "C3",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 24,
+      "column": 24,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "C3",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 24,
+      "column": 28,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "C3",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 24,
+      "column": 30,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "C3",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 25,
+      "column": 21,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "C3",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 25,
+      "column": 25,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "C3",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 25,
+      "column": 29,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "C3",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 29,
+      "column": 28,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "dark, saturated, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "C9",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 30,
+      "column": 27,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "dark, saturated, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "C9",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 30,
+      "column": 29,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "dark, saturated, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "C9",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 31,
+      "column": 28,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "dark, saturated, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "C9",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 30,
+      "column": 28,
+      "occupancy": "occupied",
+      "verification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      },
+      "evidence": "saturated, text",
+      "notes": "Imported development annotation; NOT independent human-certified truth.",
+      "colorCode": "A5",
+      "colorVerification": {
+        "status": "unreviewed",
+        "reviewer": "Development annotation import",
+        "reviewerKind": "assistant",
+        "independent": false,
+        "evidence": "Development-era annotation/reference only; awaiting independent human review of these exact image bytes."
+      }
+    },
+    {
+      "row": 40,
+      "column": 40,
+      "occupancy": "unknown",
+      "verification": {
+        "status": "unreviewed"
+      },
+      "notes": "Explicitly unknown pending human review; no empty/occupied label has been supplied for this address."
+    }
+  ]
+}

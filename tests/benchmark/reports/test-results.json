@@ -1,0 +1,28 @@
+{
+  "baseCommit": "91d7f25fd21f1323e2db52988bfdce4ee66e354b",
+  "branch": "feat/v2-benchmark-infrastructure",
+  "algorithmFilesByteIdenticalToBase": {
+    "src/recognition.ts": "6a5bb758927d8b0a2e1182c407f83eaa78fd087f57e9b864f563b6c3102a5dca",
+    "src/gridDetection.ts": "5f724d6eb9b528d105cb74426e4d0502eaafa0ff666ca0a85fd6b1b9f7533493",
+    "src/cellClassification.ts": "6dbca8781ba8993f842fb8a1b710ca152cdab74cbd2f7916dddf08d3a8d96222"
+  },
+  "checks": {
+    "npm ci": "passed",
+    "npm test": "44 passed, 0 failed",
+    "npm run benchmark:test": "22 passed, 0 failed",
+    "npm run benchmark:check": "passed",
+    "npm run benchmark:validate": "4 samples, 0 errors; expected provenance/partial-truth warnings",
+    "npm run benchmark:run": "4 fixtures, 8 mode evaluations, no recognition failures",
+    "20-image ingestion": "20 distinct generated PNG files validated; not a 20-real-image accuracy claim",
+    "npm run build": "passed",
+    "npm run build:preview": "passed",
+    "npm run test:browser": "all 6 existing Workspace suites passed",
+    "npm run test:recognition": "five viewports plus upload/manual recovery/export/import/persistence passed",
+    "npm run test:crop": "four viewport touch/mouse/zoom/reset/stale-gating cases passed",
+    "npm run test:preview": "6 passed",
+    "npm run test:round2": "7 passed",
+    "HTML visual QA": "1440x900 synthetic and real-unreviewed pages: no overflow, no page errors, no failed image requests"
+  },
+  "deployed": false,
+  "pushed": false
+}

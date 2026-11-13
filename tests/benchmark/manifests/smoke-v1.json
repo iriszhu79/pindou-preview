@@ -1,0 +1,194 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "pindou-recognition-smoke",
+  "version": "1.0.0",
+  "description": "Infrastructure smoke dataset: three development chart copies with unverified annotations, plus one explicitly synthetic truth fixture. No human-reviewed held-out dataset is included.",
+  "samples": [
+    {
+      "id": "flying-pig",
+      "familyId": "mard-flying-pig",
+      "kind": "real",
+      "split": "development",
+      "splitHistory": [
+        {
+          "split": "development",
+          "at": "2026-11-13T07:37:03.354107Z",
+          "reason": "Already used in development; never present these fixtures as a held-out evaluation."
+        }
+      ],
+      "image": {
+        "file": "public/samples/sample-pattern.jpg",
+        "width": 1256,
+        "height": 2760,
+        "sha256": "dd4adc3fd44257baf020725055e56371749d97259bf26f1c9ab08ef76be49a61",
+        "provenance": {
+          "status": "repository-screenshot",
+          "source": "repository screenshot; unchanged original project asset",
+          "transformations": [],
+          "byteIdentity": "not-verified"
+        }
+      },
+      "chart": {
+        "brand": "MARD",
+        "type": "printed square-grid chart"
+      },
+      "annotation": "tests/benchmark/annotations/flying-pig.json",
+      "manualRecovery": {
+        "geometry": {
+          "crop": {
+            "x": 34,
+            "y": 592,
+            "width": 1188,
+            "height": 1516
+          },
+          "rows": 51,
+          "columns": 40
+        },
+        "source": "Historical development manual rectangle, not verified grid truth; this is an explicitly supplied recovery input."
+      }
+    },
+    {
+      "id": "duck-copy",
+      "familyId": "mard-duck",
+      "kind": "real",
+      "split": "development",
+      "splitHistory": [
+        {
+          "split": "development",
+          "at": "2026-11-13T07:37:03.354107Z",
+          "reason": "Already used in development; never present these fixtures as a held-out evaluation."
+        }
+      ],
+      "image": {
+        "file": "tests/fixtures/mard/duck_chat_copy.png",
+        "width": 1080,
+        "height": 1254,
+        "sha256": "6bb5475d098913e6086709f1d0e9039b2d2cf2a66a16c4b0e1951e87da654273",
+        "provenance": {
+          "status": "conversation-copy",
+          "source": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7250.jpeg 1440x1672",
+          "transformations": [
+            "Conversation-preserved copy; exact transformation chain is unknown"
+          ],
+          "byteIdentity": "not-verified"
+        },
+        "original": {
+          "width": 1440,
+          "height": 1672,
+          "sha256": null
+        }
+      },
+      "chart": {
+        "brand": "MARD",
+        "type": "printed square-grid chart"
+      },
+      "annotation": "tests/benchmark/annotations/duck-copy.json",
+      "manualRecovery": {
+        "geometry": {
+          "crop": {
+            "x": 81,
+            "y": 139,
+            "width": 904,
+            "height": 904
+          },
+          "rows": 50,
+          "columns": 50
+        },
+        "source": "Historical development manual rectangle, not verified grid truth; this is an explicitly supplied recovery input."
+      }
+    },
+    {
+      "id": "teapot-copy",
+      "familyId": "mard-teapot",
+      "kind": "real",
+      "split": "development",
+      "splitHistory": [
+        {
+          "split": "development",
+          "at": "2026-11-13T07:37:03.354107Z",
+          "reason": "Already used in development; never present these fixtures as a held-out evaluation."
+        }
+      ],
+      "image": {
+        "file": "tests/fixtures/mard/teapot_chat_copy.png",
+        "width": 1080,
+        "height": 1254,
+        "sha256": "9f0b21e976ad516b51b506f3f7fb01f61ad15e9530738ed40838391a2bb9d7af",
+        "provenance": {
+          "status": "conversation-copy",
+          "source": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7252.jpeg 1440x1672",
+          "transformations": [
+            "Conversation-preserved copy; exact transformation chain is unknown"
+          ],
+          "byteIdentity": "not-verified"
+        },
+        "original": {
+          "width": 1440,
+          "height": 1672,
+          "sha256": null
+        }
+      },
+      "chart": {
+        "brand": "MARD",
+        "type": "printed square-grid chart"
+      },
+      "annotation": "tests/benchmark/annotations/teapot-copy.json",
+      "manualRecovery": {
+        "geometry": {
+          "crop": {
+            "x": 81,
+            "y": 139,
+            "width": 904,
+            "height": 904
+          },
+          "rows": 50,
+          "columns": 50
+        },
+        "source": "Historical development manual rectangle, not verified grid truth; this is an explicitly supplied recovery input."
+      }
+    },
+    {
+      "id": "synthetic-complete",
+      "familyId": "synthetic-complete",
+      "kind": "synthetic",
+      "split": "development",
+      "splitHistory": [
+        {
+          "split": "development",
+          "at": "2026-11-13T07:37:03.354107Z",
+          "reason": "Infrastructure-only generator fixture; never real-image accuracy evidence."
+        }
+      ],
+      "image": {
+        "file": "tests/benchmark/images/synthetic-complete.png",
+        "width": 352,
+        "height": 368,
+        "sha256": "63b28c7bf000a06a4829837b4c113376e378d200dc154f6a07211c597450a858",
+        "provenance": {
+          "status": "synthetic",
+          "source": "tests/benchmark/make-synthetic.mjs; existing syntheticChart generator",
+          "transformations": [],
+          "byteIdentity": "not-applicable"
+        }
+      },
+      "chart": {
+        "brand": null,
+        "type": "synthetic complete ground truth"
+      },
+      "annotation": "tests/benchmark/annotations/synthetic-complete.json",
+      "manualRecovery": {
+        "geometry": {
+          "rows": 20,
+          "columns": 20,
+          "crop": {
+            "x": 16,
+            "y": 24,
+            "width": 320,
+            "height": 320
+          }
+        },
+        "source": "Generator geometry, specified independently before rendering."
+      }
+    }
+  ]
+}

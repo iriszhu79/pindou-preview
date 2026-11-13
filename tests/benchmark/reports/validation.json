@@ -1,0 +1,53 @@
+{
+  "datasetId": "pindou-recognition-smoke",
+  "samples": 4,
+  "errors": 0,
+  "warnings": 9,
+  "issues": [
+    {
+      "level": "warning",
+      "at": "flying-pig",
+      "message": "Original byte identity is unverified; available-file hash does not certify the original upload"
+    },
+    {
+      "level": "warning",
+      "at": "flying-pig",
+      "message": "Partial cell annotations are valid; missing cells are not errors or successes"
+    },
+    {
+      "level": "warning",
+      "at": "flying-pig",
+      "message": "No independently verified occupancy labels: cell metrics will be Not evaluated"
+    },
+    {
+      "level": "warning",
+      "at": "duck-copy",
+      "message": "Original byte identity is unverified; available-file hash does not certify the original upload"
+    },
+    {
+      "level": "warning",
+      "at": "duck-copy",
+      "message": "Partial cell annotations are valid; missing cells are not errors or successes"
+    },
+    {
+      "level": "warning",
+      "at": "duck-copy",
+      "message": "No independently verified occupancy labels: cell metrics will be Not evaluated"
+    },
+    {
+      "level": "warning",
+      "at": "teapot-copy",
+      "message": "Original byte identity is unverified; available-file hash does not certify the original upload"
+    },
+    {
+      "level": "warning",
+      "at": "teapot-copy",
+      "message": "Partial cell annotations are valid; missing cells are not errors or successes"
+    },
+    {
+      "level": "warning",
+      "at": "teapot-copy",
+      "message": "No independently verified occupancy labels: cell metrics will be Not evaluated"
+    }
+  ]
+}

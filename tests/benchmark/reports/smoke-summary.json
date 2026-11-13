@@ -1,0 +1,813 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2026-11-13T08-00-03.521Z-db4cb3d0",
+  "dataset": {
+    "datasetId": "pindou-recognition-smoke",
+    "version": "1.0.0",
+    "manifestHash": "c6b26e533e5ad44931babc5c5ade884e230074684cc2c9ea4ae86ad3390b3543",
+    "sampleCount": 4,
+    "evaluatedSampleIds": [
+      "flying-pig",
+      "duck-copy",
+      "teapot-copy",
+      "synthetic-complete"
+    ],
+    "previousManifestHash": null
+  },
+  "git": {
+    "commit": "91d7f25fd21f1323e2db52988bfdce4ee66e354b",
+    "dirty": true
+  },
+  "codeHashes": {
+    "src/recognition.ts": "6a5bb758927d8b0a2e1182c407f83eaa78fd087f57e9b864f563b6c3102a5dca",
+    "src/gridDetection.ts": "5f724d6eb9b528d105cb74426e4d0502eaafa0ff666ca0a85fd6b1b9f7533493",
+    "src/cellClassification.ts": "6dbca8781ba8993f842fb8a1b710ca152cdab74cbd2f7916dddf08d3a8d96222"
+  },
+  "harnessHashes": {
+    "cli.mjs": "13203822507e147c85aaa919c2104b5aeddfb56a89b75b23af483c1e34954239",
+    "schema.json": "b09e48349cf59b8ad09db1fb5bcd927e0b2c7d68c8dc0e3ba7b45deba85987cf",
+    "types.ts": "48d769bcbb9102411fdbabb9e8a1f4d9bb793829a899cd3779f40c5993652c97",
+    "metrics.ts": "eed540953bdb8ae41782df1e540aa92db92db1391c1c8afe36a156dffc1e1f36",
+    "diagnostics.ts": "ab3b182ade2839419a4e05f41444e8fa4a92027399178e2fdca49da84f1b716f",
+    "validate.mjs": "be3a9d55fef90154c523a91951216e702ad9afed0cb507928173958d9e5d4462",
+    "run.mjs": "b0dba444b958265c89d0e25dd126d836d3633ddcae7b493afdd72d2f0b1c8ca9",
+    "report.mjs": "9d81c5afc22d972b1bb1f702327f6a2d18ab5aa80552e17dadd2c700f25bc1ae"
+  },
+  "coverage": {
+    "real/development/automatic": {
+      "samples": 3,
+      "failures": 0,
+      "occupancyEvaluated": 0,
+      "colorEvaluated": 0,
+      "dimensionsEvaluated": 0
+    },
+    "real/development/manual": {
+      "samples": 3,
+      "failures": 0,
+      "occupancyEvaluated": 0,
+      "colorEvaluated": 0,
+      "dimensionsEvaluated": 0
+    },
+    "synthetic/development/automatic": {
+      "samples": 1,
+      "failures": 0,
+      "occupancyEvaluated": 1,
+      "colorEvaluated": 1,
+      "dimensionsEvaluated": 1
+    },
+    "synthetic/development/manual": {
+      "samples": 1,
+      "failures": 0,
+      "occupancyEvaluated": 1,
+      "colorEvaluated": 1,
+      "dimensionsEvaluated": 1
+    }
+  },
+  "provenanceNote": "Real smoke references are unreviewed. Only synthetic labels are eligible. No real cell accuracy is claimed.",
+  "samples": [
+    {
+      "id": "flying-pig",
+      "kind": "real",
+      "split": "development",
+      "image": {
+        "file": "public/samples/sample-pattern.jpg",
+        "width": 1256,
+        "height": 2760,
+        "sha256": "dd4adc3fd44257baf020725055e56371749d97259bf26f1c9ab08ef76be49a61",
+        "provenance": {
+          "status": "repository-screenshot",
+          "source": "repository screenshot; unchanged original project asset",
+          "transformations": [],
+          "byteIdentity": "not-verified"
+        }
+      },
+      "annotationHash": "adb1cabdaadb194e6482c2cbb7864320723a519c4f87ecab069b107ca511c9c6",
+      "modes": [
+        {
+          "mode": "automatic",
+          "recognitionMs": 2420.8325829999994,
+          "failure": null,
+          "observed": {
+            "rows": 51,
+            "columns": 40,
+            "beads": 1179,
+            "groups": 5
+          },
+          "metrics": {
+            "dimensions": {
+              "status": "not-evaluated",
+              "reason": "Grid dimensions are not independently verified"
+            },
+            "crop": {
+              "status": "not-evaluated",
+              "reason": "Verified reference crop or recognition result is unavailable"
+            },
+            "occupancy": {
+              "status": "not-evaluated",
+              "reason": "Reference grid dimensions are not independently verified"
+            },
+            "occupiedColor": {
+              "status": "not-evaluated",
+              "reason": "Reference grid dimensions are not independently verified"
+            },
+            "codeMapping": {
+              "status": "not-evaluated",
+              "reason": "Existing recognizer emits temporary group codes; official-code prediction is not implemented"
+            },
+            "paletteGroups": {
+              "status": "not-evaluated",
+              "reason": "Verified complete palette inventory or prediction is unavailable"
+            },
+            "beadCount": {
+              "status": "not-evaluated",
+              "reason": "Verified complete palette quantities or prediction is unavailable"
+            },
+            "perCodeQuantities": {
+              "status": "not-evaluated",
+              "reason": "Complete verified quantities and unambiguous color mapping for every predicted group are required"
+            },
+            "paletteMapping": {
+              "eligible": false,
+              "reason": "A complete independently verified palette, reference swatches and mapping policy are required",
+              "groups": []
+            },
+            "uncertainty": {
+              "criterion": "Existing review convention: uncorrected model confidence < 0.7; not a calibrated probability",
+              "total": 61,
+              "incorrectlyConfident": {
+                "status": "not-evaluated",
+                "reason": "No aligned independently verified labels"
+              },
+              "missingOrUnverifiedTruth": 2040
+            }
+          }
+        },
+        {
+          "mode": "manual",
+          "recognitionMs": 529.5280510000002,
+          "failure": null,
+          "observed": {
+            "rows": 51,
+            "columns": 40,
+            "beads": 1179,
+            "groups": 5
+          },
+          "metrics": {
+            "dimensions": {
+              "status": "not-evaluated",
+              "reason": "Grid dimensions are not independently verified"
+            },
+            "crop": {
+              "status": "not-evaluated",
+              "reason": "Verified reference crop or recognition result is unavailable"
+            },
+            "occupancy": {
+              "status": "not-evaluated",
+              "reason": "Reference grid dimensions are not independently verified"
+            },
+            "occupiedColor": {
+              "status": "not-evaluated",
+              "reason": "Reference grid dimensions are not independently verified"
+            },
+            "codeMapping": {
+              "status": "not-evaluated",
+              "reason": "Existing recognizer emits temporary group codes; official-code prediction is not implemented"
+            },
+            "paletteGroups": {
+              "status": "not-evaluated",
+              "reason": "Verified complete palette inventory or prediction is unavailable"
+            },
+            "beadCount": {
+              "status": "not-evaluated",
+              "reason": "Verified complete palette quantities or prediction is unavailable"
+            },
+            "perCodeQuantities": {
+              "status": "not-evaluated",
+              "reason": "Complete verified quantities and unambiguous color mapping for every predicted group are required"
+            },
+            "paletteMapping": {
+              "eligible": false,
+              "reason": "A complete independently verified palette, reference swatches and mapping policy are required",
+              "groups": []
+            },
+            "uncertainty": {
+              "criterion": "Existing review convention: uncorrected model confidence < 0.7; not a calibrated probability",
+              "total": 61,
+              "incorrectlyConfident": {
+                "status": "not-evaluated",
+                "reason": "No aligned independently verified labels"
+              },
+              "missingOrUnverifiedTruth": 2040
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "duck-copy",
+      "kind": "real",
+      "split": "development",
+      "image": {
+        "file": "tests/fixtures/mard/duck_chat_copy.png",
+        "width": 1080,
+        "height": 1254,
+        "sha256": "6bb5475d098913e6086709f1d0e9039b2d2cf2a66a16c4b0e1951e87da654273",
+        "provenance": {
+          "status": "conversation-copy",
+          "source": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7250.jpeg 1440x1672",
+          "transformations": [
+            "Conversation-preserved copy; exact transformation chain is unknown"
+          ],
+          "byteIdentity": "not-verified"
+        },
+        "original": {
+          "width": 1440,
+          "height": 1672,
+          "sha256": null
+        }
+      },
+      "annotationHash": "ebeb082634ee14dd170677b53fbb4d347141d964dc919553f8689b2ead4694e4",
+      "modes": [
+        {
+          "mode": "automatic",
+          "recognitionMs": 834.2120829999994,
+          "failure": null,
+          "observed": {
+            "rows": 50,
+            "columns": 50,
+            "beads": 139,
+            "groups": 8
+          },
+          "metrics": {
+            "dimensions": {
+              "status": "not-evaluated",
+              "reason": "Grid dimensions are not independently verified"
+            },
+            "crop": {
+              "status": "not-evaluated",
+              "reason": "Verified reference crop or recognition result is unavailable"
+            },
+            "occupancy": {
+              "status": "not-evaluated",
+              "reason": "Reference grid dimensions are not independently verified"
+            },
+            "occupiedColor": {
+              "status": "not-evaluated",
+              "reason": "Reference grid dimensions are not independently verified"
+            },
+            "codeMapping": {
+              "status": "not-evaluated",
+              "reason": "Existing recognizer emits temporary group codes; official-code prediction is not implemented"
+            },
+            "paletteGroups": {
+              "status": "not-evaluated",
+              "reason": "Verified complete palette inventory or prediction is unavailable"
+            },
+            "beadCount": {
+              "status": "not-evaluated",
+              "reason": "Verified complete palette quantities or prediction is unavailable"
+            },
+            "perCodeQuantities": {
+              "status": "not-evaluated",
+              "reason": "Complete verified quantities and unambiguous color mapping for every predicted group are required"
+            },
+            "paletteMapping": {
+              "eligible": false,
+              "reason": "A complete independently verified palette, reference swatches and mapping policy are required",
+              "groups": []
+            },
+            "uncertainty": {
+              "criterion": "Existing review convention: uncorrected model confidence < 0.7; not a calibrated probability",
+              "total": 79,
+              "incorrectlyConfident": {
+                "status": "not-evaluated",
+                "reason": "No aligned independently verified labels"
+              },
+              "missingOrUnverifiedTruth": 2500
+            }
+          }
+        },
+        {
+          "mode": "manual",
+          "recognitionMs": 272.20802599999934,
+          "failure": null,
+          "observed": {
+            "rows": 50,
+            "columns": 50,
+            "beads": 139,
+            "groups": 8
+          },
+          "metrics": {
+            "dimensions": {
+              "status": "not-evaluated",
+              "reason": "Grid dimensions are not independently verified"
+            },
+            "crop": {
+              "status": "not-evaluated",
+              "reason": "Verified reference crop or recognition result is unavailable"
+            },
+            "occupancy": {
+              "status": "not-evaluated",
+              "reason": "Reference grid dimensions are not independently verified"
+            },
+            "occupiedColor": {
+              "status": "not-evaluated",
+              "reason": "Reference grid dimensions are not independently verified"
+            },
+            "codeMapping": {
+              "status": "not-evaluated",
+              "reason": "Existing recognizer emits temporary group codes; official-code prediction is not implemented"
+            },
+            "paletteGroups": {
+              "status": "not-evaluated",
+              "reason": "Verified complete palette inventory or prediction is unavailable"
+            },
+            "beadCount": {
+              "status": "not-evaluated",
+              "reason": "Verified complete palette quantities or prediction is unavailable"
+            },
+            "perCodeQuantities": {
+              "status": "not-evaluated",
+              "reason": "Complete verified quantities and unambiguous color mapping for every predicted group are required"
+            },
+            "paletteMapping": {
+              "eligible": false,
+              "reason": "A complete independently verified palette, reference swatches and mapping policy are required",
+              "groups": []
+            },
+            "uncertainty": {
+              "criterion": "Existing review convention: uncorrected model confidence < 0.7; not a calibrated probability",
+              "total": 80,
+              "incorrectlyConfident": {
+                "status": "not-evaluated",
+                "reason": "No aligned independently verified labels"
+              },
+              "missingOrUnverifiedTruth": 2500
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "teapot-copy",
+      "kind": "real",
+      "split": "development",
+      "image": {
+        "file": "tests/fixtures/mard/teapot_chat_copy.png",
+        "width": 1080,
+        "height": 1254,
+        "sha256": "9f0b21e976ad516b51b506f3f7fb01f61ad15e9530738ed40838391a2bb9d7af",
+        "provenance": {
+          "status": "conversation-copy",
+          "source": "conversation-preserved 1080x1254 copy; NOT confirmed identical to native IMG_7252.jpeg 1440x1672",
+          "transformations": [
+            "Conversation-preserved copy; exact transformation chain is unknown"
+          ],
+          "byteIdentity": "not-verified"
+        },
+        "original": {
+          "width": 1440,
+          "height": 1672,
+          "sha256": null
+        }
+      },
+      "annotationHash": "441afc43995aa6d44227d8abd1254f0321957b1a875e3ba1876d5f7958a78aec",
+      "modes": [
+        {
+          "mode": "automatic",
+          "recognitionMs": 635.0002390000009,
+          "failure": null,
+          "observed": {
+            "rows": 50,
+            "columns": 50,
+            "beads": 1333,
+            "groups": 6
+          },
+          "metrics": {
+            "dimensions": {
+              "status": "not-evaluated",
+              "reason": "Grid dimensions are not independently verified"
+            },
+            "crop": {
+              "status": "not-evaluated",
+              "reason": "Verified reference crop or recognition result is unavailable"
+            },
+            "occupancy": {
+              "status": "not-evaluated",
+              "reason": "Reference grid dimensions are not independently verified"
+            },
+            "occupiedColor": {
+              "status": "not-evaluated",
+              "reason": "Reference grid dimensions are not independently verified"
+            },
+            "codeMapping": {
+              "status": "not-evaluated",
+              "reason": "Existing recognizer emits temporary group codes; official-code prediction is not implemented"
+            },
+            "paletteGroups": {
+              "status": "not-evaluated",
+              "reason": "Verified complete palette inventory or prediction is unavailable"
+            },
+            "beadCount": {
+              "status": "not-evaluated",
+              "reason": "Verified complete palette quantities or prediction is unavailable"
+            },
+            "perCodeQuantities": {
+              "status": "not-evaluated",
+              "reason": "Complete verified quantities and unambiguous color mapping for every predicted group are required"
+            },
+            "paletteMapping": {
+              "eligible": false,
+              "reason": "A complete independently verified palette, reference swatches and mapping policy are required",
+              "groups": []
+            },
+            "uncertainty": {
+              "criterion": "Existing review convention: uncorrected model confidence < 0.7; not a calibrated probability",
+              "total": 16,
+              "incorrectlyConfident": {
+                "status": "not-evaluated",
+                "reason": "No aligned independently verified labels"
+              },
+              "missingOrUnverifiedTruth": 2500
+            }
+          }
+        },
+        {
+          "mode": "manual",
+          "recognitionMs": 267.2196320000003,
+          "failure": null,
+          "observed": {
+            "rows": 50,
+            "columns": 50,
+            "beads": 1333,
+            "groups": 6
+          },
+          "metrics": {
+            "dimensions": {
+              "status": "not-evaluated",
+              "reason": "Grid dimensions are not independently verified"
+            },
+            "crop": {
+              "status": "not-evaluated",
+              "reason": "Verified reference crop or recognition result is unavailable"
+            },
+            "occupancy": {
+              "status": "not-evaluated",
+              "reason": "Reference grid dimensions are not independently verified"
+            },
+            "occupiedColor": {
+              "status": "not-evaluated",
+              "reason": "Reference grid dimensions are not independently verified"
+            },
+            "codeMapping": {
+              "status": "not-evaluated",
+              "reason": "Existing recognizer emits temporary group codes; official-code prediction is not implemented"
+            },
+            "paletteGroups": {
+              "status": "not-evaluated",
+              "reason": "Verified complete palette inventory or prediction is unavailable"
+            },
+            "beadCount": {
+              "status": "not-evaluated",
+              "reason": "Verified complete palette quantities or prediction is unavailable"
+            },
+            "perCodeQuantities": {
+              "status": "not-evaluated",
+              "reason": "Complete verified quantities and unambiguous color mapping for every predicted group are required"
+            },
+            "paletteMapping": {
+              "eligible": false,
+              "reason": "A complete independently verified palette, reference swatches and mapping policy are required",
+              "groups": []
+            },
+            "uncertainty": {
+              "criterion": "Existing review convention: uncorrected model confidence < 0.7; not a calibrated probability",
+              "total": 16,
+              "incorrectlyConfident": {
+                "status": "not-evaluated",
+                "reason": "No aligned independently verified labels"
+              },
+              "missingOrUnverifiedTruth": 2500
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "synthetic-complete",
+      "kind": "synthetic",
+      "split": "development",
+      "image": {
+        "file": "tests/benchmark/images/synthetic-complete.png",
+        "width": 352,
+        "height": 368,
+        "sha256": "63b28c7bf000a06a4829837b4c113376e378d200dc154f6a07211c597450a858",
+        "provenance": {
+          "status": "synthetic",
+          "source": "tests/benchmark/make-synthetic.mjs; existing syntheticChart generator",
+          "transformations": [],
+          "byteIdentity": "not-applicable"
+        }
+      },
+      "annotationHash": "a2d10ed4511ad7ca7b87bed9d92b7c8e2db973c3456934dd9be6ff7041a34509",
+      "modes": [
+        {
+          "mode": "automatic",
+          "recognitionMs": 118.61186300000008,
+          "failure": null,
+          "observed": {
+            "rows": 20,
+            "columns": 20,
+            "beads": 278,
+            "groups": 4
+          },
+          "metrics": {
+            "dimensions": {
+              "status": "evaluated",
+              "value": {
+                "expected": {
+                  "rows": 20,
+                  "columns": 20
+                },
+                "actual": {
+                  "rows": 20,
+                  "columns": 20
+                },
+                "correct": true
+              }
+            },
+            "crop": {
+              "status": "evaluated",
+              "value": {
+                "iou": 1,
+                "referenceCoverage": 1,
+                "edgeRMSErrorPx": 0,
+                "maxEdgeErrorPx": 0
+              }
+            },
+            "occupancy": {
+              "status": "evaluated",
+              "value": {
+                "tp": 278,
+                "fp": 0,
+                "fn": 0,
+                "tn": 122,
+                "precision": 1,
+                "recall": 1
+              },
+              "denominator": 400
+            },
+            "occupiedColor": {
+              "status": "evaluated",
+              "value": {
+                "correct": 278,
+                "total": 278,
+                "accuracy": 1,
+                "mappedPredictions": 278,
+                "unmappedOrMissed": 0
+              },
+              "denominator": 278
+            },
+            "codeMapping": {
+              "status": "not-evaluated",
+              "reason": "Existing recognizer emits temporary group codes; official-code prediction is not implemented"
+            },
+            "paletteGroups": {
+              "status": "evaluated",
+              "value": {
+                "expected": 4,
+                "predicted": 4,
+                "delta": 0
+              }
+            },
+            "beadCount": {
+              "status": "evaluated",
+              "value": {
+                "expected": 278,
+                "predicted": 278,
+                "delta": 0
+              }
+            },
+            "perCodeQuantities": {
+              "status": "evaluated",
+              "value": [
+                {
+                  "code": "SYN-CREAM",
+                  "expected": 72,
+                  "predicted": 72,
+                  "delta": 0
+                },
+                {
+                  "code": "SYN-BLUE",
+                  "expected": 64,
+                  "predicted": 64,
+                  "delta": 0
+                },
+                {
+                  "code": "SYN-PINK",
+                  "expected": 68,
+                  "predicted": 68,
+                  "delta": 0
+                },
+                {
+                  "code": "SYN-WHITE",
+                  "expected": 74,
+                  "predicted": 74,
+                  "delta": 0
+                }
+              ]
+            },
+            "paletteMapping": {
+              "eligible": true,
+              "reason": null,
+              "groups": [
+                {
+                  "predictedCode": "Color 1",
+                  "referenceCode": "SYN-PINK",
+                  "distance": 0,
+                  "margin": 0.0581078480745159
+                },
+                {
+                  "predictedCode": "Color 2",
+                  "referenceCode": "SYN-WHITE",
+                  "distance": 0,
+                  "margin": 0.06558979123075147
+                },
+                {
+                  "predictedCode": "Color 3",
+                  "referenceCode": "SYN-CREAM",
+                  "distance": 0,
+                  "margin": 0.06558979123075147
+                },
+                {
+                  "predictedCode": "Color 4",
+                  "referenceCode": "SYN-BLUE",
+                  "distance": 0,
+                  "margin": 0.0581078480745159
+                }
+              ]
+            },
+            "uncertainty": {
+              "criterion": "Existing review convention: uncorrected model confidence < 0.7; not a calibrated probability",
+              "total": 46,
+              "incorrectlyConfident": {
+                "status": "evaluated",
+                "value": 0,
+                "denominator": 400
+              },
+              "missingOrUnverifiedTruth": 0
+            }
+          }
+        },
+        {
+          "mode": "manual",
+          "recognitionMs": 28.507870000001276,
+          "failure": null,
+          "observed": {
+            "rows": 20,
+            "columns": 20,
+            "beads": 278,
+            "groups": 4
+          },
+          "metrics": {
+            "dimensions": {
+              "status": "evaluated",
+              "value": {
+                "expected": {
+                  "rows": 20,
+                  "columns": 20
+                },
+                "actual": {
+                  "rows": 20,
+                  "columns": 20
+                },
+                "correct": true
+              }
+            },
+            "crop": {
+              "status": "evaluated",
+              "value": {
+                "iou": 1,
+                "referenceCoverage": 1,
+                "edgeRMSErrorPx": 0,
+                "maxEdgeErrorPx": 0
+              }
+            },
+            "occupancy": {
+              "status": "evaluated",
+              "value": {
+                "tp": 278,
+                "fp": 0,
+                "fn": 0,
+                "tn": 122,
+                "precision": 1,
+                "recall": 1
+              },
+              "denominator": 400
+            },
+            "occupiedColor": {
+              "status": "evaluated",
+              "value": {
+                "correct": 278,
+                "total": 278,
+                "accuracy": 1,
+                "mappedPredictions": 278,
+                "unmappedOrMissed": 0
+              },
+              "denominator": 278
+            },
+            "codeMapping": {
+              "status": "not-evaluated",
+              "reason": "Existing recognizer emits temporary group codes; official-code prediction is not implemented"
+            },
+            "paletteGroups": {
+              "status": "evaluated",
+              "value": {
+                "expected": 4,
+                "predicted": 4,
+                "delta": 0
+              }
+            },
+            "beadCount": {
+              "status": "evaluated",
+              "value": {
+                "expected": 278,
+                "predicted": 278,
+                "delta": 0
+              }
+            },
+            "perCodeQuantities": {
+              "status": "evaluated",
+              "value": [
+                {
+                  "code": "SYN-CREAM",
+                  "expected": 72,
+                  "predicted": 72,
+                  "delta": 0
+                },
+                {
+                  "code": "SYN-BLUE",
+                  "expected": 64,
+                  "predicted": 64,
+                  "delta": 0
+                },
+                {
+                  "code": "SYN-PINK",
+                  "expected": 68,
+                  "predicted": 68,
+                  "delta": 0
+                },
+                {
+                  "code": "SYN-WHITE",
+                  "expected": 74,
+                  "predicted": 74,
+                  "delta": 0
+                }
+              ]
+            },
+            "paletteMapping": {
+              "eligible": true,
+              "reason": null,
+              "groups": [
+                {
+                  "predictedCode": "Color 1",
+                  "referenceCode": "SYN-PINK",
+                  "distance": 0,
+                  "margin": 0.0581078480745159
+                },
+                {
+                  "predictedCode": "Color 2",
+                  "referenceCode": "SYN-WHITE",
+                  "distance": 0,
+                  "margin": 0.06558979123075147
+                },
+                {
+                  "predictedCode": "Color 3",
+                  "referenceCode": "SYN-CREAM",
+                  "distance": 0,
+                  "margin": 0.06558979123075147
+                },
+                {
+                  "predictedCode": "Color 4",
+                  "referenceCode": "SYN-BLUE",
+                  "distance": 0,
+                  "margin": 0.0581078480745159
+                }
+              ]
+            },
+            "uncertainty": {
+              "criterion": "Existing review convention: uncorrected model confidence < 0.7; not a calibrated probability",
+              "total": 46,
+              "incorrectlyConfident": {
+                "status": "evaluated",
+                "value": 0,
+                "denominator": 400
+              },
+              "missingOrUnverifiedTruth": 0
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

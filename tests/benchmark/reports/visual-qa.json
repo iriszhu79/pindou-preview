@@ -1,0 +1,22 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "errors": [],
+  "failed": [],
+  "results": [
+    {
+      "name": "synthetic",
+      "url": "http://127.0.0.1:4307/tests/benchmark/reports/examples/synthetic-v1/synthetic-complete.html",
+      "sourceImages": 2,
+      "overflow": false
+    },
+    {
+      "name": "real-unverified",
+      "url": "http://127.0.0.1:4307/tests/benchmark/reports/runs/2026-11-13T08-00-03.521Z-db4cb3d0/duck-copy.html",
+      "sourceImages": 2,
+      "overflow": false
+    }
+  ]
+}

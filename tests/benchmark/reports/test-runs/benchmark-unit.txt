@@ -1,0 +1,39 @@
+
+> pindou@0.1.0 benchmark:test
+> node --experimental-strip-types --test tests/benchmark/*.test.ts
+
+✔ independent confusion-matrix oracle: unknown and draft cells never affect precision, recall or incorrect confidence (5.678819ms)
+✔ wrong occupied color is separate from occupancy; a missed bead remains a color failure (0.392752ms)
+✔ missing verification, absent mappings, dimension mismatch and missing predictions produce Not evaluated (0.555347ms)
+✔ ambiguous QA swatch mapping abstains, does not inject official codes, and suppresses quantity scoring (0.403818ms)
+✔ geometry errors use intersection/union and edge distances, not inferred correctness (0.249626ms)
+✔ native official-code accuracy is available only through an explicitly capable evaluator adapter (0.2323ms)
+✔ verified occupancy does not silently certify an unverified color (0.249586ms)
+✔ candidate selection checks dimensions as well as bounds and does not invent alternative rejection reasons (2.455061ms)
+✔ automatic inference receives only pixels, manual input stays explicit, and labels never enter recognition arguments (3.909511ms)
+✔ failure records retain existing grid stage and manual validation failure rather than making empty-grid predictions (0.520414ms)
+✔ production source never imports benchmark annotations or dataset fixtures (11.540931ms)
+✔ static difference view renders independently known FP, FN, wrong-color and unverified regions distinctly (4.463406ms)
+✔ manual recovery success never turns an automatic detection failure into automatic success (0.516017ms)
+✔ sample dataset permits partial unreviewed real annotations but never certifies their cells (28.027202ms)
+✔ validator catches duplicate IDs, image hash mismatch and missing files (16.352109ms)
+✔ validator rejects out-of-range cells, duplicate addresses, invalid palette references and contradictory status (7.338758ms)
+✔ complete verified quantities must agree with cell truth; partial counts are not forced to match totals (9.083547ms)
+✔ held-out family/hash leakage and missing split-history evidence are errors (6.898985ms)
+✔ valid 20-image dataset ingests without code changes and can contain dimensions-only/unknown truth (24.758788ms)
+✔ HTML escapes annotation text and never needs executable prediction/ground-truth scripts (0.390889ms)
+✔ previous-manifest comparison detects erased held-out membership and permits explicit versioned moves (16.154061ms)
+✔ wrong normalized dimensions, missing verification, and out-of-image bounds are actionable errors (13.966965ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1282.206959
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

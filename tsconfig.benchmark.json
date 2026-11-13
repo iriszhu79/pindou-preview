@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "tests/benchmark/types.ts",
+    "tests/benchmark/metrics.ts",
+    "tests/benchmark/diagnostics.ts"
+  ],
+  "exclude": []
+}

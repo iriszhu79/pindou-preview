@@ -1,0 +1,29 @@
+
+> pindou@0.1.0 test:browser
+> node tests/workspace.mjs && node tests/steps.mjs && node tests/mobile-session.mjs && node tests/selection-navigation.mjs && node tests/routes.mjs && node tests/mobile-canvas.mjs
+
+PASS: mouse/touch Hand and Select, drag suppression, Space shortcut, unmodified wheel without zoom, Ctrl/Meta zoom, buttons, pinch, saved progress, mobile overflow.
+PASS: rectangular preview and direction limits, click/range navigation, automatic focus with zoom retention, remaining counts/undo, compact positions, viewport-docked collapsible mobile panel, multiple saved projects/legacy progress, tall-grid fit.
+PASS 390×844: 10 steps without page scrolling, chips, separate completion/navigation, focus, rotation, refresh, safe layout, 40×51 synthetic grid
+PASS 375×667: 10 steps without page scrolling, chips, separate completion/navigation, focus, rotation, refresh, safe layout, 40×51 synthetic grid
+PASS 844×390: 10 steps without page scrolling, chips, separate completion/navigation, focus, rotation, refresh, safe layout, 40×51 synthetic grid
+PASS 667×375: 10 steps without page scrolling, chips, separate completion/navigation, focus, rotation, refresh, safe layout, 40×51 synthetic grid
+PASS 820×1180: 10 steps without page scrolling, chips, separate completion/navigation, focus, rotation, refresh, safe layout, 40×51 synthetic grid
+PASS 1180×820: 10 steps without page scrolling, chips, separate completion/navigation, focus, rotation, refresh, safe layout, 40×51 synthetic grid
+PASS 1440×900: 10 steps without page scrolling, chips, separate completion/navigation, focus, rotation, refresh, safe layout, 40×51 synthetic grid
+PASS 1280×800: 10 steps without page scrolling, chips, separate completion/navigation, focus, rotation, refresh, safe layout, 40×51 synthetic grid
+PASS 640×400: 10 steps without page scrolling, chips, separate completion/navigation, focus, rotation, refresh, safe layout, 40×51 synthetic grid
+PASS V1.3 844×390: rendered hit geometry at 100/200/300%, pan/boundaries/cancel/pinch, explicit five-cell progress, strategy/Focus/rotation/refresh, larger Focus canvas
+PASS V1.3 820×1180: rendered hit geometry at 100/200/300%, pan/boundaries/cancel/pinch, explicit five-cell progress, strategy/Focus/rotation/refresh, larger Focus canvas
+PASS V1.3 1180×820: rendered hit geometry at 100/200/300%, pan/boundaries/cancel/pinch, explicit five-cell progress, strategy/Focus/rotation/refresh, larger Focus canvas
+PASS V1.3 1440×900: rendered hit geometry at 100/200/300%, pan/boundaries/cancel/pinch, explicit five-cell progress, strategy/Focus/rotation/refresh, larger Focus canvas
+PASS: sparse nonempty/reverse routes, explicit grid-coordinate mode, saved legacy positions, keyboard selection, project-change clearing, unrelated progress, finished and empty patterns.
+PASS V1.4 375×667: canvas share, pixel font, swipe/tap/keyboard drawer, ten-step navigation, vector zoom/selection 100–500%, explicit completion/undo/routes, Focus, rotation, persistence
+PASS V1.4 390×844: canvas share, pixel font, swipe/tap/keyboard drawer, ten-step navigation, vector zoom/selection 100–500%, explicit completion/undo/routes, Focus, rotation, persistence
+PASS V1.4 402×874: canvas share, pixel font, swipe/tap/keyboard drawer, ten-step navigation, vector zoom/selection 100–500%, explicit completion/undo/routes, Focus, rotation, persistence
+PASS V1.4 430×932: canvas share, pixel font, swipe/tap/keyboard drawer, ten-step navigation, vector zoom/selection 100–500%, explicit completion/undo/routes, Focus, rotation, persistence
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice
