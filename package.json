@@ -25,10 +25,14 @@
     "benchmark:validate": "node --experimental-strip-types tests/benchmark/cli.mjs validate",
     "benchmark:run": "node --experimental-strip-types tests/benchmark/cli.mjs run",
     "benchmark:test": "node --experimental-strip-types --test tests/benchmark/*.test.ts",
-    "benchmark:check": "tsc -p tsconfig.benchmark.json"
+    "benchmark:check": "tsc -p tsconfig.benchmark.json",
+    "dev:studio": "vite --config vite.studio.config.ts",
+    "build:studio": "tsc -p tsconfig.studio.json && vite build --config vite.studio.config.ts",
+    "test:studio": "node --experimental-strip-types --test studio/src/*.test.ts"
   },
   "dependencies": {
     "@fontsource/pixelify-sans": "5.2.5",
+    "fflate": "0.8.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

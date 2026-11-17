@@ -9,3 +9,7 @@ tests/benchmark/images/*
 !tests/benchmark/images/.gitkeep
 !tests/benchmark/images/synthetic-complete.png
 tests/benchmark/reports/runs/
+
+# Standalone annotation tool builds and private local QA inputs.
+dist-studio/
+studio/.local/

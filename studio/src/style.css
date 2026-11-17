@@ -1,0 +1,293 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #f3f5f8;
+  color: #172538;
+  font:
+    14px/1.5 system-ui,
+    sans-serif;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0.5em 0;
+}
+h1 {
+  font-size: 23px;
+}
+h2 {
+  font-size: 18px;
+}
+h3 {
+  font-size: 15px;
+}
+small {
+  letter-spacing: 0.13em;
+  color: #53708a;
+}
+header {
+  background: #fff;
+  padding: 20px 26px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #cdd4df;
+}
+h1 span {
+  font-size: 12px;
+  background: #e5e9f5;
+  padding: 4px;
+  border-radius: 4px;
+}
+button,
+.button,
+select,
+input,
+textarea {
+  font: inherit;
+  border: 1px solid #aab7c7;
+  border-radius: 5px;
+  padding: 8px;
+  background: white;
+  color: inherit;
+  max-width: 100%;
+}
+button,
+.button {
+  cursor: pointer;
+  display: inline-block;
+  margin: 3px;
+}
+button:hover,
+.button:hover {
+  background: #eaf1ff;
+  border-color: #3263ae;
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+input[type="file"] {
+  display: none;
+}
+label {
+  display: block;
+}
+input:not([type="checkbox"]):not([type="range"]):not([type="color"]),
+select,
+textarea {
+  width: 100%;
+}
+textarea {
+  min-height: 65px;
+  resize: vertical;
+}
+input[type="checkbox"] {
+  margin-right: 7px;
+}
+input[type="range"] {
+  width: 100px;
+  vertical-align: middle;
+}
+.actions,
+.tools {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.actions select {
+  width: 180px;
+}
+.status {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 10px 26px;
+  background: #e7edf5;
+  font-size: 12px;
+}
+nav {
+  display: flex;
+  gap: 24px;
+  padding: 16px 26px;
+}
+nav a {
+  color: #345c8b;
+  text-decoration: none;
+}
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr) minmax(
+      270px,
+      0.8fr
+    );
+  gap: 14px;
+  padding: 0 20px;
+}
+.panel,
+.legend,
+.metadata,
+.audit,
+.importer {
+  background: #fff;
+  border: 1px solid #d4dce6;
+  border-radius: 9px;
+  padding: 16px;
+  min-width: 0;
+}
+.metadata,
+.legend,
+.audit,
+.importer {
+  margin: 14px 20px;
+}
+.fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+}
+.fields label {
+  min-width: 0;
+}
+.source-scroll {
+  height: 450px;
+  overflow: auto;
+  background: #dfe5ec;
+  margin-top: 12px;
+}
+.source-scroll svg {
+  display: block;
+  max-width: none;
+  user-select: none;
+}
+.matrix {
+  height: 450px;
+  overflow: auto;
+  background: #dae0e9;
+  position: relative;
+}
+.cell-crop {
+  display: block;
+  width: 130px;
+  height: 130px;
+  border: 1px solid #a8b6c8;
+  background: #fff;
+  image-rendering: pixelated;
+}
+.hint {
+  font-size: 12px;
+  color: #596b80;
+}
+.warning {
+  color: #825600;
+}
+.error {
+  margin: 10px 20px;
+  padding: 12px;
+  background: #ffebea;
+  color: #9c2525;
+}
+.error button {
+  float: right;
+}
+.welcome {
+  max-width: 700px;
+  margin: 12vh auto;
+  padding: 32px;
+  background: white;
+  border-radius: 12px;
+}
+.welcome h1 {
+  font-size: 36px;
+}
+.welcome p {
+  margin: 20px 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+td,
+th {
+  padding: 8px;
+  border-bottom: 1px solid #e0e5ec;
+}
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #69798b;
+  font-size: 12px;
+}
+li {
+  margin: 4px 0;
+}
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+@media (max-width: 1100px) {
+  .workspace {
+    grid-template-columns: 1fr 1fr;
+  }
+  .panel:last-child {
+    grid-column: 1/-1;
+  }
+  .panel:last-child {
+    display: block;
+  }
+  .status {
+    gap: 8px;
+  }
+  header {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 600px) {
+  .workspace {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+  .metadata,
+  .legend,
+  .audit,
+  .importer {
+    margin: 10px;
+  }
+  .panel:last-child {
+    grid-column: auto;
+  }
+  header {
+    padding: 14px;
+  }
+  .actions {
+    width: 100%;
+  }
+  nav {
+    padding: 12px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .source-scroll,
+  .matrix {
+    height: 360px;
+  }
+  .legend {
+    overflow: auto;
+  }
+  .welcome {
+    margin: 20px;
+    padding: 20px;
+  }
+  .status {
+    padding: 10px;
+  }
+  .cell-crop {
+    width: 160px;
+    height: 160px;
+  }
+}

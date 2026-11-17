@@ -1,0 +1,45 @@
+{
+  "errors": [],
+  "metrics": [
+    {
+      "width": 1440,
+      "height": 900,
+      "cells": 4560,
+      "candidateOccupied": 1844,
+      "verified": 0,
+      "sourceBytes": 1689453,
+      "zipBytes": 3675934,
+      "heap": 423317630
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "cells": 4560,
+      "candidateOccupied": 1844,
+      "verified": 0,
+      "sourceBytes": 1689453,
+      "zipBytes": 3674434,
+      "heap": 422175359
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "cells": 4560,
+      "candidateOccupied": 1844,
+      "verified": 0,
+      "sourceBytes": 1689453,
+      "zipBytes": 3673003,
+      "heap": 511798764
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "cells": 4560,
+      "candidateOccupied": 1844,
+      "verified": 0,
+      "sourceBytes": 1689453,
+      "zipBytes": 3673689,
+      "heap": 511806132
+    }
+  ]
+}

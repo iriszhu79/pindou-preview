@@ -1,0 +1,1029 @@
+{
+  "type": "object",
+  "properties": {
+    "format": {
+      "const": "pindou.annotation-studio/project-v1"
+    },
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "id": {
+      "type": "string"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "filename": {
+          "type": "string"
+        },
+        "mime": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "filename",
+        "mime",
+        "sha256",
+        "width",
+        "height",
+        "bytes"
+      ],
+      "additionalProperties": false
+    },
+    "meta": {
+      "$ref": "#/$defs/meta"
+    },
+    "grid": {
+      "$ref": "#/$defs/grid"
+    },
+    "legendRegion": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/region"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "legend": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/legend"
+      }
+    },
+    "cells": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/cell"
+      }
+    },
+    "audit": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    },
+    "archives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "at": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "frame": {
+            "$ref": "#/$defs/frame"
+          }
+        },
+        "required": [
+          "at",
+          "reason",
+          "frame"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "history": {
+      "type": "object",
+      "properties": {
+        "undo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/command"
+          }
+        },
+        "redo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/command"
+          }
+        }
+      },
+      "required": [
+        "undo",
+        "redo"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "format",
+    "schemaVersion",
+    "id",
+    "revision",
+    "createdAt",
+    "updatedAt",
+    "source",
+    "meta",
+    "grid",
+    "legendRegion",
+    "legend",
+    "cells",
+    "audit",
+    "archives",
+    "history"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://pindou.example/annotation-studio/project/1.0",
+  "$defs": {
+    "crop": {
+      "type": "object",
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "width": {
+          "type": "number"
+        },
+        "height": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "x",
+        "y",
+        "width",
+        "height"
+      ],
+      "additionalProperties": false
+    },
+    "geometry": {
+      "type": "object",
+      "properties": {
+        "rows": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 300
+        },
+        "columns": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 300
+        },
+        "crop": {
+          "$ref": "#/$defs/crop"
+        }
+      },
+      "required": [
+        "rows",
+        "columns",
+        "crop"
+      ],
+      "additionalProperties": false
+    },
+    "signoff": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "unreviewed",
+            "verified"
+          ]
+        },
+        "reviewer": {
+          "type": "string"
+        },
+        "at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "independent": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "eventId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "reviewer",
+        "at",
+        "independent",
+        "notes",
+        "eventId"
+      ],
+      "additionalProperties": false
+    },
+    "grid": {
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "#/$defs/geometry"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "verification": {
+          "$ref": "#/$defs/signoff"
+        }
+      },
+      "required": [
+        "geometry",
+        "revision",
+        "verification"
+      ],
+      "additionalProperties": false
+    },
+    "candidate": {
+      "type": "object",
+      "properties": {
+        "occupancy": {
+          "enum": [
+            "unknown",
+            "empty",
+            "occupied"
+          ]
+        },
+        "rgb": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "group": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source": {
+          "type": "string"
+        },
+        "at": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "occupancy",
+        "rgb",
+        "group",
+        "code",
+        "confidence",
+        "source",
+        "at"
+      ],
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "channel": {
+          "enum": [
+            "background-color",
+            "printed-code"
+          ]
+        },
+        "provider": {
+          "enum": [
+            "deterministic-sampling",
+            "manual-transcription",
+            "import",
+            "ocr"
+          ]
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          ]
+        },
+        "at": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "bounds": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/crop"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "channel",
+        "provider",
+        "value",
+        "at",
+        "author",
+        "bounds",
+        "confidence",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "review": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "unreviewed",
+            "candidate-generated",
+            "confirmed",
+            "corrected",
+            "ambiguous",
+            "unreadable"
+          ]
+        },
+        "occupancy": {
+          "enum": [
+            "unknown",
+            "empty",
+            "occupied"
+          ]
+        },
+        "code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reviewer": {
+          "type": "string"
+        },
+        "at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "independent": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "evidenceSource": {
+          "type": "string"
+        },
+        "eventId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "geometryRevision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "secondReviewer": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "reviewer": {
+                  "type": "string"
+                },
+                "at": {
+                  "type": "string"
+                },
+                "notes": {
+                  "type": "string"
+                },
+                "decision": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "reviewer",
+                "at",
+                "notes",
+                "decision"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "occupancy",
+        "code",
+        "reviewer",
+        "at",
+        "independent",
+        "notes",
+        "evidenceSource",
+        "eventId",
+        "geometryRevision",
+        "secondReviewer"
+      ],
+      "additionalProperties": false
+    },
+    "cell": {
+      "type": "object",
+      "properties": {
+        "row": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "column": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "candidate": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/candidate"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "draft": {
+          "type": "object",
+          "properties": {
+            "occupancy": {
+              "enum": [
+                "unknown",
+                "empty",
+                "occupied"
+              ]
+            },
+            "code": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "occupancy",
+            "code"
+          ],
+          "additionalProperties": false
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        }
+      },
+      "required": [
+        "row",
+        "column",
+        "candidate",
+        "evidence",
+        "draft",
+        "review"
+      ],
+      "additionalProperties": false
+    },
+    "legend": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "brand": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "rgb": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "quantity": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "location": {
+          "type": "string"
+        },
+        "verification": {
+          "$ref": "#/$defs/signoff"
+        },
+        "resolution": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "notes": {
+                  "type": "string"
+                },
+                "reviewer": {
+                  "type": "string"
+                },
+                "at": {
+                  "type": "string"
+                },
+                "eventId": {
+                  "type": "string"
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "quantity": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "gridRevision": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "notes",
+                "reviewer",
+                "at",
+                "eventId",
+                "count",
+                "quantity",
+                "gridRevision"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "brand",
+        "code",
+        "rgb",
+        "quantity",
+        "location",
+        "verification",
+        "resolution"
+      ],
+      "additionalProperties": false
+    },
+    "region": {
+      "type": "object",
+      "properties": {
+        "rect": {
+          "$ref": "#/$defs/crop"
+        },
+        "verification": {
+          "$ref": "#/$defs/signoff"
+        }
+      },
+      "required": [
+        "rect",
+        "verification"
+      ],
+      "additionalProperties": false
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "patternId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "brand": {
+          "type": "string"
+        },
+        "reviewer": {
+          "type": "string"
+        },
+        "secondReviewer": {
+          "type": "string"
+        },
+        "provenanceNotes": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "real",
+            "synthetic"
+          ]
+        },
+        "purpose": {
+          "enum": [
+            "annotation",
+            "practice"
+          ]
+        },
+        "split": {
+          "enum": [
+            "development",
+            "held-out"
+          ]
+        },
+        "provenance": {
+          "enum": [
+            "original",
+            "repository-screenshot",
+            "conversation-copy",
+            "derived",
+            "unknown"
+          ]
+        },
+        "target": {
+          "enum": [
+            "Gold",
+            "Silver"
+          ]
+        },
+        "referenceClaims": {}
+      },
+      "required": [
+        "patternId",
+        "title",
+        "brand",
+        "reviewer",
+        "secondReviewer",
+        "provenanceNotes",
+        "kind",
+        "purpose",
+        "split",
+        "provenance",
+        "target",
+        "referenceClaims"
+      ],
+      "additionalProperties": false
+    },
+    "frame": {
+      "type": "object",
+      "properties": {
+        "grid": {
+          "$ref": "#/$defs/grid"
+        },
+        "cells": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/cell"
+          }
+        }
+      },
+      "required": [
+        "grid",
+        "cells"
+      ],
+      "additionalProperties": false
+    },
+    "patch": {
+      "type": "object",
+      "properties": {
+        "cells": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "before": {
+                "$ref": "#/$defs/cell"
+              },
+              "after": {
+                "$ref": "#/$defs/cell"
+              }
+            },
+            "required": [
+              "index",
+              "before",
+              "after"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "frame": {
+          "type": "object",
+          "properties": {
+            "before": {
+              "$ref": "#/$defs/frame"
+            },
+            "after": {
+              "$ref": "#/$defs/frame"
+            }
+          },
+          "required": [
+            "before",
+            "after"
+          ],
+          "additionalProperties": false
+        },
+        "meta": {
+          "type": "object",
+          "properties": {
+            "before": {
+              "$ref": "#/$defs/meta"
+            },
+            "after": {
+              "$ref": "#/$defs/meta"
+            }
+          },
+          "required": [
+            "before",
+            "after"
+          ],
+          "additionalProperties": false
+        },
+        "legend": {
+          "type": "object",
+          "properties": {
+            "before": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/legend"
+              }
+            },
+            "after": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/legend"
+              }
+            }
+          },
+          "required": [
+            "before",
+            "after"
+          ],
+          "additionalProperties": false
+        },
+        "region": {
+          "type": "object",
+          "properties": {
+            "before": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/region"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "after": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/region"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "before",
+            "after"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "event": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "at": {
+          "type": "string"
+        },
+        "actor": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "patch": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/patch"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "relatedEvent": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "sequence",
+        "at",
+        "actor",
+        "action",
+        "scope",
+        "patch",
+        "relatedEvent"
+      ],
+      "additionalProperties": false
+    },
+    "command": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "patch": {
+          "$ref": "#/$defs/patch"
+        },
+        "scope": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "coalesceKey": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "action",
+        "patch",
+        "scope",
+        "coalesceKey"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "title": "Pattern Annotation Studio project v1"
+}
