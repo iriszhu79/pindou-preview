@@ -291,3 +291,5 @@ summary {
     height: 160px;
   }
 }
+
+.storage-notice { margin: 0; padding: 12px 26px; background: #fff4d4; color: #584318; font-size: 13px; }

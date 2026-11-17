@@ -33,6 +33,7 @@ import {
   sha,
 } from "./io";
 import "./style.css";
+const storageNotice='Public static site: this tool stores images and annotations in this browser and does not upload them. Browser storage can be cleared or evicted. Save and export backups regularly. This site provides no private server or access control.';
 function App() {
   const [p, setP] = useState<Project | null>(null),
     [library, setLibrary] = useState<Project[]>([]),
@@ -424,7 +425,7 @@ function App() {
       <main className="welcome">
         <small>PINDOU · INTERNAL QUALITY TOOL</small>
         <h1>Pattern Annotation Studio</h1>
-        <p>Build evidence, review cells, preserve uncertainty.</p>
+        <p>Build evidence, review cells, preserve uncertainty.</p><p role="note">{storageNotice}</p>
         <p>
           Images and annotations stay in this browser. Candidates never become
           verified answers automatically.
@@ -441,7 +442,7 @@ function App() {
         </label>
         {error && <p role="alert">{error}</p>}
         <p>
-          Separate local storage • No consumer projects accessed • No deployment
+          Separate local storage • No consumer projects accessed
         </p>
       </main>
     );
@@ -535,6 +536,7 @@ function App() {
           </button>
         </div>
       </header>
+      <p role="note" className="storage-notice">{storageNotice}</p>
       <div className="status">
         <b>{status}</b>
         <span>

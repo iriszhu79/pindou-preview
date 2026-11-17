@@ -5,7 +5,7 @@ import { unzipSync, strFromU8 } from "fflate";
 import Ajv from "ajv/dist/2020.js";
 const b = await chromium.launch({
   headless: true,
-  executablePath: "/usr/bin/chromium",
+  ...(process.env.CHROMIUM_PATH ? {executablePath:process.env.CHROMIUM_PATH}:{}),
 });
 const context = await b.newContext({
   viewport: { width: 1440, height: 900 },
@@ -15,7 +15,7 @@ const p = await context.newPage();
 const errors = [];
 p.on("pageerror", (e) => errors.push(e.message));
 try {
-  await p.goto("http://localhost:4310");
+  await p.goto(process.env.PINDOU_TEST_URL || "http://localhost:4310");
   await p.evaluate(() => {
     for (const k of [
       "pindou.projects.v1",
