@@ -19,7 +19,9 @@ function run(args, cwd) {
 await Promise.all(
   versions.map(async (v) => {
     const cwd = path.join(build, v.name);
-    for (const args of [["ci"], ["test"], ["run", "build"]])
+    for (const args of v.name === "studio"
+      ? [["ci"], ["run", "test:studio"], ["run", "build:studio"]]
+      : [["ci"], ["test"], ["run", "build"]])
       await run(args, cwd);
   }),
 );

@@ -35,7 +35,7 @@ try {
     { width: 1440, height: 900 },
     { width: 390, height: 844 },
   ])
-    for (const version of versions) {
+    for (const version of versions.filter((v) => v.name !== "studio")) {
       const context = await browser.newContext({
         viewport,
         hasTouch: viewport.width < 900,
@@ -167,13 +167,6 @@ try {
             /1179 beads · 5 colors/,
           );
         }
-        await page.screenshot({
-          path: path.join(
-            dir,
-            `${version.name}-recognition-${viewport.width}.png`,
-          ),
-          fullPage: true,
-        });
         await page.getByRole("checkbox").check();
         await page
           .getByRole("button", {
@@ -228,10 +221,6 @@ try {
           () => document.documentElement.scrollWidth <= innerWidth,
         ),
       );
-      await page.screenshot({
-        path: path.join(dir, `${version.name}-workspace-${viewport.width}.png`),
-        fullPage: true,
-      });
       for (const [key, value] of Object.entries(sentinels))
         assert.equal(
           await page.evaluate((key) => qaRead(key), key),
@@ -321,7 +310,7 @@ try {
     JSON.stringify(logs, null, 2) + "\n",
   );
   console.log(
-    "PASS all three applications' HTML, JavaScript, CSS, fonts, images and workers match packaged hashes.",
+    "PASS all four applications' HTML, JavaScript, CSS, fonts, images and workers match packaged hashes.",
   );
 } finally {
   await browser.close();

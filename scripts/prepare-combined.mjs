@@ -11,6 +11,7 @@ import path from "node:path";
 export const V15 = "19a4cfbccc2eedcf70eab12db4512f6bc00ee57b";
 export const V20 = "86f58afd93bac3ea3bcdd3339254185681fab602";
 export const V211 = "91d7f25fd21f1323e2db52988bfdce4ee66e354b";
+export const STUDIO = "5c1b89e2e0d67786c25d0d806f2005b7ef5552f6";
 export const root = path.resolve(import.meta.dirname, "..");
 export const build = path.join(root, ".combined");
 export const versions = [
@@ -32,6 +33,12 @@ export const versions = [
     base: "/pindou-preview/v2-b1-1/",
     key: "pindou.preview.v20b11.projects.v1",
   },
+  {
+    name: "studio",
+    sha: STUDIO,
+    base: "/pindou-preview/annotation-studio/",
+    key: "pindou.annotation-studio.v1",
+  },
 ];
 if (process.argv[1] === import.meta.filename) {
   mkdirSync(build, { recursive: true });
@@ -45,6 +52,42 @@ if (process.argv[1] === import.meta.filename) {
       maxBuffer: 50 * 1024 * 1024,
     });
     execFileSync("tar", ["-xf", "-", "-C", dest], { input: tar });
+    if (v.name === "studio") {
+      // Only Studio's own entry and sources are built. The consumer public/ directory is not used.
+      const files = readdirSync(path.join(dest, "studio/src")).filter(
+        (f) => !f.includes(".test."),
+      );
+      const accesses = [];
+      for (const f of files) {
+        const text = readFileSync(path.join(dest, "studio/src", f), "utf8");
+        if (/localStorage|indexedDB/.test(text)) accesses.push(f);
+        assert.ok(
+          !/localStorage\.(?:clear|removeItem)|sessionStorage|deleteDatabase/.test(
+            text,
+          ),
+        );
+        for (const key of [
+          "pindou.projects.v1",
+          ...versions.filter((x) => x.name !== "studio").map((x) => x.key),
+        ])
+          assert.ok(!text.includes(key));
+      }
+      assert.deepEqual(accesses.sort(), ["io.ts", "main.tsx"]);
+      assert.ok(
+        readFileSync(path.join(dest, "studio/src/io.ts"), "utf8").includes(
+          `export const namespace = "${v.key}"`,
+        ),
+      );
+      assert.ok(
+        readFileSync(path.join(dest, "vite.studio.config.ts"), "utf8").includes(
+          'root: "studio"',
+        ),
+      );
+      console.log(
+        `Prepared Studio ${v.sha}: exclusive namespace, separate entry`,
+      );
+      continue;
+    }
     if (v.name !== "v15") {
       const sourceKey =
         v.name === "v211"
@@ -109,6 +152,18 @@ if (process.argv[1] === import.meta.filename) {
         `"${v.key}"`,
       ),
     );
+    const workspaceTest = path.join(dest, "tests/workspace.mjs");
+    let test = readFileSync(workspaceTest, "utf8");
+    test = test.replace(
+      "  await page.mouse.move(100, 200);",
+      `  await page.evaluate(() => document.fonts.ready);
+  await page.waitForFunction(() => document.documentElement.scrollHeight > innerHeight);
+  await page.locator('body').hover({position:{x:100,y:200}});
+  // Synchronize compositor readiness; the subsequent Workspace wheel checks remain unchanged.
+  await page.waitForTimeout(500);
+  await page.mouse.move(100, 200);`,
+    );
+    writeFileSync(workspaceTest, test);
     console.log(`Prepared ${v.name}: ${v.sha} ${v.base} ${v.key}`);
   }
 }

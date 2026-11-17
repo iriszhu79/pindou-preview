@@ -1,5 +1,5 @@
-# All three pinned applications MUST be packaged and verified before one atomic Pages upload.
-name: Deploy combined V1.5, V2.0-A and V2.0-B1.1 previews
+# All four pinned applications MUST be packaged and verified before one atomic Pages upload.
+name: Deploy combined V1.5, V2.0-A and V2.0-B1.1 and Annotation Studio previews
 on:
   push:
     branches: [main]
@@ -22,14 +22,14 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: "24"
           cache: npm
       - run: npm ci
       - name: Export approved commits and audit storage isolation
         run: node scripts/prepare-combined.mjs
-      - name: Install, unit-test and production-build all three applications
+      - name: Install, unit-test and production-build all four applications
         run: node scripts/build-combined.mjs
-      - name: Package and hash-verify all three applications
+      - name: Package and hash-verify all four applications
         run: node scripts/package-combined.mjs
       - name: Install test browser
         run: npx playwright install --with-deps chromium
@@ -45,13 +45,17 @@ jobs:
             sleep 1
           done
           node scripts/verify-combined.mjs
+          node scripts/verify-studio.mjs
           node scripts/test-combined.mjs
       - name: Retain QA evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: combined-preview-qa
-          path: .combined/verification/
+          # Only aggregate results; never upload screenshots, source images or annotation payloads.
+          path: |
+            .combined/verification/results.json
+            .combined/verification/studio-results.json
           if-no-files-found: ignore
       - uses: actions/configure-pages@v5
       - name: Upload complete, verified Pages artifact
@@ -65,6 +69,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy all three isolated previews atomically
+      - name: Deploy all four isolated previews atomically
         id: deployment
         uses: actions/deploy-pages@v4

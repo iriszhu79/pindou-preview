@@ -27,6 +27,10 @@ await Promise.all(
         PINDOU_TEST_URL: `http://127.0.0.1:4400${v.base}`,
         PINDOU_QA_DIR: path.join(build, "verification", v.name),
       };
+    if (v.name === "studio") {
+      await run("node", ["studio/tests/review.mjs"], cwd, env);
+      return;
+    }
     for (const suite of [
       "test:browser",
       "test:preview",
